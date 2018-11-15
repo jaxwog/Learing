@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<integer-array name="resourceId">
+    <item >@drawable/search_icon_casesearch</item>
+    <item >@drawable/search_icon_deliver</item>
+    <item >@drawable/search_icon_instest</item>
+    <item >@drawable/search_icon_manager</item>
+    <item >@drawable/search_icon_message</item>
+    <item >@drawable/search_icon_pcase</item>
+    <item >@drawable/search_icon_policy</item>
+    <item >@drawable/search_icon_posignfor</item>
+    <item >@drawable/search_icon_povisit</item>
+    <item >@drawable/search_icon_ppapplication</item>
+    <item >@drawable/search_icon_pprogress</item>
+    <item >@drawable/search_icon_stephealth</item>
+    <item >@drawable/search_icon_invest</item>
+
+</integer-array>
+    
+</resources>

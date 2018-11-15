@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_FFFFFF"
+    android:orientation="vertical">
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:maxHeight="@dimen/dimen_dp_30dp"
+        android:maxWidth="@dimen/dimen_dp_30dp"
+        android:layout_gravity="center"
+        android:id="@+id/iv_function_item"
+        android:layout_width="@dimen/dimen_dp_30dp"
+        android:layout_height="@dimen/dimen_dp_30dp"
+        android:adjustViewBounds="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_dp_15dp"
+        android:src="@mipmap/placeholder_icon" />
+
+    <TextView
+        android:singleLine="true"
+        android:layout_marginTop="@dimen/dimen_dp_6dp"
+        android:layout_gravity="center"
+        android:id="@+id/tv_function_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全部服务"
+        android:textColor="#FF000000"
+        android:textSize="@dimen/dimen_sp_13sp" />
+
+</LinearLayout>

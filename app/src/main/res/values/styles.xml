@@ -1,0 +1,38 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="NoAcBarTheme" parent="Theme.AppCompat.NoActionBar">
+    </style>
+
+    <!--
+Base application theme, dependent on API level. This theme is replaced
+by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+-->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="MyAppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:textColor">@color/mytextcolor</item>
+        <item name="colorPrimary">@color/colorPrimary_pink</item>
+        <item name="colorPrimaryDark">@color/colorPrimary_pinkDark</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="colorAccent">@color/accent_material_dark</item>
+        <!-- 设置虚拟导航栏背景颜色 -->
+        <item name="android:navigationBarColor" tools:ignore="NewApi">@color/colorPrimary_pink</item>
+    </style>
+
+</resources>

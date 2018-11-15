@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">贾克斯</string>
+
+    <string name="string_search_hint">可搜索功能、天气</string>
+    <string name="string_search">搜索</string>
+    <string name="string_histroy_search">历史搜索</string>
+</resources>
