@@ -7,7 +7,7 @@ import com.love.jax.utils.Logger;
 
 /**
  * 根据设计图的px进行屏幕适配
- * 保证图片进行等比缩放（比dp更加精确）
+ * 保证进行等比缩放（比dp更加精确）
  */
 public class ScreenAdaptationActivity extends BaseActivity {
 

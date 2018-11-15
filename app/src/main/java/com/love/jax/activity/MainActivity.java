@@ -57,9 +57,9 @@ public class MainActivity extends BaseActivity {
     InFuncAdapter mInFuncAdapter;
     private String[] mStrings = new String[]{
             "屏幕适配","列表适配","图片适配","主题设置","交互动画","侧滑效果","文本输入","沉浸式设计","属性动画"
-            ,"南辕北辙","得陇望蜀","明修栈道","暗度陈仓","叶公好龙","无理取闹","风风火火","恍恍惚惚","德玛西亚"
-            ,"剑圣偷塔","艾欧尼亚","暗影之道","五光十色","诺克萨斯","德邦总管","加里奥","凯南","武器大师"
-            ,"金属大师","盖伦","德莱文","卢锡安","战争女神","黑暗骑士","斯嘉丽","黑寡妇","泰勒斯威夫特"
+//            ,"南辕北辙","得陇望蜀","明修栈道","暗度陈仓","叶公好龙","无理取闹","风风火火","恍恍惚惚","德玛西亚"
+//            ,"剑圣偷塔","艾欧尼亚","暗影之道","五光十色","诺克萨斯","德邦总管","加里奥","凯南","武器大师"
+//            ,"金属大师","盖伦","德莱文","卢锡安","战争女神","黑暗骑士","斯嘉丽","黑寡妇","泰勒斯威夫特"
     };
 
 
@@ -218,7 +218,7 @@ public class MainActivity extends BaseActivity {
         Bundle bundle = new Bundle();
         String tempStr = StringShowUtils.delTag(mEntityList.get(position).getTitle());
         switch (tempStr){
-            case "图片适配":
+            case "屏幕适配":
                 bundle.putString(ConfigSet.INTENT_STRING,"测试数据");
                 jumpToActivity(ScreenAdaptationActivity.class,bundle);
                 if (mBundle==null){
