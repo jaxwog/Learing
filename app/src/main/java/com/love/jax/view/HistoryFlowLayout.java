@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * com.love.jax.view
  * Created by jax on 2018/11/13 11:17
- * TODO:
+ * TODO: 流式历史记录布局
  */
 public class HistoryFlowLayout extends ViewGroup{
 

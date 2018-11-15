@@ -1,7 +1,6 @@
 package com.love.jax.utils;
 
 import android.text.TextUtils;
-import android.view.TextureView;
 
 import com.love.jax.bean.LettersEntity;
 
@@ -175,10 +174,6 @@ public class StringShowUtils {
 
     /**
      * 替换查询高亮标签
-     *
-     * @param word "泰康<em>集团股份有限</em>公司<em>股份</em>"
-     * @return 泰康<font       color   =   '   #   5   1   7   DF7   '>集团股份有限</font>公司<font
-     * color='#517DF7'>股份</font>
      */
     public static String highLight(String word) {
         if (word.isEmpty()) {
