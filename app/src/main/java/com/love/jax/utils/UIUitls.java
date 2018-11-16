@@ -45,7 +45,8 @@ public static final float STANDARD_WIDTH = 720F;
         if (displayMericsWidth==0.0f || displayMericsHeight ==0.0f){
 
             //得到系统通知栏高度
-            int systemBarHeight = getValue(context,"system_bar_height",48);
+            int systemBarHeight = getStatusBarValue(context,"status_bar_height",48);
+            Logger.i("wog","系统状态栏高度="+systemBarHeight);
 
             if (metrics.widthPixels > metrics.heightPixels){
                 this.displayMericsHeight = metrics.widthPixels - systemBarHeight;
@@ -68,13 +69,14 @@ public static final float STANDARD_WIDTH = 720F;
         return this.displayMericsWidth / STANDARD_WIDTH;
     }
 
-    public int getValue(Context context,String systemId,int defValue){
+    public int getStatusBarValue(Context context, String systemId, int defValue){
 
         try {
             Class<?> clazz =  Class.forName(DIMEN_CLASS);
-            Object r = clazz.getInterfaces();
+            Object r = clazz.newInstance();
             Field field = clazz.getField(systemId);
             int x = (int) field.get(r);
+            Logger.i("woge","实际获取="+context.getResources().getDimensionPixelOffset(x));
             return context.getResources().getDimensionPixelOffset(x);
         } catch (Exception e) {
             return defValue;
