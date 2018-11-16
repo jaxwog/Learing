@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.love.jax.utils.Logger;
 import com.love.jax.utils.UIUitls;
 
 /**
@@ -33,7 +34,8 @@ public class AdapterRelLayout extends RelativeLayout {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
-    static boolean isFlag = true;
+    boolean isFlag = true;
+    static int num = 1;
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -52,6 +54,7 @@ public class AdapterRelLayout extends RelativeLayout {
                 layoutParams.bottomMargin = (int) (layoutParams.bottomMargin*scaleY);
 
             }
+            Logger.i("wog","我刷新的是第"+num);
             isFlag = false;
 
         }

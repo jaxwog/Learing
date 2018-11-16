@@ -7,8 +7,9 @@
     tools:context=".activity.ScreenAdaptationActivity">
 
     <Button
-        android:layout_width="360px"
-        android:layout_height="640px"
+        android:layout_width="240px"
+        android:layout_height="400px"
+        android:textSize="@dimen/dimen_sp_30sp"
         android:text="按钮"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"/>

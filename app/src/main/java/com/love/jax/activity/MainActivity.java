@@ -77,7 +77,7 @@ public class MainActivity extends BaseActivity {
         mStringList.addAll(Arrays.asList(mStrings));
         mEntityList = ListUtils.addLetter(mStringList);
         for (int i = 0; i < mEntityList.size(); i++) {
-            Logger.e("woge",mEntityList.get(i).getTitle());
+            Logger.e("wog",mEntityList.get(i).getTitle());
         }
 
 

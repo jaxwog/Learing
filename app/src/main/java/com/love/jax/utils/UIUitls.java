@@ -1,10 +1,12 @@
 package com.love.jax.utils;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 /**
  * com.love.jax.utils
@@ -16,8 +18,8 @@ public class UIUitls {
     //反射系统组件信息
 private static final String DIMEN_CLASS = "com.android.internal.R$dimen";
 
-public static final float STANDARD_WIDTH = 720F;
-    public static final float STANDARD_HEIGHT = 1280F;
+public static final float STANDARD_WIDTH = 480F;
+    public static final float STANDARD_HEIGHT = 800F;
 
     public float displayMericsWidth;
     public float displayMericsHeight;
@@ -46,7 +48,11 @@ public static final float STANDARD_WIDTH = 720F;
 
             //得到系统通知栏高度
             int systemBarHeight = getStatusBarValue(context,"status_bar_height",48);
+            int navigationBarHeight = getNavigationBarHeight(context);
+
+
             Logger.i("wog","系统状态栏高度="+systemBarHeight);
+            Logger.i("wog","虚拟三大按键高度="+navigationBarHeight);
 
             if (metrics.widthPixels > metrics.heightPixels){
                 this.displayMericsHeight = metrics.widthPixels - systemBarHeight;
@@ -76,11 +82,59 @@ public static final float STANDARD_WIDTH = 720F;
             Object r = clazz.newInstance();
             Field field = clazz.getField(systemId);
             int x = (int) field.get(r);
-            Logger.i("woge","实际获取="+context.getResources().getDimensionPixelOffset(x));
+            Logger.i("wog","实际获取="+context.getResources().getDimensionPixelOffset(x));
             return context.getResources().getDimensionPixelOffset(x);
         } catch (Exception e) {
             return defValue;
         }
+    }
+
+    /**
+     * 获取虚拟按键高度
+     *
+     * @param context
+     * @return
+     */
+    public static int getNavigationBarHeight(Context context) {
+        int navigationBarHeight = 0;
+        try {
+            Resources rs = context.getResources();
+            int id = rs.getIdentifier("navigation_bar_height", "dimen", "android");
+            if (id > 0 && checkDeviceHasNavigationBar(context)) {
+                navigationBarHeight = rs.getDimensionPixelSize(id);
+            }
+        } catch (Exception e) {
+        }
+        return navigationBarHeight;
+    }
+
+    /**
+     * 判断有没有虚拟按键
+     *
+     * @param context
+     * @return
+     */
+    public static boolean checkDeviceHasNavigationBar(Context context) {
+        boolean hasNavigationBar = false;
+        Resources rs = context.getResources();
+        int id = rs.getIdentifier("config_showNavigationBar", "bool", "android");
+        if (id > 0) {
+            hasNavigationBar = rs.getBoolean(id);
+        }
+        try {
+            Class systemPropertiesClass = Class.forName("android.os.SystemProperties");
+            Method m = systemPropertiesClass.getMethod("get", String.class);
+            String navBarOverride = (String) m.invoke(systemPropertiesClass, "qemu.hw.mainkeys");
+            if ("1".equals(navBarOverride)) {
+                hasNavigationBar = false;
+            } else if ("0".equals(navBarOverride)) {
+                hasNavigationBar = true;
+            }
+        } catch (Exception e) {
+        }
+
+        return hasNavigationBar;
+
     }
 
 

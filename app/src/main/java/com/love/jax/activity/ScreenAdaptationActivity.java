@@ -1,6 +1,8 @@
 package com.love.jax.activity;
 
 
+import android.view.View;
+
 import com.love.jax.R;
 import com.love.jax.utils.ConfigSet;
 import com.love.jax.utils.Logger;
