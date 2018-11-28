@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.love.jax.JaxApplication;
 import com.love.jax.utils.Logger;
 import com.love.jax.utils.UIUitls;
 
@@ -41,8 +42,11 @@ public class AdapterRelLayout extends RelativeLayout {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         if (isFlag){
             int count = getChildCount();
-            float scaleX = UIUitls.getInstance(this.getContext()).getHorizontalScalValue();
-            float scaleY = UIUitls.getInstance(this.getContext()).getVertucakScalValue();
+            //单例引用Activity，导致内存泄漏
+//            float scaleX = UIUitls.getInstance(this.getContext()).getHorizontalScalValue();
+//            float scaleY = UIUitls.getInstance(this.getContext()).getVertucakScalValue();
+            float scaleX = UIUitls.getInstance(JaxApplication.getInstance()).getHorizontalScalValue();
+            float scaleY = UIUitls.getInstance(JaxApplication.getInstance()).getVertucakScalValue();
             for (int i = 0; i < count; i++) {
                 View view = getChildAt(i);
                 LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
