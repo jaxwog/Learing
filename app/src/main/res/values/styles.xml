@@ -25,6 +25,10 @@ by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
         -->
     </style>
 
+    <!--colorPrimary：主色，-->
+    <!--colorPrimaryDark：主色&#45;&#45;深色，一般可以用于状态栏颜色、底部导航栏-->
+    <!--colorAccent：（代表各个空间的基调颜色&#45;&#45;CheckBox、RadioButton、ProgressBar等等）-->
+    <!--"android:textColor"：当前所有的文本颜色-->
     <!-- Application theme. -->
     <style name="MyAppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
@@ -35,6 +39,13 @@ by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
         <item name="colorAccent">@color/accent_material_dark</item>
         <!-- 设置虚拟导航栏背景颜色 -->
         <item name="android:navigationBarColor" tools:ignore="NewApi">@color/colorPrimary_pink</item>
+    </style>
+
+
+    <style name="tv_1dp_line">
+        <item name="android:background">@color/color_F4F6FC</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_dp_1dp</item>
     </style>
 
 </resources>

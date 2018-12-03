@@ -99,6 +99,9 @@ public class InFuncAdapter extends RecyclerView.Adapter<InFuncAdapter.FunctionVi
         return mList.size();
     }
 
+    public List<LettersEntity> getList() {
+        return mList;
+    }
 
     public static class FunctionViewHolder extends RecyclerView.ViewHolder {
 

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.love.jax.view.InputFixedLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/view_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F4F6FC">
+
+    <include layout="@layout/common_title"/>
+
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_dp_44dp"
+        android:scrollbars="none">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:background="#FFF"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--标题-->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF"
+                android:paddingBottom="@dimen/dimen_dp_15dp"
+                android:paddingLeft="@dimen/dimen_dp_18dp"
+                android:paddingRight="@dimen/dimen_dp_18dp"
+                android:paddingTop="@dimen/dimen_dp_15dp">
+
+                <TextView
+                    android:id="@+id/view_order_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="超声波洁牙套餐"
+                    android:textColor="#FF1F2845"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </FrameLayout>
+
+            <View
+
+                android:background="#FFF8F8F8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <!--款式-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF"
+                android:paddingBottom="@dimen/dimen_dp_15dp"
+                android:paddingLeft="@dimen/dimen_dp_18dp"
+                android:paddingRight="@dimen/dimen_dp_18dp"
+                android:paddingTop="@dimen/dimen_dp_15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="款式"
+                    android:textColor="#FF4C5979"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/view_marke_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="实惠款"
+                    android:textColor="#FF1F2845"
+                    android:textSize="14sp"/>
+            </FrameLayout>
+
+            <View
+                android:background="#FFF8F8F8"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dimen_dp_18dp"
+                android:layout_marginRight="@dimen/dimen_dp_18dp"
+                android:layout_height="1dp"/>
+
+            <!--价格-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF"
+                android:paddingBottom="@dimen/dimen_dp_15dp"
+                android:paddingLeft="@dimen/dimen_dp_18dp"
+                android:paddingRight="@dimen/dimen_dp_18dp"
+                android:paddingTop="@dimen/dimen_dp_15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="价格"
+                    android:textColor="#FF4C5979"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/view_marke_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:text="¥ 300"
+                    android:textColor="#FF1F2845"
+                    android:textSize="14sp"/>
+            </FrameLayout>
+
+            <View
+                android:background="#FFF8F8F8"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dimen_dp_18dp"
+                android:layout_marginRight="@dimen/dimen_dp_18dp"
+                android:layout_height="1dp"/>
+
+            <!--数量-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF"
+                android:paddingBottom="@dimen/dimen_dp_15dp"
+                android:paddingLeft="@dimen/dimen_dp_18dp"
+                android:paddingRight="@dimen/dimen_dp_18dp"
+                android:paddingTop="@dimen/dimen_dp_15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="数量"
+                    android:textColor="#FF4C5979"
+                    android:textSize="14sp"/>
+
+                <!--<com.taikang.tailife.app.health.view.CounterView-->
+                    <!--android:id="@+id/view_count"-->
+                    <!--android:layout_width="122dp"-->
+                    <!--android:layout_height="24dp"-->
+                    <!--android:layout_gravity="center_vertical|right"-->
+                    <!--android:layout_marginRight="-20dp"></com.taikang.tailife.app.health.view.CounterView>-->
+            </FrameLayout>
+
+            <View
+                android:background="#FFF8F8F8"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dimen_dp_18dp"
+                android:layout_marginRight="@dimen/dimen_dp_18dp"
+                android:layout_height="1dp"/>
+
+
+            <!--发票信息-->
+            <FrameLayout
+                android:id="@+id/btn_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF"
+                android:paddingBottom="@dimen/dimen_dp_15dp"
+                android:paddingLeft="@dimen/dimen_dp_18dp"
+                android:paddingRight="@dimen/dimen_dp_18dp"
+                android:paddingTop="@dimen/dimen_dp_15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="发票信息"
+                    android:textColor="#FF4C5979"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/view_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginLeft="@dimen/dimen_dp_100dp"
+                    android:drawablePadding="6dp"
+                    android:drawableRight="@mipmap/health_next_arrows"
+                    android:hint="选填"
+                    android:textColor="@color/color_1F2845"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="14sp"/>
+            </FrameLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_dp_47dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_F8F8F8"></View>
+
+        <TextView
+            android:id="@+id/view_money_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp"
+            android:includeFontPadding="false"
+            android:text="¥300"
+            android:textColor="@color/color_FF595D"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/view_money_marke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/view_money_pay"
+            android:includeFontPadding="false"
+            android:text="¥300"
+            android:textColor="@color/color_999999"
+            android:textSize="13sp"/>
+
+        <!--<com.fastdev.fastdevdumplib.widget.SimpleTxtButton-->
+            <!--android:id="@+id/btn_submit"-->
+            <!--android:layout_width="150dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:gravity="center"-->
+            <!--android:text="提交"-->
+            <!--android:textColor="#FFF"-->
+            <!--android:textSize="16sp"-->
+            <!--app:stb_bg_active="@color/color_316CA0"-->
+            <!--app:stb_bg_negtive="@color/color_517DF7"/>-->
+    </RelativeLayout>
+
+</com.love.jax.view.InputFixedLayout>
