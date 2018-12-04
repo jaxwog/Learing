@@ -20,7 +20,9 @@
         <activity android:name=".activity.ScreenAdaptationActivity" />
         <activity android:name=".activity.BaseActivity" />
         <activity android:name=".activity.OrderActivity" />
-        <activity android:name=".activity.recycleview.ThemeActivity"></activity>
+        <activity android:name=".activity.recycleview.ThemeActivity" />
+        <activity android:name=".activity.recycleview.RcSimpleActivity" />
+        <activity android:name=".activity.recycleview.RcDividerActivity"/>
     </application>
 
 </manifest>

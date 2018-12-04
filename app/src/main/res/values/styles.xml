@@ -41,6 +41,8 @@ by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
         <item name="android:navigationBarColor" tools:ignore="NewApi">@color/colorPrimary_pink</item>
     </style>
 
+    <!--14 为4.0   19为4.4    21为5.0-->
+
 
     <style name="tv_1dp_line">
         <item name="android:background">@color/color_F4F6FC</item>

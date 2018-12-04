@@ -19,6 +19,7 @@ import com.love.jax.activity.BaseActivity;
 
 /**
  * 主题适配
+ * LinearLayoutCompat 给包裹在里面的所有子控件添加间隔线
  */
 public class ThemeActivity extends BaseActivity {
     private ProgressBar progressBar1;
@@ -55,7 +56,7 @@ public class ThemeActivity extends BaseActivity {
 
         String[] items = {"条目0","条目1","条目2","条目3","条目4","条目5","条目6",};
         //数据
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items );
+        adapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, items );
     }
 
     @Override
@@ -87,14 +88,14 @@ public class ThemeActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Toast.makeText(getApplicationContext(), "点了第"+position, 0).show();
+                Toast.makeText(getApplicationContext(), "点了第"+position, Toast.LENGTH_LONG).show();
                 listPopupWindow.dismiss();
             }
         });
     }
 
     public void showDialog(View v) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
         builder.setTitle("女朋友");
         builder.setMessage("给我一个女朋友");
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
