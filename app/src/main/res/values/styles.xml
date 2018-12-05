@@ -39,6 +39,8 @@ by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
         <item name="colorAccent">@color/accent_material_dark</item>
         <!-- 设置虚拟导航栏背景颜色 -->
         <item name="android:navigationBarColor" tools:ignore="NewApi">@color/colorPrimary_pink</item>
+        <!--设置间隔线颜色和大小-->
+        <item name="android:listDivider">@drawable/item_divider</item>
     </style>
 
     <!--14 为4.0   19为4.4    21为5.0-->

@@ -3,6 +3,7 @@ package com.love.jax.activity.recycleview;
 
 
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,11 +12,16 @@ import android.widget.Toast;
 
 import com.love.jax.R;
 import com.love.jax.activity.BaseActivity;
+import com.love.jax.adapter.MyDivItemDecoration;
+import com.love.jax.adapter.MyDivItemGridDecoration;
 import com.love.jax.adapter.MySimpleAdapter;
 import com.love.jax.adapter.MyStagSimpleAdapter;
 
 import java.util.ArrayList;
 
+/**
+ * recycleView间隔线绘制
+ */
 public class RcDividerActivity extends BaseActivity {
     private RecyclerView recylerview;
     private ArrayList<String> list;
@@ -38,14 +44,21 @@ public class RcDividerActivity extends BaseActivity {
         adapter = new MySimpleAdapter(list);
         sAdapter = new MyStagSimpleAdapter(list);
         //LayoutManager布局摆放管理器(线性摆放、瀑布流)
-        recylerview.setLayoutManager(new LinearLayoutManager(this));//默认垂直
+//        recylerview.setLayoutManager(new LinearLayoutManager(this));//默认垂直
         //reverseLayout:数据倒置，从右边开始滑动
 //		recylerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
-//		recylerview.setLayoutManager(new GridLayoutManager(this, 3));
+		recylerview.setLayoutManager(new GridLayoutManager(this, 3));
         //瀑布流效果
 //		recylerview.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));
 //		recylerview.setAdapter(sAdapter);
         recylerview.setAdapter(adapter);
+//        v7包中系统自带间隔线
+//        DividerItemDecoration decoration = new DividerItemDecoration(mContext,LinearLayoutManager.VERTICAL);
+//        recylerview.addItemDecoration(decoration);
+//        MyDivItemDecoration decoration1 = new MyDivItemDecoration(mContext,LinearLayoutManager.VERTICAL);
+//        recylerview.addItemDecoration(decoration1);
+        MyDivItemGridDecoration decoration2  = new MyDivItemGridDecoration(mContext);
+        recylerview.addItemDecoration(decoration2);
 
         recylerview.setItemAnimator(new DefaultItemAnimator());
         adapter.setOnItemClickListener(new MySimpleAdapter.OnItemClickListener() {
