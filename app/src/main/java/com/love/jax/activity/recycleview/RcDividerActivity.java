@@ -36,7 +36,7 @@ public class RcDividerActivity extends BaseActivity {
     @Override
     protected void initView() {
         list = new ArrayList<String>();
-        for (int i = 0; i < 60; i++) {
+        for (int i = 0; i < 59; i++) {
             list.add("item"+i);
         }
 
@@ -47,7 +47,7 @@ public class RcDividerActivity extends BaseActivity {
 //        recylerview.setLayoutManager(new LinearLayoutManager(this));//默认垂直
         //reverseLayout:数据倒置，从右边开始滑动
 //		recylerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
-		recylerview.setLayoutManager(new GridLayoutManager(this, 3));
+		recylerview.setLayoutManager(new GridLayoutManager(this, 4));
         //瀑布流效果
 //		recylerview.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));
 //		recylerview.setAdapter(sAdapter);

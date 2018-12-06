@@ -22,7 +22,8 @@
         <activity android:name=".activity.OrderActivity" />
         <activity android:name=".activity.recycleview.ThemeActivity" />
         <activity android:name=".activity.recycleview.RcSimpleActivity" />
-        <activity android:name=".activity.recycleview.RcDividerActivity"/>
+        <activity android:name=".activity.recycleview.RcDividerActivity" />
+        <activity android:name=".activity.recycleview.HeaderActivity"></activity>
     </application>
 
 </manifest>
