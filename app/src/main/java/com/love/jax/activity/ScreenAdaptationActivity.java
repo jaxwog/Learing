@@ -13,7 +13,7 @@ import com.love.jax.utils.Logger;
  */
 public class ScreenAdaptationActivity extends BaseActivity {
 
-
+    private static final String TAG = "ScreenAdaptationActivit";
     @Override
     protected void initJestListener() {
 
@@ -33,7 +33,7 @@ public class ScreenAdaptationActivity extends BaseActivity {
     protected void initBundle() {
         super.initBundle();
         if (mBundle!=null){
-            Logger.i("wog",mBundle.getString(ConfigSet.INTENT_STRING));
+            Logger.i(TAG,mBundle.getString(ConfigSet.INTENT_STRING));
         }
 
 

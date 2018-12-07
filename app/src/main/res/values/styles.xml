@@ -9,6 +9,7 @@
     </style>
 
     <style name="NoAcBarTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/background</item>
     </style>
 
     <!--

@@ -23,7 +23,9 @@
         <activity android:name=".activity.recycleview.ThemeActivity" />
         <activity android:name=".activity.recycleview.RcSimpleActivity" />
         <activity android:name=".activity.recycleview.RcDividerActivity" />
-        <activity android:name=".activity.recycleview.HeaderActivity"></activity>
+        <activity android:name=".activity.recycleview.HeaderActivity" />
+        <activity android:name=".activity.recycleview.RcTouchActivity"
+            android:theme="@style/NoAcBarTheme"></activity>
     </application>
 
 </manifest>

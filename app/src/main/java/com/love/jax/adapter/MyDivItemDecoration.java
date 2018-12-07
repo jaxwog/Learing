@@ -17,6 +17,7 @@ import com.love.jax.utils.Logger;
  * TODO: 绘制水平或者竖直方向的间隔线
  */
 public class MyDivItemDecoration extends RecyclerView.ItemDecoration {
+    private static final String TAG = "MyDivItemDecoration";
     public static final int VERTICAL = 1;
     public static final int HORIZONTAL = 0;
     private int mOrientation;
@@ -28,7 +29,7 @@ public class MyDivItemDecoration extends RecyclerView.ItemDecoration {
         TypedArray a = context.obtainStyledAttributes(attrs);
          this.mDivider = a.getDrawable(0);
          if (mDivider==null){
-             Logger.w("jax","获取系统间隔线失败");
+             Logger.w(TAG,"获取系统间隔线失败");
          }
          //?????
          a.recycle();

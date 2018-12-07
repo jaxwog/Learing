@@ -17,6 +17,7 @@ import com.love.jax.R;
 import com.love.jax.activity.recycleview.HeaderActivity;
 import com.love.jax.activity.recycleview.RcDividerActivity;
 import com.love.jax.activity.recycleview.RcSimpleActivity;
+import com.love.jax.activity.recycleview.RcTouchActivity;
 import com.love.jax.activity.recycleview.ThemeActivity;
 import com.love.jax.adapter.InFuncAdapter;
 import com.love.jax.bean.LettersEntity;
@@ -54,6 +55,8 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.fl_search_history)
     HistoryFlowLayout mHistoryFlowLayoutHis;
 
+    private static final String TAG = "MainActivity";
+
     List<String> mStringList = new ArrayList<>();
     List<String> mHislist = new ArrayList<>();
     //将文字转换为拼音
@@ -65,7 +68,7 @@ public class MainActivity extends BaseActivity {
 
     InFuncAdapter mInFuncAdapter;
     private String[] mStrings = new String[]{
-            "屏幕适配","商品订单","主题适配","列表简单使用","列表间隔线","列表头尾","文本输入","沉浸式设计","属性动画"
+            "屏幕适配","商品订单","主题适配","列表简单使用","列表间隔线","列表头尾","列表交互动画","沉浸式设计","属性动画"
 //            ,"南辕北辙","得陇望蜀","明修栈道","暗度陈仓","叶公好龙","无理取闹","风风火火","恍恍惚惚","德玛西亚"
 //            ,"剑圣偷塔","艾欧尼亚","暗影之道","五光十色","诺克萨斯","德邦总管","加里奥","凯南","武器大师"
 //            ,"金属大师","盖伦","德莱文","卢锡安","战争女神","黑暗骑士","斯嘉丽","黑寡妇","泰勒斯威夫特"
@@ -86,7 +89,7 @@ public class MainActivity extends BaseActivity {
         mStringList.addAll(Arrays.asList(mStrings));
         mEntityList = ListUtils.addLetter(mStringList);
         for (int i = 0; i < mEntityList.size(); i++) {
-            Logger.e("wog",mEntityList.get(i).getTitle());
+            Logger.e(TAG,mEntityList.get(i).getTitle());
         }
 
 
@@ -98,7 +101,7 @@ public class MainActivity extends BaseActivity {
         mHistoryFlowLayoutHis.deleteAllWord();
         mHislist = mHistoryFlowLayoutHis.readFormSdCard(ConfigSet.HIS_KEY);
         for (int i = 0; i < mHislist.size(); i++) {
-            Logger.i("wog","从新读取数据内容"+i+"="+mHislist.get(i));
+            Logger.i(TAG,"从新读取数据内容"+i+"="+mHislist.get(i));
         }
         if (mHislist.size()>14){
             //避免主站返回过多数据，造成界面卡顿
@@ -165,7 +168,7 @@ public class MainActivity extends BaseActivity {
                 }else {
                     mViewdel.setVisibility(View.GONE);
                 }
-                Logger.i("wog",
+                Logger.i(TAG,
                         "afterTextChanged:s="+s);
                 mEditText.setSelection(s.length());
                 skipSearchList();
@@ -187,9 +190,9 @@ public class MainActivity extends BaseActivity {
 //               if (nestedScrollView.getScrollY() +nestedScrollView.getHeight() - nestedScrollView.getPaddingTop() -nestedScrollView.getPaddingBottom()
 //                       == nestedScrollView.getChildAt(0).getHeight()){
 //               }
-//                Logger.i("wog","左侧条件="+(nestedScrollView.getScrollY() +nestedScrollView.getHeight() - nestedScrollView.getPaddingTop() -nestedScrollView.getPaddingBottom()
+//                Logger.i(TAG,"左侧条件="+(nestedScrollView.getScrollY() +nestedScrollView.getHeight() - nestedScrollView.getPaddingTop() -nestedScrollView.getPaddingBottom()
 //                ));
-//                Logger.i("wog","右侧条件="+nestedScrollView.getChildAt(0).getHeight());
+//                Logger.i(TAG,"右侧条件="+nestedScrollView.getChildAt(0).getHeight());
 //            }
 //        });
 
@@ -232,7 +235,7 @@ public class MainActivity extends BaseActivity {
                 sBundle.putString(ConfigSet.INTENT_STRING,"屏幕适配");
                 jumpToActivity(ScreenAdaptationActivity.class, sBundle);
                 if (mBundle==null){
-                    Logger.i("wog","数据为空啊~");
+                    Logger.i(TAG,"数据为空啊~");
                 }
                 break;
             case "商品订单":
@@ -256,6 +259,10 @@ public class MainActivity extends BaseActivity {
             case "列表头尾":
                 sBundle.putString(ConfigSet.INTENT_STRING,"列表头尾");
                 jumpToActivity(HeaderActivity.class, sBundle);
+                break;
+            case "列表交互动画":
+                sBundle.putString(ConfigSet.INTENT_STRING,"列表交互动画");
+                jumpToActivity(RcTouchActivity.class, sBundle);
                 break;
 
             default:

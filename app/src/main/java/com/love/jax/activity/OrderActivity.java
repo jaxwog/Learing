@@ -9,6 +9,7 @@ import com.love.jax.utils.Logger;
 
 public class OrderActivity extends BaseActivity {
     OrderEntity entity;
+    private static final String TAG = "OrderActivity";
 
 
     @Override
@@ -19,7 +20,7 @@ public class OrderActivity extends BaseActivity {
             Gson gson  = new Gson();
           entity =  gson.fromJson(mBundle.getString(ConfigSet.INTENT_STRING), OrderEntity.class);
 
-            Logger.i("wog","获取到的json数据="+entity.toString());
+            Logger.i(TAG,"获取到的json数据="+entity.toString());
         }
     }
 

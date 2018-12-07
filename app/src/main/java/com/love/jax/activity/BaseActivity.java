@@ -19,6 +19,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     // 声明变量
     public Context mContext;
     public Activity mActivity;
+    private static final String TAG = "BaseActivity";
     /**
      * 需要判断是否为空
      * if(null!=mBundle){
@@ -35,7 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         mContext = this;
         mActivity = this;
         mBundle = new Bundle();
-        Logger.e("wog", "Add Activity To Stack:" + getClass().getSimpleName());
+        Logger.e(TAG, "Add Activity To Stack:" + getClass().getSimpleName());
         setContentView(getContentView());
         ButterKnife.bind(this);
         initData();
