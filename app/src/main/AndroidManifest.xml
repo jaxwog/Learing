@@ -27,7 +27,8 @@
         <activity
             android:name=".activity.recycleview.RcTouchActivity"
             android:theme="@style/NoAcBarTheme" />
-        <activity android:name=".activity.DrawerLayoutActivity"></activity>
+        <activity android:name=".activity.DrawerLayoutActivity" />
+        <activity android:name=".activity.NavigationActivity"></activity>
     </application>
 
 </manifest>
