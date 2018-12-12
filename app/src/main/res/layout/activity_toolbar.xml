@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="?attr/colorPrimary"-->
+        <!--app:title="网易新闻"-->
+        <!--app:titleTextColor="#ff0"-->
+        <!--app:subtitle="旅行"-->
+        <!--app:logo="@drawable/search_icon_message"-->
+        <!--app:navigationIcon="@mipmap/nav_icon_back"-->
+        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"-->
+        <!--&gt;-->
+         		<!--&lt;!&ndash;<TextView&ndash;&gt;-->
+         		    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                 	<!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                 	<!--&lt;!&ndash;android:layout_gravity="center"&ndash;&gt;-->
+                 	<!--&lt;!&ndash;android:text="textview"&ndash;&gt;-->
+                 	<!--&lt;!&ndash;/>&ndash;&gt;-->
+
+    <!--</android.support.v7.widget.Toolbar>-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:title="科技资讯"
+        app:navigationIcon="@drawable/search_icon_message"
+        >
+        <!-- 		<TextView  -->
+        <!-- 		    android:layout_width="wrap_content" -->
+        <!--         	android:layout_height="wrap_content" -->
+        <!--         	android:layout_gravity="center" -->
+        <!--         	android:text="textview" -->
+        <!--         	/> -->
+
+    </android.support.v7.widget.Toolbar>
+</LinearLayout>

@@ -29,7 +29,10 @@
             android:theme="@style/NoAcBarTheme" />
         <activity android:name=".activity.DrawerLayoutActivity" />
         <activity android:name=".activity.NavigationActivity" />
-        <activity android:name=".activity.SnackbarActivity"></activity>
+        <activity android:name=".activity.SnackbarActivity" />
+        <activity android:name=".activity.TextInputActivity" />
+        <activity android:name=".activity.ToolbarActivity"
+            android:theme="@style/LightNoAcBarTheme"></activity>
     </application>
 
 </manifest>
