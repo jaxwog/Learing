@@ -1,6 +1,7 @@
 package com.love.jax.activity;
 
 
+import android.graphics.Color;
 import android.support.design.widget.TextInputLayout;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -84,6 +85,24 @@ public class TextInputActivity extends BaseActivity {
             }
         }
 
+    }
+
+    //颜色渐变
+
+    /**
+     * @see android.support.design.widget.CollapsingTextHelper 三个矩形区域测量绘制
+     * @param color1
+     * @param color2
+     * @param ratio
+     * @return
+     */
+    private static int blendColors(int color1, int color2, float ratio) {
+        float inverseRatio = 1.0F - ratio;
+        float a = (float) Color.alpha(color1) * inverseRatio + (float)Color.alpha(color2) * ratio;
+        float r = (float)Color.red(color1) * inverseRatio + (float)Color.red(color2) * ratio;
+        float g = (float)Color.green(color1) * inverseRatio + (float)Color.green(color2) * ratio;
+        float b = (float)Color.blue(color1) * inverseRatio + (float)Color.blue(color2) * ratio;
+        return Color.argb((int)a, (int)r, (int)g, (int)b);
     }
 
 

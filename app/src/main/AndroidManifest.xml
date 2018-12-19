@@ -31,7 +31,10 @@
         <activity android:name=".activity.NavigationActivity" />
         <activity android:name=".activity.SnackbarActivity" />
         <activity android:name=".activity.TextInputActivity" />
-        <activity android:name=".activity.ToolbarActivity"
+        <activity
+            android:name=".activity.ToolbarActivity"
+            android:theme="@style/LightNoAcBarTheme" />
+        <activity android:name=".activity.TransparentToolbarActivity"
             android:theme="@style/LightNoAcBarTheme"></activity>
     </application>
 

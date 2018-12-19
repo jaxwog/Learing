@@ -17,6 +17,8 @@ import com.love.jax.R;
  * Dialog：用户可以交互，但是体验会打折扣，会阻断用户的连贯性操作；
  * Snackbar既可以做到轻量级的用户提醒效果，又可以有交互的功能（必须是一种非必须的操作）。
  *    对源码进行分析，自定义Toast和snackbar 更换弹窗显示格式，或者字体颜色
+ *    @see Snackbar 控制显示样式等内容
+ *    @see android.support.design.widget.SnackbarManager 通过发送消息来更新显示
  */
 public class SnackbarActivity extends BaseActivity {
 
