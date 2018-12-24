@@ -110,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|right"
                     android:singleLine="true"
-                    android:text="¥ 300"
+                    android:text="¥ 100"
                     android:textColor="#FF1F2845"
                     android:textSize="14sp"/>
             </FrameLayout>
@@ -140,12 +140,12 @@
                     android:textColor="#FF4C5979"
                     android:textSize="14sp"/>
 
-                <!--<com.taikang.tailife.app.health.view.CounterView-->
-                    <!--android:id="@+id/view_count"-->
-                    <!--android:layout_width="122dp"-->
-                    <!--android:layout_height="24dp"-->
-                    <!--android:layout_gravity="center_vertical|right"-->
-                    <!--android:layout_marginRight="-20dp"></com.taikang.tailife.app.health.view.CounterView>-->
+                <com.love.jax.view.CounterView
+                    android:id="@+id/view_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="-10dp"></com.love.jax.view.CounterView>
             </FrameLayout>
 
             <View

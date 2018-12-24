@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
@@ -25,6 +26,7 @@ import com.love.jax.bean.OrderEntity;
 import com.love.jax.utils.ConfigSet;
 import com.love.jax.utils.ListUtils;
 import com.love.jax.utils.Logger;
+import com.love.jax.utils.MatchContact;
 import com.love.jax.utils.StringShowUtils;
 import com.love.jax.view.HistoryFlowLayout;
 

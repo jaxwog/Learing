@@ -1,15 +1,25 @@
 package com.love.jax.activity;
 
 
+import android.widget.TextView;
+
 import com.google.gson.Gson;
 import com.love.jax.R;
 import com.love.jax.bean.OrderEntity;
 import com.love.jax.utils.ConfigSet;
 import com.love.jax.utils.Logger;
+import com.love.jax.view.CounterView;
+
+import butterknife.BindView;
 
 public class OrderActivity extends BaseActivity {
     OrderEntity entity;
     private static final String TAG = "OrderActivity";
+
+    @BindView(R.id.view_count)
+    CounterView viewCount;
+    @BindView(R.id.view_money_pay)
+    TextView viewMoneyPay;
 
 
     @Override
@@ -31,7 +41,16 @@ public class OrderActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        viewCount.setOnCountChangeListener(new CounterView.OnCountChangeListener() {
+            @Override
+            public void onCountChange(int count) {
+                viewMoneyPay.setText("¥ "+count*100);
+            }
+        });
 
+        viewCount.getOnCountChangeListener().onCountChange(1);
+        viewCount.setMaxCount(10);
+        viewCount.setMinCount(1);
     }
 
     @Override
