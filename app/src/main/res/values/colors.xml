@@ -73,4 +73,32 @@
     <color name="color_FFFFA524">#FFFFA524</color>
     <color name="color_FFFF595D">#FFFF595D</color>
 
+
+    <color name="line_chart_uncomplete">#FFFFFF</color>
+    <color name="line_chart_complete">#FFA524</color>
+    <color name="text_line_chart">#CCCCCC</color>
+    <color name="color_94C4EC">#94C4EC</color>
+    <color name="blue1">#3dabff</color>
+    <color name="color_BEC1C6">#BEC1C6</color>
+    <color name="color_F57559">#FFF57559</color>
+    <color name="color_15517DF7">#15517DF7</color>
+
+    <color name="color_B5B5B5">#B5B5B5</color>
+    <color name="color_FFEBDF">#FFEBDF</color>
+    <color name="color_030303">#030303</color>
+    <color name="color_3D000000">#3D000000</color>
+    <color name="color_8362FC">#8362FC</color>
+
+    <color name="color_DFE5FE">#DFE5FE</color>
+    <color name="color_BBBBBB">#BBBBBB</color>
+    <color name="color_E68362FC">#E68362FC</color>
+    <color name="color_1A517DF7">#1A517DF7</color>
+    <color name="color_C8D2D1">#C8D2D1</color>
+    <color name="color_33000000">#33000000</color>
+    <color name="color_FC6F16">#FC6F16</color>
+    <color name="color_FDB78A">#FDB78A</color>
+    <color name="color_CCFFFFFF">#CCFFFFFF</color>
+    <color name="color_D9FFFFFF">#D9FFFFFF</color>
+    <color name="color_F7F7F9">#F7F7F9</color>
+
 </resources>

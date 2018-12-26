@@ -6,4 +6,9 @@
     <string name="string_histroy_search">历史搜索</string>
     <string name="drawer_open">打开</string>
     <string name="drawer_close">关闭</string>
+
+    <string name="string_activity_invoice_info">发票信息</string>
+    <string name="string_invoice_tip">我们将在15个工作日内，以到付的方式将纸质发票邮寄给您，发票一旦开具，将不能调整，请谨慎选择。</string>
+    <string name="string_vat_ordinary_invoice">增值税普通发票</string>
+    <string name="string_vat_ticket">增值税专票</string>
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/scrollLayout"
      >
 
     <com.love.jax.view.TransparentScrollView
@@ -137,13 +138,15 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Button" />
+                android:text="Button2" />
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Button" />
-
+                android:text="Button1" />
+            <!--<EditText-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/dimen_dp_50dp" />-->
         </android.support.v7.widget.LinearLayoutCompat>
     </com.love.jax.view.TransparentScrollView>
 

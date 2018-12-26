@@ -65,4 +65,53 @@ by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
         <item name="android:layout_height">@dimen/dimen_dp_1dp</item>
     </style>
 
+
+
+    <!--发票信息-->
+    <style name="style_invoice_info_lay">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_dp_50dp</item>
+        <item name="android:background">@color/color_FFFFFF</item>
+        <item name="android:paddingLeft">@dimen/dimen_dp_18dp</item>
+        <item name="android:paddingRight">@dimen/dimen_dp_18dp</item>
+        <item name="android:layout_marginTop">@dimen/dimen_dp_1dp</item>
+    </style>
+    <style name="style_invoice_info_tv_left">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">@color/color_666666</item>
+        <item name="android:textSize">@dimen/dimen_sp_14sp</item>
+    </style>
+    <style name="style_invoice_info_tv_right">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:textColor">@color/color_333333</item>
+        <item name="android:textColorHint">@color/color_999999</item>
+        <item name="android:textSize">@dimen/dimen_sp_14sp</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_marginLeft">@dimen/dimen_dp_47dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    <style name="style_invoice_info_lineview">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_dp_1dp</item>
+        <item name="android:layout_marginLeft">@dimen/dimen_dp_18dp</item>
+        <item name="android:layout_marginRight">@dimen/dimen_dp_18dp</item>
+        <item name="android:background">@color/color_F8F8F8</item>
+    </style>
+    <style name="style_invoice_info_radiobutton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@drawable/select_btn</item>
+        <item name="android:textColor">@color/color_333333</item>
+        <item name="android:textSize">@dimen/dimen_sp_14sp</item>
+        <item name="android:padding">@dimen/dimen_dp_6dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
 </resources>

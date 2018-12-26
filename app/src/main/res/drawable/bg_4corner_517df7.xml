@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/layer_bg_517df7" android:state_pressed="true">
+
+    </item>
+
+    <item android:state_enabled="false">
+        <shape>
+            <corners android:radius="@dimen/dimen_dp_4dp" />
+            <solid android:color="@color/color_B5B5B5" />
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <corners android:radius="@dimen/dimen_dp_4dp" />
+            <solid android:color="@color/color_517DF7" />
+        </shape>
+    </item>
+
+</selector>
