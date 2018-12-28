@@ -26,6 +26,7 @@ public class MatchContact {
     public static int matchMachine(String telNo){
 
         if (TextUtils.isEmpty(telNo)){
+            Logger.i("wog","电话号码为空");
             return 1;
         }
 
@@ -33,39 +34,48 @@ public class MatchContact {
 
         // include non number, length non 7、8、11、12、13
         if (!telNo.matches("\\d{7,8}|\\d{11,13}")){
+            Logger.i("wog","电话号码：长度不是7、8、11、12、13位或者纯数字");
             return 2;
         }
 
         //The machine number is not 13 digits. It begins with 00
         if (telNo.length()!=13 && telNo.startsWith("00")){
+            Logger.i("wog","电话号码不是13位，以00开头");
             return 3;
         }
 
         //There are 7 Numbers that are the same
         if (isSameNumber(telNo,7)){
+            Logger.i("wog","电话号码有7个连续数字相同 ");
             return 4;
         }
 
         //Telephone number 13 digits, the first 5 digits of the number does not
         // start with 00852, 00853 (Hong Kong and Macao telephone)
         if (telNo.length()==13 && !telNo.matches("(00853|00852)[0-9]{8}")){
+            Logger.i("wog","电话号码13位，数字的前5位不是以00852、00853开头(港澳电话) ");
             return 5;
         }
 
         //the number does not start with 10、11、12、95、400、800
         if (telNo.matches("(10|11|12|95|400|800)\\d+")){
+            Logger.i("wog","电话号码以10、11、12、95、400、800开头");
             return 6;
         }
 
         //Non-zero start (including area code)
         if (telNo.matches("\\d{11,12}") && !telNo.matches("^0\\d+")){
+            Logger.i("wog","电话号码非0（包含区号）等开头");
             return 7;
         }
 
         //zero start (not contain area code)
         if (telNo.matches("\\d{7,8}") && telNo.matches("0\\d+")){
+            Logger.i("wog","电话号码不包含区号以0开头");
             return 8;
         }
+
+        Logger.i("wog","电话号码:"+telNo+"匹配成功");
 
         return 0;
     }
@@ -83,17 +93,21 @@ public class MatchContact {
      */
     public static int matchPhone(String telNo){
         if (TextUtils.isEmpty(telNo)){
+            Logger.i("wog","手机号码为空");
             return 1;
         }
         Logger.i("wog","手机号码为："+telNo+" ,长度为："+telNo.length());
         //length non 11 ，the head  non 13、14、15、16、17、18、19,includ non number
         if (!telNo.matches("(13|14|15|16|18|17|19)[0-9]{9}")){
+            Logger.i("wog","电话号码11位，前两位不是13、14、15、16、17、18、19");
             return 2;
         }
         //There are 7 Numbers that are the same
         if (isSameNumber(telNo,7)){
+            Logger.i("wog","手机号码有7个连续数字相同 ");
             return 4;
         }
+        Logger.i("wog","手机号码:"+telNo+"匹配成功");
         return 0;
 
     }
