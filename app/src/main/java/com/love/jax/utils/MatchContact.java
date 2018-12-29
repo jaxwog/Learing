@@ -26,56 +26,56 @@ public class MatchContact {
     public static int matchMachine(String telNo){
 
         if (TextUtils.isEmpty(telNo)){
-            Logger.i("wog","电话号码为空");
+            Logger.i("wog","The phone number is empty");
             return 1;
         }
 
-        Logger.i("wog","电话号码为："+telNo+",长度为："+telNo.length());
+        Logger.i("wog","The phone number is："+telNo+",length："+telNo.length());
 
         // include non number, length non 7、8、11、12、13
         if (!telNo.matches("\\d{7,8}|\\d{11,13}")){
-            Logger.i("wog","电话号码：长度不是7、8、11、12、13位或者纯数字");
+            Logger.i("wog","Phone number: length is not 7, 8, 11, 12, 13 digits or pure digits");
             return 2;
         }
 
         //The machine number is not 13 digits. It begins with 00
         if (telNo.length()!=13 && telNo.startsWith("00")){
-            Logger.i("wog","电话号码不是13位，以00开头");
+            Logger.i("wog","The phone number is not 13 digits. It begins with 00");
             return 3;
         }
 
         //There are 7 Numbers that are the same
         if (isSameNumber(telNo,7)){
-            Logger.i("wog","电话号码有7个连续数字相同 ");
+            Logger.i("wog","A telephone number has 7 consecutive digits equal ");
             return 4;
         }
 
         //Telephone number 13 digits, the first 5 digits of the number does not
         // start with 00852, 00853 (Hong Kong and Macao telephone)
         if (telNo.length()==13 && !telNo.matches("(00853|00852)[0-9]{8}")){
-            Logger.i("wog","电话号码13位，数字的前5位不是以00852、00853开头(港澳电话) ");
+            Logger.i("wog","Telephone number 13 digits, the first 5 digits of the number does not start with 00852, 00853 (Hong Kong and Macao telephone) ");
             return 5;
         }
 
         //the number does not start with 10、11、12、95、400、800
         if (telNo.matches("(10|11|12|95|400|800)\\d+")){
-            Logger.i("wog","电话号码以10、11、12、95、400、800开头");
+            Logger.i("wog","The phone number begins with 10, 11, 12, 95, 400, 800");
             return 6;
         }
 
         //Non-zero start (including area code)
         if (telNo.matches("\\d{11,12}") && !telNo.matches("^0\\d+")){
-            Logger.i("wog","电话号码非0（包含区号）等开头");
+            Logger.i("wog","The phone number is not 0 (including the area code) and so on");
             return 7;
         }
 
         //zero start (not contain area code)
         if (telNo.matches("\\d{7,8}") && telNo.matches("0\\d+")){
-            Logger.i("wog","电话号码不包含区号以0开头");
+            Logger.i("wog","Telephone Numbers do not contain area codes that begin with 0");
             return 8;
         }
 
-        Logger.i("wog","电话号码:"+telNo+"匹配成功");
+        Logger.i("wog","The phone number is:"+telNo+"，match is successful");
 
         return 0;
     }
@@ -93,21 +93,21 @@ public class MatchContact {
      */
     public static int matchPhone(String telNo){
         if (TextUtils.isEmpty(telNo)){
-            Logger.i("wog","手机号码为空");
+            Logger.i("wog","The phone number is empty");
             return 1;
         }
         Logger.i("wog","手机号码为："+telNo+" ,长度为："+telNo.length());
         //length non 11 ，the head  non 13、14、15、16、17、18、19,includ non number
         if (!telNo.matches("(13|14|15|16|18|17|19)[0-9]{9}")){
-            Logger.i("wog","电话号码11位，前两位不是13、14、15、16、17、18、19");
+            Logger.i("wog","The phone number is 11 digits. The first two digits are not 13, 14, 15, 16, 17, 18, 19");
             return 2;
         }
         //There are 7 Numbers that are the same
         if (isSameNumber(telNo,7)){
-            Logger.i("wog","手机号码有7个连续数字相同 ");
+            Logger.i("wog","A telephone number has 7 consecutive digits equal ");
             return 4;
         }
-        Logger.i("wog","手机号码:"+telNo+"匹配成功");
+        Logger.i("wog","The phone number is:"+telNo+"，match is successful");
         return 0;
 
     }
@@ -167,7 +167,7 @@ public class MatchContact {
             }
 //            Logger.i("wog",chars[i]+" ，");
         }
-        Logger.i("wog","联系相同数字出现次数："+count);
+        Logger.i("wog","The number of consecutive occurrences of the same number："+count);
         if (count > (number-1)){
             return true;
         }else {
