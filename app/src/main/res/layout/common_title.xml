@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
     android:layout_height="@dimen/dimen_dp_44dp"
     android:background="@color/color_FFFFFF">
 
@@ -10,28 +10,46 @@
         android:src="@mipmap/nav_icon_back"
         android:paddingLeft="@dimen/dimen_dp_18dp"
         android:paddingRight="@dimen/dimen_dp_18dp"
+        android:layout_alignParentStart="true"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:ignore="RtlCompat" />
 
     <TextView
-        android:text="我都不知道啊"
         android:id="@+id/tv_common_title"
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:gravity="center"
+        android:textStyle="bold"
         android:textColor="@color/color_1F2845"
         android:textSize="@dimen/dimen_sp_18sp" />
 
+    <TextView
+        android:id="@+id/tv_right_save"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dimen_dp_18dp"
+        android:paddingRight="@dimen/dimen_dp_18dp"
+        android:textColor="@color/color_1F2845"
+        android:textSize="@dimen/dimen_sp_16sp"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/iv_search"
-        android:src="@mipmap/search_icon_delete"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:paddingLeft="@dimen/dimen_dp_18dp"
         android:paddingRight="@dimen/dimen_dp_18dp"
-        />
+        android:visibility="gone" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/common_line"
+        style="@style/tv_1dp_line"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

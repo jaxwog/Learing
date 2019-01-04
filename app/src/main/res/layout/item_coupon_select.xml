@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/rl_item_root"
+    android:layout_height="@dimen/dimen_dp_110dp"
+    android:background="@mipmap/ic_coupon_bg_use">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/iv_select"
+        android:layout_alignParentLeft="true"
+        android:layout_width="30dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_marginTop="@dimen/dimen_dp_45dp"
+            android:id="@+id/iv_select_iv"
+            android:src="@mipmap/coupon_unslecect"
+            android:paddingLeft="@dimen/dimen_dp_10dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_toRightOf="@+id/iv_select"
+        android:gravity="center_vertical"
+        android:id="@+id/layout_titdata"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_item_coupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_dp_10dp"
+            android:layout_marginTop="@dimen/dimen_dp_15dp"
+            android:text="标题"
+            android:singleLine="true"
+            android:textColor="@color/color_1F2845"
+            android:textSize="@dimen/dimen_sp_14sp"/>
+        <TextView
+            android:id="@+id/tv_item_dates"
+            android:layout_marginLeft="@dimen/dimen_dp_10dp"
+            android:layout_marginTop="@dimen/dimen_dp_10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_dp_17dp"
+            android:text="有效期"
+            android:textColor="@color/color_8A91A4"
+            android:textSize="@dimen/dimen_sp_10sp"/>
+
+        <!--客户经理-->
+        <TextView
+            android:layout_marginLeft="@dimen/dimen_dp_10dp"
+            android:layout_marginTop="@dimen/dimen_dp_10dp"
+            android:id="@+id/tv_item_manager_names"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_dp_20dp"
+            android:text="客户经理"
+            android:textColor="@color/color_1F2845"
+            android:textSize="@dimen/dimen_sp_14sp"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_item_to_use"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="99dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true">
+        <LinearLayout
+            android:layout_marginTop="@dimen/dimen_dp_34dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            >
+            <TextView
+                android:id="@+id/tv_money_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="2.5dp"
+                android:text="¥"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/dimen_sp_16sp"/>
+
+            <TextView
+                android:id="@+id/tv_item_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="1019"
+                android:textStyle="bold"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="30sp"/>
+            <TextView
+                android:id="@+id/tv_discounts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="折"
+                android:layout_marginBottom="2.5dp"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/dimen_sp_14sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/color_F4F6FC">
 
-    <include layout="@layout/common_title"/>
+    <include layout="@layout/common_title_order"/>
 
 
     <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -147,6 +147,45 @@
                     android:layout_gravity="center_vertical|right"
                     android:layout_marginRight="-10dp"></com.love.jax.view.CounterView>
             </FrameLayout>
+            <View
+                android:background="#FFF8F8F8"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dimen_dp_18dp"
+                android:layout_marginRight="@dimen/dimen_dp_18dp"
+                android:layout_height="1dp"/>
+            <FrameLayout
+                android:id="@+id/btn_preferential"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF"
+                android:paddingBottom="@dimen/dimen_dp_15dp"
+                android:paddingLeft="@dimen/dimen_dp_18dp"
+                android:paddingRight="@dimen/dimen_dp_18dp"
+                android:paddingTop="@dimen/dimen_dp_15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="优惠"
+                    android:textColor="#FF4C5979"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/view_preferential"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:gravity="center_vertical|right"
+                    android:layout_marginLeft="@dimen/dimen_dp_100dp"
+                    android:drawablePadding="6dp"
+                    android:drawableRight="@mipmap/health_next_arrows"
+                    android:hint="10张可用"
+                    android:text="10张可用"
+                    android:textColor="@color/color_1F2845"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="14sp"/>
+            </FrameLayout>
 
             <View
                 android:background="#FFF8F8F8"
@@ -180,6 +219,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|right"
+                    android:gravity="center_vertical|right"
                     android:layout_marginLeft="@dimen/dimen_dp_100dp"
                     android:drawablePadding="6dp"
                     android:drawableRight="@mipmap/health_next_arrows"

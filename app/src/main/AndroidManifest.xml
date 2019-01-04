@@ -38,7 +38,8 @@
             android:name=".activity.TransparentToolbarActivity"
             android:theme="@style/LightNoAcBarTheme" />
         <activity android:name=".activity.PaletteActivity" />
-        <activity android:name=".activity.InvoiceInfoActivity"></activity>
+        <activity android:name=".activity.InvoiceInfoActivity" />
+        <activity android:name=".activity.recycleview.SelectCouponsActivity"></activity>
     </application>
 
 </manifest>

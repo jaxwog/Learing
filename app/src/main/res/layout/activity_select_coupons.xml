@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F4F6FC"
+    tools:context=".activity.recycleview.SelectCouponsActivity"
+    android:orientation="vertical">
+
+    <include  layout="@layout/common_title"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/dimen_dp_10dp"
+        android:id="@+id/rec_coupons"
+        android:background="@color/color_F4F6FC"
+        android:layout_marginLeft="@dimen/dimen_dp_18dp"
+        android:layout_marginRight="@dimen/dimen_dp_18dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
