@@ -15,6 +15,16 @@ public class CouponEntity implements Serializable {
     private String  manager; //客户经理
     private String  pice;  //优惠价格
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    private String  content; //优惠限制
+
     public String getPice() {
         return pice;
     }
@@ -37,8 +47,9 @@ public class CouponEntity implements Serializable {
     @Override
     public String toString() {
         return "CouponEntity{" + "title='" + title + '\'' + ", startData='" + startData + '\'' +
-                ", endData='" + endData + '\'' + ", manager='" + manager + '\'' + ", pice=" +
-                pice + ", discount=" + discount + ", flag=" + flag + '}';
+                ", endData='" + endData + '\'' + ", manager='" + manager + '\'' + ", pice='" +
+                pice + '\'' + ", content='" + content + '\'' + ", discount='" + discount + '\'' +
+                ", flag=" + flag + '}';
     }
 
     public String getStartData() {

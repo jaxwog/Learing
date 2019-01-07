@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimen_dp_10dp"
-            android:layout_marginTop="@dimen/dimen_dp_15dp"
+            android:layout_marginTop="@dimen/dimen_dp_18dp"
             android:text="标题"
             android:singleLine="true"
             android:textColor="@color/color_1F2845"
@@ -48,7 +48,7 @@
             android:layout_height="@dimen/dimen_dp_17dp"
             android:text="有效期"
             android:textColor="@color/color_8A91A4"
-            android:textSize="@dimen/dimen_sp_10sp"/>
+            android:textSize="@dimen/dimen_sp_12sp"/>
 
         <!--客户经理-->
         <TextView
@@ -56,10 +56,10 @@
             android:layout_marginTop="@dimen/dimen_dp_10dp"
             android:id="@+id/tv_item_manager_names"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/dimen_dp_20dp"
+            android:layout_height="@dimen/dimen_dp_17dp"
             android:text="客户经理"
             android:textColor="@color/color_1F2845"
-            android:textSize="@dimen/dimen_sp_14sp"/>
+            android:textSize="@dimen/dimen_sp_12sp"/>
 
     </LinearLayout>
 

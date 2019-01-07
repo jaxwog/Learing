@@ -1,6 +1,7 @@
 package com.love.jax.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
@@ -74,16 +75,18 @@ public class SelectCouponAdapter extends RecyclerView.Adapter<SelectCouponAdapte
         viewHolder.tvItemCoupon.setText(mList.get(position).getTitle());
 
         viewHolder.tvItemDates.setText(String.format("%s至%s",mList.get(position).getStartData(),mList.get(position).getEndData()));
-        if (TextUtils.isEmpty(mList.get(position).getManager())){
-            viewHolder.tvItemManagerNames.setVisibility(View.GONE);
-            int top = ScreenUtil.dip2px(mContext, 15);
-            viewHolder.tvItemCoupon.setPadding(0,top,0,0);
-        }else {
-            int top = ScreenUtil.dip2px(mContext, 3);
-            viewHolder.tvItemCoupon.setPadding(0,top,0,0);
-            viewHolder.tvItemManagerNames.setVisibility(View.VISIBLE);
-            viewHolder.tvItemManagerNames.setText(mList.get(position).getManager());
-        }
+//        if (TextUtils.isEmpty(mList.get(position).getManager())){
+//            viewHolder.tvItemManagerNames.setVisibility(View.GONE);
+//            int top = ScreenUtil.dip2px(mContext, 15);
+//            viewHolder.tvItemCoupon.setPadding(0,top,0,0);
+//        }else {
+//            int top = ScreenUtil.dip2px(mContext, 3);
+//            viewHolder.tvItemCoupon.setPadding(0,top,0,0);
+//            viewHolder.tvItemManagerNames.setVisibility(View.VISIBLE);
+//            viewHolder.tvItemManagerNames.setText(mList.get(position).getManager());
+//        }
+        viewHolder.tvItemManagerNames.setTextColor(Color.rgb(138,145,164));
+        viewHolder.tvItemManagerNames.setText(mList.get(position).getContent());
 
         if (!TextUtils.isEmpty(mList.get(position).getPice())){
             viewHolder.tvMoneyFlag.setVisibility(View.VISIBLE);

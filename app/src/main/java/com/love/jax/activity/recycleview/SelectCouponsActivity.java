@@ -101,6 +101,7 @@ public class SelectCouponsActivity extends BaseActivity {
             entity.setTitle("超声波洁牙优惠券"+i);
             entity.setStartData("2019.02.26");
             entity.setEndData("2019.12.26");
+            entity.setContent("适用于儿童护牙套餐所有款式");
 
             mList.add(entity);
         }

@@ -2,6 +2,7 @@ package com.love.jax.activity;
 
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.love.jax.bean.CouponEntity;
 import com.love.jax.bean.OrderEntity;
 import com.love.jax.utils.ConfigSet;
 import com.love.jax.utils.Logger;
+import com.love.jax.utils.ScreenUtil;
 import com.love.jax.view.CounterView;
 import java.math.BigDecimal;
 
@@ -63,14 +65,32 @@ public class OrderActivity extends BaseActivity {
         viewCount.setOnCountChangeListener(new CounterView.OnCountChangeListener() {
             @Override
             public void onCountChange(int count) {
-                viewMoneyPay.setText("¥ " + count * 100);
-                showPayInfo();
+                viewMoneyPay.setText("¥ " + getPayMoney());
+//                showPayInfo();
             }
         });
 
         viewCount.getOnCountChangeListener().onCountChange(1);
         viewCount.setMaxCount(10);
         viewCount.setMinCount(1);
+
+
+
+
+
+    }
+
+    //控制是否显示右侧图标
+    private void showRightDrawable(boolean flag){
+        if (flag){
+            Drawable drawable_n = getResources().getDrawable(R.mipmap.health_next_arrows);
+            int padding = ScreenUtil.dip2px(mContext,6);
+            drawable_n.setBounds(0, 0, drawable_n.getMinimumWidth(),drawable_n.getMinimumHeight());  //此为必须写的
+            viewPreferential.setCompoundDrawablePadding(padding);
+            viewPreferential.setCompoundDrawables(null, null, drawable_n, null);
+        }else {
+            viewPreferential.setCompoundDrawables(null,null,null,null);
+        }
     }
 
     @Override
@@ -96,6 +116,25 @@ public class OrderActivity extends BaseActivity {
 
         }
 
+    }
+
+    private String  getPayMoney(){
+        String result ;
+        if (mCouponEntity!=null){
+            if (mCouponEntity.getPice() == null){
+                BigDecimal  moneyPay0 = price("100").multiply(BigDecimal.valueOf(0.85));
+                BigDecimal  moneyPay1 = price("100").multiply(BigDecimal.valueOf(viewCount.getResult()-1));
+               result= moneyPay0.add(moneyPay1).toString() ;
+            }else {
+                int i = viewCount.getResult()*100 - Integer.parseInt(mCouponEntity.getPice());
+                result = String.valueOf(i);
+
+            }
+        }else {
+           result =  String.valueOf(viewCount.getResult()*100);
+        }
+
+        return result;
     }
 
     private void showPayInfo(){
