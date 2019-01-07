@@ -178,7 +178,8 @@
                     android:layout_gravity="center_vertical|right"
                     android:gravity="center_vertical|right"
                     android:layout_marginLeft="@dimen/dimen_dp_100dp"
-
+                    android:drawablePadding="6dp"
+                    android:drawableRight="@mipmap/health_next_arrows"
                     android:hint="10张可用"
                     android:text="10张可用"
                     android:textColor="@color/color_1F2845"

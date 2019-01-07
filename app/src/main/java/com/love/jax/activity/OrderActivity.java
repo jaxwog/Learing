@@ -73,6 +73,7 @@ public class OrderActivity extends BaseActivity {
         viewCount.getOnCountChangeListener().onCountChange(1);
         viewCount.setMaxCount(10);
         viewCount.setMinCount(1);
+        showRightDrawable(true);
 
 
 
@@ -111,6 +112,7 @@ public class OrderActivity extends BaseActivity {
                 jumpToActivity(InvoiceInfoActivity.class, mBundle);
                 break;
             case R.id.btn_preferential:
+                //判断是否有优惠券，没有显示不可用，并且不可点击
                 jumpToActivityResult(SelectCouponsActivity.class, 1010);
                 break;
 
@@ -188,8 +190,10 @@ public class OrderActivity extends BaseActivity {
                            int i = viewCount.getResult()*100 - Integer.parseInt(mCouponEntity.getPice());
                            viewMoneyPay.setText("￥ "+i);
                        }
+                        showRightDrawable(true);
                     }else {
                         //判断有多少张优惠券可用，显示X张优惠券可用
+//                        showRightDrawable(false);
                         viewPreferential.setText("11张可用");
                         viewMoneyPay.setText("￥ "+viewCount.getResult()*100);
                     }
