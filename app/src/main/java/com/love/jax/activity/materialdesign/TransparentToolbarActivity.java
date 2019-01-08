@@ -1,13 +1,11 @@
-package com.love.jax.activity;
+package com.love.jax.activity.materialdesign;
 
-import android.graphics.Rect;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.love.jax.R;
+import com.love.jax.activity.BaseActivity;
 import com.love.jax.callback.TranslucentListener;
-import com.love.jax.utils.Logger;
 import com.love.jax.view.TransparentScrollView;
 
 import butterknife.BindView;

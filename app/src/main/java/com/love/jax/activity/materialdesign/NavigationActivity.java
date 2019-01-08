@@ -1,9 +1,7 @@
-package com.love.jax.activity;
-
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+package com.love.jax.activity.materialdesign;
 
 import com.love.jax.R;
+import com.love.jax.activity.BaseActivity;
 
 /**
  * TODO google规范的侧滑效果

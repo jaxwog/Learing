@@ -1,16 +1,16 @@
-package com.love.jax.activity;
+package com.love.jax.activity.materialdesign;
 
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
-
 import android.support.v7.graphics.Palette;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.love.jax.R;
+import com.love.jax.activity.BaseActivity;
 
 import butterknife.BindView;
 

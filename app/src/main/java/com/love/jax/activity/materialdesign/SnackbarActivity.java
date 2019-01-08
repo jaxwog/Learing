@@ -1,4 +1,4 @@
-package com.love.jax.activity;
+package com.love.jax.activity.materialdesign;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.love.jax.R;
+import com.love.jax.activity.BaseActivity;
 
 /**
  * Snackbar:的提出实际上是界于Toast和Dialog的中间产物。

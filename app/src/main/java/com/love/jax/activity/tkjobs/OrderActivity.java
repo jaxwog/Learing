@@ -1,9 +1,8 @@
-package com.love.jax.activity;
+package com.love.jax.activity.tkjobs;
 
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -11,17 +10,17 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.love.jax.R;
-import com.love.jax.activity.recycleview.SelectCouponsActivity;
+import com.love.jax.activity.BaseActivity;
 import com.love.jax.bean.CouponEntity;
 import com.love.jax.bean.OrderEntity;
 import com.love.jax.utils.ConfigSet;
 import com.love.jax.utils.Logger;
 import com.love.jax.utils.ScreenUtil;
 import com.love.jax.view.CounterView;
+
 import java.math.BigDecimal;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class OrderActivity extends BaseActivity {

@@ -1,9 +1,8 @@
-package com.love.jax.activity.recycleview;
+package com.love.jax.activity.tkjobs;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;

@@ -1,4 +1,4 @@
-package com.love.jax.activity;
+package com.love.jax.activity.materialdesign;
 
 
 import android.graphics.Color;
@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.love.jax.R;
+import com.love.jax.activity.BaseActivity;
 
 import butterknife.BindView;
 

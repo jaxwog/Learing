@@ -1,11 +1,8 @@
-package com.love.jax.activity;
+package com.love.jax.activity.tkjobs;
 
 import android.graphics.Rect;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.Selection;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +16,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.love.jax.R;
+import com.love.jax.activity.BaseActivity;
 import com.love.jax.utils.Logger;
 
 import butterknife.BindView;

@@ -1,4 +1,4 @@
-package com.love.jax.activity;
+package com.love.jax.activity.materialdesign;
 
 
 import android.graphics.Color;
@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 
 import com.love.jax.R;
+import com.love.jax.activity.BaseActivity;
 
 import butterknife.BindView;
 

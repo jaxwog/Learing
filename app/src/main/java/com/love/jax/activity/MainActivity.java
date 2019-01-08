@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
@@ -17,18 +16,26 @@ import com.google.gson.Gson;
 import com.love.jax.R;
 import com.love.jax.activity.fragment.TabLayoutBottomActivity;
 import com.love.jax.activity.fragment.TabLayoutTopActivity;
+import com.love.jax.activity.materialdesign.DrawerLayoutActivity;
+import com.love.jax.activity.materialdesign.NavigationActivity;
+import com.love.jax.activity.materialdesign.PaletteActivity;
+import com.love.jax.activity.materialdesign.SnackbarActivity;
+import com.love.jax.activity.materialdesign.TextInputActivity;
+import com.love.jax.activity.materialdesign.ToolbarActivity;
+import com.love.jax.activity.materialdesign.TranslucentTopActivity;
+import com.love.jax.activity.materialdesign.TransparentToolbarActivity;
 import com.love.jax.activity.recycleview.HeaderActivity;
 import com.love.jax.activity.recycleview.RcDividerActivity;
 import com.love.jax.activity.recycleview.RcSimpleActivity;
 import com.love.jax.activity.recycleview.RcTouchActivity;
 import com.love.jax.activity.recycleview.ThemeActivity;
+import com.love.jax.activity.tkjobs.OrderActivity;
 import com.love.jax.adapter.InFuncAdapter;
 import com.love.jax.bean.LettersEntity;
 import com.love.jax.bean.OrderEntity;
 import com.love.jax.utils.ConfigSet;
 import com.love.jax.utils.ListUtils;
 import com.love.jax.utils.Logger;
-import com.love.jax.utils.MatchContact;
 import com.love.jax.utils.StringShowUtils;
 import com.love.jax.view.HistoryFlowLayout;
 
@@ -73,7 +80,7 @@ public class MainActivity extends BaseActivity {
     InFuncAdapter mInFuncAdapter;
     private String[] mStrings = new String[]{
             "屏幕适配","商品订单","主题适配","列表简单使用","列表间隔线","列表头尾","列表交互动画","侧滑效果一","侧滑效果二"
-            ,"底部弹窗","文本输入","标题栏","顶部透明","颜色获取","顶部标题","底部导航"
+            ,"底部弹窗","文本输入","标题栏","顶部透明","颜色获取","顶部标题","底部导航","顶部沉浸","底部沉浸"
 //            ,"南辕北辙","得陇望蜀","明修栈道","暗度陈仓","叶公好龙","无理取闹","风风火火","恍恍惚惚","德玛西亚"
 //            ,"剑圣偷塔","艾欧尼亚","暗影之道","五光十色","诺克萨斯","德邦总管","加里奥","凯南","武器大师"
 //            ,"金属大师","盖伦","德莱文","卢锡安","战争女神","黑暗骑士","斯嘉丽","黑寡妇","泰勒斯威夫特"
@@ -304,6 +311,14 @@ public class MainActivity extends BaseActivity {
             case "底部导航":
                 sBundle.putString(ConfigSet.INTENT_STRING,"底部导航");
                 jumpToActivity(TabLayoutBottomActivity.class, sBundle);
+                break;
+            case "顶部沉浸":
+                sBundle.putString(ConfigSet.INTENT_STRING,"顶部沉浸");
+                jumpToActivity(TranslucentTopActivity.class, sBundle);
+                break;
+            case "底部沉浸":
+                sBundle.putString(ConfigSet.INTENT_STRING,"底部沉浸");
+                jumpToActivity(TranslucentTopActivity.class, sBundle);
                 break;
             default:
                     break;
