@@ -7,6 +7,8 @@
     <color name="colorPrimary_pink">#F06292</color>
     <color name="colorPrimary_pinkDark">#E91E63</color>
     <color name="mytextcolor">#F8BBD0</color>
+    <!--ZTE RGB 值58，132，203-->
+    <color name="zteBlue">#3A64CB</color>
 
     <color name="color_FFBC4E">#FFBC4E</color>
     <color name="color_F0F0F0">#F0F0F0</color>

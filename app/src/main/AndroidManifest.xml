@@ -39,7 +39,10 @@
             android:theme="@style/LightNoAcBarTheme" />
         <activity android:name=".activity.PaletteActivity" />
         <activity android:name=".activity.InvoiceInfoActivity" />
-        <activity android:name=".activity.recycleview.SelectCouponsActivity"></activity>
+        <activity android:name=".activity.recycleview.SelectCouponsActivity" />
+        <activity android:name=".activity.fragment.TabLayoutTopActivity" />
+        <activity android:name=".activity.fragment.TabLayoutBottomActivity" />
+        <activity android:name=".activity.TranslucentActivity"></activity>
     </application>
 
 </manifest>
