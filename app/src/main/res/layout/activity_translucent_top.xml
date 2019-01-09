@@ -3,8 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="?attr/colorPrimary"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--设置到最外层布局中，4.4适配使用-->
+    <!--android:fitsSystemWindows="true"-->
+    <!--android:background="?attr/colorPrimary"-->
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -18,11 +20,11 @@
     </android.support.v7.widget.Toolbar>
 
 
+    <!--设置布局颜色，防止输入框弹出布局颜色问题，4.4适配-->
+    <!--android:background="#fff"-->
     <ScrollView
         android:layout_width="match_parent"
-        android:background="#fff"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
+        android:layout_height="match_parent" >
 
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -159,11 +161,5 @@
                 android:layout_marginTop="65dp" />
         </android.support.v7.widget.LinearLayoutCompat>
     </ScrollView>
-    <View
-        android:id="@+id/nav"
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_weight="0"
-        android:background="?attr/colorPrimary"
-        />
+
 </LinearLayout>

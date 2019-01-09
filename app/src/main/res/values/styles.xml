@@ -22,6 +22,8 @@
         <item name="android:navigationBarColor" tools:ignore="NewApi">@color/colorPrimary_pink</item>
         <!--设置间隔线颜色和大小-->
         <item name="android:listDivider">@drawable/item_divider</item>
+                 <!--<item name="android:windowBackground">@color/background</item> -->
+                 <!--<item name="colorAccent">#906292</item> -->
     </style>
 
     <!--
@@ -54,6 +56,8 @@ by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
         <item name="android:navigationBarColor" tools:ignore="NewApi">@color/colorPrimary_pink</item>
         <!--设置间隔线颜色和大小-->
         <item name="android:listDivider">@drawable/item_divider</item>
+        <!--设置时间、信号状态栏颜色-->
+        <!--<item name="android:statusBarColor" tools:ignore="NewApi">@color/zteBlue</item>-->
     </style>
 
     <!--14 为4.0   19为4.4    21为5.0-->
