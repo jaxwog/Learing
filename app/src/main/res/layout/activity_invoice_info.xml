@@ -29,7 +29,7 @@
                 android:paddingRight="@dimen/dimen_dp_18dp"
                 android:paddingTop="@dimen/dimen_dp_12dp"
                 android:paddingBottom="@dimen/dimen_dp_12dp"
-                android:text="@string/string_invoice_tip"
+                android:text="@string/string_invoice_tip2"
                 android:textColor="@color/color_FF9141"
                 android:textSize="@dimen/dimen_sp_13sp"
                 android:background="@color/color_FFEBDF"/>
