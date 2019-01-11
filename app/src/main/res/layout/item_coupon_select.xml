@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dimen_dp_17dp"
             android:text="客户经理"
-            android:textColor="@color/color_1F2845"
+            android:textColor="@color/color_8A91A4"
             android:textSize="@dimen/dimen_sp_12sp"/>
 
     </LinearLayout>
