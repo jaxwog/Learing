@@ -48,7 +48,10 @@
         <activity android:name=".activity.materialdesign.TranslucentActivity" />
         <activity android:name=".activity.materialdesign.CardViewActivity" />
         <activity android:name=".activity.materialdesign.FloatingActionButtonActivity" />
-        <activity android:name=".activity.materialdesign.FabRecAnimatorActivity"
+        <activity
+            android:name=".activity.materialdesign.FabRecAnimatorActivity"
+            android:theme="@style/LightNoAcBarTheme" />
+        <activity android:name=".activity.materialdesign.FabRecAnimatorActivity2"
             android:theme="@style/LightNoAcBarTheme"></activity>
     </application>
 
