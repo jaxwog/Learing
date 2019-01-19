@@ -23,6 +23,7 @@ import com.love.jax.activity.materialdesign.FabRecAnimatorActivity2;
 import com.love.jax.activity.materialdesign.FloatingActionButtonActivity;
 import com.love.jax.activity.materialdesign.NavigationActivity;
 import com.love.jax.activity.materialdesign.PaletteActivity;
+import com.love.jax.activity.materialdesign.ParallelSpaceActivity;
 import com.love.jax.activity.materialdesign.SnackbarActivity;
 import com.love.jax.activity.materialdesign.TextInputActivity;
 import com.love.jax.activity.materialdesign.ToolbarActivity;
@@ -86,7 +87,7 @@ public class MainActivity extends BaseActivity {
     private String[] mStrings = new String[]{
             "屏幕适配","商品订单","主题适配","列表简单使用","列表间隔线","列表头尾","列表交互动画","侧滑效果一","侧滑效果二"
             ,"底部弹窗","文本输入","标题栏","顶部透明","颜色获取","顶部标题","底部导航","顶部沉浸","底部沉浸","卡片布局","悬浮按钮"
-            ,"隐藏交互动画","隐藏动画2"
+            ,"隐藏交互动画","隐藏动画2","平行空间"
 //            ,"南辕北辙","得陇望蜀","明修栈道","暗度陈仓","叶公好龙","无理取闹","风风火火","恍恍惚惚","德玛西亚"
 //            ,"剑圣偷塔","艾欧尼亚","暗影之道","五光十色","诺克萨斯","德邦总管","加里奥","凯南","武器大师"
 //            ,"金属大师","盖伦","德莱文","卢锡安","战争女神","黑暗骑士","斯嘉丽","黑寡妇","泰勒斯威夫特"
@@ -341,6 +342,10 @@ public class MainActivity extends BaseActivity {
             case "隐藏动画2":
                 sBundle.putString(ConfigSet.INTENT_STRING,"隐藏动画2");
                 jumpToActivity(FabRecAnimatorActivity2.class, sBundle);
+                break;
+            case "平行空间":
+                sBundle.putString(ConfigSet.INTENT_STRING,"平行空间");
+                jumpToActivity(ParallelSpaceActivity.class, sBundle);
                 break;
             default:
                     break;

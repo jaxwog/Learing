@@ -105,4 +105,13 @@
     <color name="color_D9FFFFFF">#D9FFFFFF</color>
     <color name="color_F7F7F9">#F7F7F9</color>
 
+
+      <!--平行空间效果-->
+    <color name="bg1_green">#6DB345</color>
+    <color name="bg2_blue">#6DB3ff</color>
+    <!--     <color name="bg2_blue">#6DB3ff</color> -->
+    <color name="bg3_green">#6DB311</color>
+    <!--平行空间效果-->
+
+
 </resources>
