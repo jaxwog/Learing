@@ -13,6 +13,7 @@ public class ParallelScrollView extends HorizontalScrollView {
 
     }
 
+    //拦截当前事件
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
 

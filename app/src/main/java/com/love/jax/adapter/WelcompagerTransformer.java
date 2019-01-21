@@ -23,7 +23,7 @@ import static android.graphics.Color.RED;
 
 public class WelcompagerTransformer implements PageTransformer, OnPageChangeListener {
     private static final float ROT_MOD = -15f;
-    private int pageIndex;
+    private int pageIndex;//当前正在滑动的是第几个界面
     private boolean pageChanged = true;
     private Activity mContext;
 
@@ -33,8 +33,8 @@ public class WelcompagerTransformer implements PageTransformer, OnPageChangeList
 
     /**
      * 此方法是滑动的时候每一个页面View都会调用该方法
-     * view:当前的页面
-     * position:当前滑动的位置
+     * view:当前的页面（Fragment中的View）
+     * position:当前滑动的位置-1（屏幕左侧）到0，0到1（屏幕右侧）
      * 视差效果：在View正常滑动的情况下，给当前View或者当前view里面的每一个子view来一个加速度
      * 而且每一个加速度大小不一样。
      */
@@ -50,8 +50,8 @@ public class WelcompagerTransformer implements PageTransformer, OnPageChangeList
         int bg2_blue = view.getContext().getResources().getColor(R.color.bg2_blue);
 //        int bg3_green = view.getContext().getResources().getColor(R.color.bg3_green);
 
-        Integer tag = (Integer) view.getTag();
-        View parent = (View) view.getParent();
+        Integer tag = (Integer) view.getTag();//标记当前位置是第几个View
+        View parent = (View) view.getParent();//得到父布局，背景颜色设置父布局
 //        if (parent instanceof ViewPager) {
 //            System.out.println("yes~~~~~~~~~~~tag:" + tag + ", position:" + position);
 //        }
@@ -61,6 +61,7 @@ public class WelcompagerTransformer implements PageTransformer, OnPageChangeList
         if (tag.intValue() == pageIndex) {
             switch (pageIndex) {
                 case 0:
+                    //判断position正负，确定滑动的方向 ，根据滑动的方向来确定渐变的颜色
                     color = (int) evaluator.evaluate(Math.abs(position), bg1_green, bg2_blue);
                     break;
                 case 1:
@@ -120,7 +121,7 @@ public class WelcompagerTransformer implements PageTransformer, OnPageChangeList
             bg1.setTranslationX(0);
             mscv.smoothScrollTo(0, 0);
         } else if (position < 1 && position > -1) {
-
+//翻转动画
             final float width = bg1.getWidth();
             final float height = bg1.getHeight();
             final float rotation = ROT_MOD * position * -1.25f;

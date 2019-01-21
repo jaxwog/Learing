@@ -22,7 +22,7 @@ public class TranslateFragment extends Fragment {
         int pageIndex = bundle.getInt("pageIndex");
 
         View view = inflater.inflate(layoutId, null);
-        view.setTag(pageIndex);
+        view.setTag(pageIndex);//设置标记，用来记录当前Fragment的是第几个
         return view;
     }
 

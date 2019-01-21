@@ -20,15 +20,15 @@
 
         <ImageView
             android:id="@+id/imageView0_2"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@mipmap/pg1_2" />
 
         <ImageView
             android:id="@+id/imageView0"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@mipmap/pg1_1" />
     </FrameLayout>
@@ -91,11 +91,12 @@
             android:layout_height="match_parent"
             android:gravity="left"
             android:orientation="horizontal" >
-
+             <!--https://blog.csdn.net/qq_34902522/article/details/76682293 图片的scaleType属性-->
+            <!--fitStart把原图按照比例放大缩小到ImageView的高度，显示在ImageView的start（前部/上部）-->
             <ImageView
                 android:id="@+id/pg1_content1"
                 android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
+                android:layout_height="match_parent"
                 android:scaleType="fitStart"
                 android:src="@mipmap/weixin" />
 
@@ -118,6 +119,7 @@
         </LinearLayout>
     </com.love.jax.view.ParallelScrollView>
 
+    <!--定义手机壳外框图片位置-->
     <ImageView
         android:id="@+id/iv_phone_bg"
         android:layout_width="0dp"
@@ -128,5 +130,5 @@
         app:layout_widthPercent="63%w"
         android:background="@mipmap/phone1" />
     <!-- </com.ricky.android.percent.support.PercentRelativeLayout> -->
-
+    <!--自定义百分比布局-->
 </com.love.jax.view.PercentRelativeLayout>
