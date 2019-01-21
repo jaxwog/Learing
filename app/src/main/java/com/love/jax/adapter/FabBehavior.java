@@ -1,8 +1,10 @@
 package com.love.jax.adapter;
 
+import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewCompat;
+import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.RelativeLayout;
@@ -15,6 +17,13 @@ import android.widget.RelativeLayout;
 public class FabBehavior extends FloatingActionButton.Behavior {
     private boolean visible = true;//是否可见
 
+      public FabBehavior(Context context, AttributeSet attributeSet){
+          super();
+      }
+    /**
+     * 监听滑动控件的滑动通过Behavior反馈到其他子控件并执行一些动画。
+     * @deprecated注意：滑动控件指的是：RecyclerView/NestedScrollView/ViewPager，意味着ListView、ScrollView不行。
+     */
     @Override
     public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, FloatingActionButton
             child, View directTargetChild, View target, int nestedScrollAxes,int type) {
@@ -48,7 +57,7 @@ public class FabBehavior extends FloatingActionButton.Behavior {
         // 隐藏动画--属性动画
 //		toolbar.animate().translationY(-toolbar.getHeight()).setInterpolator(new
 // AccelerateInterpolator(3));
-        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) fab
+       CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) fab
                 .getLayoutParams();
 
 //		fab.animate().translationY(fab.getHeight()+layoutParams.bottomMargin).setInterpolator(new
@@ -60,7 +69,7 @@ public class FabBehavior extends FloatingActionButton.Behavior {
         // 显示动画--属性动画
 //		toolbar.animate().translationY(0).setInterpolator(new DecelerateInterpolator(3));
 
-        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) fab
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) fab
                 .getLayoutParams();
 		fab.animate().translationY(0).setInterpolator(new DecelerateInterpolator(3));
         ViewCompat.animate(fab).scaleX(1f).scaleY(1f).start();

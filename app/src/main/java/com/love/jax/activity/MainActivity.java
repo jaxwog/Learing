@@ -25,6 +25,7 @@ import com.love.jax.activity.materialdesign.NavigationActivity;
 import com.love.jax.activity.materialdesign.PaletteActivity;
 import com.love.jax.activity.materialdesign.ParallelSpaceActivity;
 import com.love.jax.activity.materialdesign.SnackbarActivity;
+import com.love.jax.activity.materialdesign.TabLayoutAppBarActivity;
 import com.love.jax.activity.materialdesign.TextInputActivity;
 import com.love.jax.activity.materialdesign.ToolbarActivity;
 import com.love.jax.activity.materialdesign.TranslucentActivity;
@@ -87,11 +88,127 @@ public class MainActivity extends BaseActivity {
     private String[] mStrings = new String[]{
             "屏幕适配","商品订单","主题适配","列表简单使用","列表间隔线","列表头尾","列表交互动画","侧滑效果一","侧滑效果二"
             ,"底部弹窗","文本输入","标题栏","顶部透明","颜色获取","顶部标题","底部导航","顶部沉浸","底部沉浸","卡片布局","悬浮按钮"
-            ,"隐藏交互动画","隐藏动画2","平行空间"
+            ,"隐藏交互动画","隐藏动画2","隐藏动画3","平行空间"
 //            ,"南辕北辙","得陇望蜀","明修栈道","暗度陈仓","叶公好龙","无理取闹","风风火火","恍恍惚惚","德玛西亚"
 //            ,"剑圣偷塔","艾欧尼亚","暗影之道","五光十色","诺克萨斯","德邦总管","加里奥","凯南","武器大师"
 //            ,"金属大师","盖伦","德莱文","卢锡安","战争女神","黑暗骑士","斯嘉丽","黑寡妇","泰勒斯威夫特"
     };
+
+    /**
+     * 跳转到功能指定页面
+     * @param position 位置信息
+     */
+    private void skipFuncActivity(int position) {
+        sBundle.clear();
+        String tempStr = StringShowUtils.delTag(mInFuncAdapter.getList().get(position).getTitle());
+        switch (tempStr){
+            case "屏幕适配":
+                sBundle.putString(ConfigSet.INTENT_STRING,"屏幕适配");
+                jumpToActivity(ScreenAdaptationActivity.class, sBundle);
+                if (mBundle==null){
+                    Logger.i(TAG,"数据为空啊~");
+                }
+                break;
+            case "商品订单":
+                //传递过去json数据
+                OrderEntity entity = new OrderEntity("超声波洁牙套餐","20181115","高端款","400",9);
+                sBundle.putString(ConfigSet.INTENT_STRING, mGson.toJson(entity));
+                jumpToActivity(OrderActivity.class, sBundle);
+                break;
+            case "列表简单使用":
+                sBundle.putString(ConfigSet.INTENT_STRING,"列表简单使用");
+                jumpToActivity(RcSimpleActivity.class, sBundle);
+                break;
+            case "主题适配":
+                sBundle.putString(ConfigSet.INTENT_STRING,"主题适配");
+                jumpToActivity(ThemeActivity.class, sBundle);
+                break;
+            case "列表间隔线":
+                sBundle.putString(ConfigSet.INTENT_STRING,"列表间隔线");
+                jumpToActivity(RcDividerActivity.class, sBundle);
+                break;
+            case "列表头尾":
+                sBundle.putString(ConfigSet.INTENT_STRING,"列表头尾");
+                jumpToActivity(HeaderActivity.class, sBundle);
+                break;
+            case "列表交互动画":
+                sBundle.putString(ConfigSet.INTENT_STRING,"列表交互动画");
+                jumpToActivity(RcTouchActivity.class, sBundle);
+                break;
+            case "侧滑效果一":
+                sBundle.putString(ConfigSet.INTENT_STRING,"侧滑效果一");
+                jumpToActivity(DrawerLayoutActivity.class, sBundle);
+                break;
+            case "侧滑效果二":
+                sBundle.putString(ConfigSet.INTENT_STRING,"侧滑效果二");
+                jumpToActivity(NavigationActivity.class, sBundle);
+                break;
+            case "底部弹窗":
+                sBundle.putString(ConfigSet.INTENT_STRING,"底部弹窗");
+                jumpToActivity(SnackbarActivity.class, sBundle);
+                break;
+            case "文本输入":
+                sBundle.putString(ConfigSet.INTENT_STRING,"文本输入");
+                jumpToActivity(TextInputActivity.class, sBundle);
+                break;
+            case "标题栏":
+                sBundle.putString(ConfigSet.INTENT_STRING,"标题栏");
+                jumpToActivity(ToolbarActivity.class, sBundle);
+                break;
+            case "顶部透明":
+                sBundle.putString(ConfigSet.INTENT_STRING,"顶部透明");
+                jumpToActivity(TransparentToolbarActivity.class, sBundle);
+                break;
+            case "颜色获取":
+                sBundle.putString(ConfigSet.INTENT_STRING,"颜色获取");
+                jumpToActivity(PaletteActivity.class, sBundle);
+                break;
+            case "顶部标题":
+                sBundle.putString(ConfigSet.INTENT_STRING,"顶部标题");
+                jumpToActivity(TabLayoutTopActivity.class, sBundle);
+                break;
+            case "底部导航":
+                sBundle.putString(ConfigSet.INTENT_STRING,"底部导航");
+                jumpToActivity(TabLayoutBottomActivity.class, sBundle);
+                break;
+            case "顶部沉浸":
+                sBundle.putString(ConfigSet.INTENT_STRING,"顶部沉浸");
+                jumpToActivity(TranslucentTopActivity.class, sBundle);
+                break;
+            case "底部沉浸":
+                sBundle.putString(ConfigSet.INTENT_STRING,"底部沉浸");
+                jumpToActivity(TranslucentActivity.class, sBundle);
+                break;
+            case "卡片布局":
+                sBundle.putString(ConfigSet.INTENT_STRING,"卡片布局");
+                jumpToActivity(CardViewActivity.class, sBundle);
+                break;
+            case "悬浮按钮":
+                sBundle.putString(ConfigSet.INTENT_STRING,"悬浮按钮");
+                jumpToActivity(FloatingActionButtonActivity.class, sBundle);
+                break;
+            case "隐藏交互动画":
+                sBundle.putString(ConfigSet.INTENT_STRING,"隐藏交互动画");
+                jumpToActivity(FabRecAnimatorActivity.class, sBundle);
+                break;
+            case "隐藏动画2":
+                sBundle.putString(ConfigSet.INTENT_STRING,"隐藏动画2");
+                jumpToActivity(FabRecAnimatorActivity2.class, sBundle);
+                break;
+            case "隐藏动画3":
+                sBundle.putString(ConfigSet.INTENT_STRING,"隐藏动画3");
+                jumpToActivity(TabLayoutAppBarActivity.class, sBundle);
+                break;
+            case "平行空间":
+                sBundle.putString(ConfigSet.INTENT_STRING,"平行空间");
+                jumpToActivity(ParallelSpaceActivity.class, sBundle);
+                break;
+            default:
+                break;
+
+        }
+    }
+
 
 
     @Override
@@ -242,116 +359,6 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    /**
-     * 跳转到功能指定页面
-     * @param position 位置信息
-     */
-    private void skipFuncActivity(int position) {
-        sBundle.clear();
-        String tempStr = StringShowUtils.delTag(mInFuncAdapter.getList().get(position).getTitle());
-        switch (tempStr){
-            case "屏幕适配":
-                sBundle.putString(ConfigSet.INTENT_STRING,"屏幕适配");
-                jumpToActivity(ScreenAdaptationActivity.class, sBundle);
-                if (mBundle==null){
-                    Logger.i(TAG,"数据为空啊~");
-                }
-                break;
-            case "商品订单":
-                //传递过去json数据
-                OrderEntity entity = new OrderEntity("超声波洁牙套餐","20181115","高端款","400",9);
-                sBundle.putString(ConfigSet.INTENT_STRING, mGson.toJson(entity));
-                jumpToActivity(OrderActivity.class, sBundle);
-                break;
-            case "列表简单使用":
-                sBundle.putString(ConfigSet.INTENT_STRING,"列表简单使用");
-                jumpToActivity(RcSimpleActivity.class, sBundle);
-                break;
-            case "主题适配":
-                sBundle.putString(ConfigSet.INTENT_STRING,"主题适配");
-                jumpToActivity(ThemeActivity.class, sBundle);
-                break;
-            case "列表间隔线":
-                sBundle.putString(ConfigSet.INTENT_STRING,"列表间隔线");
-                jumpToActivity(RcDividerActivity.class, sBundle);
-                break;
-            case "列表头尾":
-                sBundle.putString(ConfigSet.INTENT_STRING,"列表头尾");
-                jumpToActivity(HeaderActivity.class, sBundle);
-                break;
-            case "列表交互动画":
-                sBundle.putString(ConfigSet.INTENT_STRING,"列表交互动画");
-                jumpToActivity(RcTouchActivity.class, sBundle);
-                break;
-            case "侧滑效果一":
-                sBundle.putString(ConfigSet.INTENT_STRING,"侧滑效果一");
-                jumpToActivity(DrawerLayoutActivity.class, sBundle);
-                break;
-            case "侧滑效果二":
-                sBundle.putString(ConfigSet.INTENT_STRING,"侧滑效果二");
-                jumpToActivity(NavigationActivity.class, sBundle);
-                break;
-            case "底部弹窗":
-                sBundle.putString(ConfigSet.INTENT_STRING,"底部弹窗");
-                jumpToActivity(SnackbarActivity.class, sBundle);
-                break;
-            case "文本输入":
-                sBundle.putString(ConfigSet.INTENT_STRING,"文本输入");
-                jumpToActivity(TextInputActivity.class, sBundle);
-                break;
-            case "标题栏":
-                sBundle.putString(ConfigSet.INTENT_STRING,"标题栏");
-                jumpToActivity(ToolbarActivity.class, sBundle);
-                break;
-            case "顶部透明":
-                sBundle.putString(ConfigSet.INTENT_STRING,"顶部透明");
-                jumpToActivity(TransparentToolbarActivity.class, sBundle);
-                break;
-            case "颜色获取":
-                sBundle.putString(ConfigSet.INTENT_STRING,"颜色获取");
-                jumpToActivity(PaletteActivity.class, sBundle);
-                break;
-            case "顶部标题":
-                sBundle.putString(ConfigSet.INTENT_STRING,"顶部标题");
-                jumpToActivity(TabLayoutTopActivity.class, sBundle);
-                break;
-            case "底部导航":
-                sBundle.putString(ConfigSet.INTENT_STRING,"底部导航");
-                jumpToActivity(TabLayoutBottomActivity.class, sBundle);
-                break;
-            case "顶部沉浸":
-                sBundle.putString(ConfigSet.INTENT_STRING,"顶部沉浸");
-                jumpToActivity(TranslucentTopActivity.class, sBundle);
-                break;
-            case "底部沉浸":
-                sBundle.putString(ConfigSet.INTENT_STRING,"底部沉浸");
-                jumpToActivity(TranslucentActivity.class, sBundle);
-                break;
-            case "卡片布局":
-                sBundle.putString(ConfigSet.INTENT_STRING,"卡片布局");
-                jumpToActivity(CardViewActivity.class, sBundle);
-                break;
-            case "悬浮按钮":
-                sBundle.putString(ConfigSet.INTENT_STRING,"悬浮按钮");
-                jumpToActivity(FloatingActionButtonActivity.class, sBundle);
-                break;
-            case "隐藏交互动画":
-                sBundle.putString(ConfigSet.INTENT_STRING,"隐藏交互动画");
-                jumpToActivity(FabRecAnimatorActivity.class, sBundle);
-                break;
-            case "隐藏动画2":
-                sBundle.putString(ConfigSet.INTENT_STRING,"隐藏动画2");
-                jumpToActivity(FabRecAnimatorActivity2.class, sBundle);
-                break;
-            case "平行空间":
-                sBundle.putString(ConfigSet.INTENT_STRING,"平行空间");
-                jumpToActivity(ParallelSpaceActivity.class, sBundle);
-                break;
-            default:
-                    break;
-
-        }
-    }
 
 
 

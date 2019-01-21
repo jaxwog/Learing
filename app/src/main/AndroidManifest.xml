@@ -54,7 +54,10 @@
         <activity
             android:name=".activity.materialdesign.FabRecAnimatorActivity2"
             android:theme="@style/LightNoAcBarTheme" />
-        <activity android:name=".activity.materialdesign.ParallelSpaceActivity"
+        <activity
+            android:name=".activity.materialdesign.ParallelSpaceActivity"
+            android:theme="@style/LightNoAcBarTheme" />
+        <activity android:name=".activity.materialdesign.TabLayoutAppBarActivity"
             android:theme="@style/LightNoAcBarTheme"></activity>
     </application>
 
