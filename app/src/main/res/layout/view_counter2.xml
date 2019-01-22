@@ -18,7 +18,8 @@
         android:paddingLeft="@dimen/dimen_dp_10dp"
         android:paddingRight="@dimen/dimen_dp_10dp"/>
 
-    <com.love.jax.activity.tkjobs.NullMenuEditText
+    <!--<com.love.jax.activity.tkjobs.NullMenuEditText-->
+    <EditText
         android:id="@+id/view_edit"
         android:layout_width="@dimen/dimen_dp_58dp"
         android:layout_height="match_parent"
@@ -27,6 +28,7 @@
         android:inputType="number"
         android:textCursorDrawable="@color/color_CCCCCC"
         android:singleLine="true"
+        android:maxLength="2"
         android:cursorVisible="true"
         android:hint="1"
         android:textStyle="bold"
