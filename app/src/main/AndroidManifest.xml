@@ -60,8 +60,14 @@
         <activity
             android:name=".activity.materialdesign.TabLayoutAppBarActivity"
             android:theme="@style/LightNoAcBarTheme" />
-        <activity android:name=".activity.materialdesign.CollapseToolbarActivity"
-            android:theme="@style/LightNoAcBarTheme"  ></activity>
+        <activity
+            android:name=".activity.materialdesign.CollapseToolbarActivity"
+            android:theme="@style/LightNoAcBarTheme" />
+        <activity
+            android:name=".activity.materialdesign.CustomerBehavior1Activity"
+            android:theme="@style/LightNoAcBarTheme" />
+        <activity android:name=".activity.materialdesign.CustomerBehavior2Activity"
+            android:theme="@style/LightNoAcBarTheme"></activity>
     </application>
 
 </manifest>

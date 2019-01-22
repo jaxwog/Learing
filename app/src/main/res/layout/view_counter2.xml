@@ -18,7 +18,7 @@
         android:paddingLeft="@dimen/dimen_dp_10dp"
         android:paddingRight="@dimen/dimen_dp_10dp"/>
 
-    <EditText
+    <com.love.jax.activity.tkjobs.NullMenuEditText
         android:id="@+id/view_edit"
         android:layout_width="@dimen/dimen_dp_58dp"
         android:layout_height="match_parent"
