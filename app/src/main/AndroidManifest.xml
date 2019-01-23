@@ -66,8 +66,11 @@
         <activity
             android:name=".activity.materialdesign.CustomerBehavior1Activity"
             android:theme="@style/LightNoAcBarTheme" />
-        <activity android:name=".activity.materialdesign.CustomerBehavior2Activity"
-            android:theme="@style/LightNoAcBarTheme"></activity>
+        <activity
+            android:name=".activity.materialdesign.CustomerBehavior2Activity"
+            android:theme="@style/LightNoAcBarTheme" />
+        <activity android:name=".activity.animation.ArrtAnimatorActivity" />
+        <activity android:name=".activity.animation.AnimatorSetActivity"></activity>
     </application>
 
 </manifest>

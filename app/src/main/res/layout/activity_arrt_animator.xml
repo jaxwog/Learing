@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:layout_marginTop="@dimen/dimen_dp_30dp"
+        android:id="@+id/button1"
+        android:scaleType="centerCrop"
+        android:onClick="startAnima"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:src="@drawable/yingjia"
+        />
+
+</LinearLayout>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<translate-->
+<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:fromXDelta="0"-->
+<!--android:fromYDelta="0"-->
+<!--android:toXDelta="50%p"-->
+<!--android:toYDelta="50%p"-->
+<!--android:fillAfter="true"-->
+<!--android:duration="500">-->
+
+
+<!--</translate>-->
