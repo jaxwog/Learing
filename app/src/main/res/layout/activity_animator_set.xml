@@ -1,9 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.animation.AnimatorSetActivity">
+    android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/first"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/icon_2"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="显示"
+            android:background="#f00"
+            android:onClick="startFirstAnimation"
+            />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/second"
+        android:src="@mipmap/icon_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:scaleType="fitEnd"
+        android:layout_alignParentBottom="true"
+        android:onClick="startSecondAnimation"
+        android:visibility="invisible"
+        />
+
+</RelativeLayout>

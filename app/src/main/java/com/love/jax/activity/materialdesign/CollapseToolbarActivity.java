@@ -82,4 +82,7 @@ public class CollapseToolbarActivity extends BaseActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+    public void rotate(View view){
+
+    }
 }
