@@ -36,6 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         mContext = this;
         mActivity = this;
         mBundle = new Bundle();
+        initFlag();
         Logger.e(TAG, "Add Activity To Stack:" + getClass().getSimpleName());
         setContentView(getContentView());
         ButterKnife.bind(this);
@@ -43,6 +44,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         initBundle();
         initView();
         initJestListener();
+    }
+
+    /**
+     * 绑定View之前进行View的Flag或者全屏设置
+     */
+    protected  void initFlag(){
+
     }
 
 

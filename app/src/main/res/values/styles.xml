@@ -11,6 +11,11 @@
     <style name="NoAcBarTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@color/background</item>
     </style>
+        <!--SDk21使用，需要考虑兼容性问题-->
+         <style name="AppBaseTheme21Button" parent="android:Theme.Material.Light" tools:ignore="NewApi">
+             <item name="android:colorControlHighlight" tools:ignore="NewApi">#f00</item>
+             <item name="android:colorButtonNormal" tools:ignore="NewApi">@color/material_blue_grey_800</item>
+         </style>
 
     <style name="LightNoAcBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:textColor">@color/mytextcolor</item>
@@ -24,6 +29,9 @@
         <item name="android:listDivider">@drawable/item_divider</item>
                  <!--<item name="android:windowBackground">@color/background</item> -->
                  <!--<item name="colorAccent">#906292</item> -->
+        <!--可以修改背景颜色和水波纹的颜色：-->
+        <!--<item name="colorControlHighlight">@color/colorPrimary_pink</item>-->
+        <!--<item name="colorButtonNormal">@color/material_blue_grey_800</item>-->
     </style>
 
     <!--

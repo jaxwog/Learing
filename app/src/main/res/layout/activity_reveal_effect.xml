@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.animation.RevealEffectActivity">
+         <!--水波纹效果-->
+    <!--<Button-->
+        <!--android:layout_width="@dimen/dimen_dp_200dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:text="@string/app_name" />-->
+    <!--<TextView-->
+        <!--android:layout_width="@dimen/dimen_dp_200dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:gravity="center"-->
+        <!--android:clickable="true"-->
+        <!--android:background="?attr/selectableItemBackground"-->
+        <!--android:text="@string/app_name" />-->
+    <!--<Button-->
+        <!--android:layout_width="@dimen/dimen_dp_200dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+        <!--android:text="@string/app_name" />-->
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="@dimen/dimen_dp_200dp"
+        android:layout_height="100dp"
+        android:text="@string/app_name" />
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="@dimen/dimen_dp_200dp"
+        android:layout_height="100dp"
+        android:text="@string/app_name" />
+
+
+</LinearLayout>

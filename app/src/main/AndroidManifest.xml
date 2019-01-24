@@ -70,7 +70,12 @@
             android:name=".activity.materialdesign.CustomerBehavior2Activity"
             android:theme="@style/LightNoAcBarTheme" />
         <activity android:name=".activity.animation.ArrtAnimatorActivity" />
-        <activity android:name=".activity.animation.AnimatorSetActivity"></activity>
+        <activity android:name=".activity.animation.AnimatorSetActivity" />
+        <activity
+            android:name=".activity.animation.RevealEffectActivity"
+            android:theme="@style/LightNoAcBarTheme" />
+        <activity android:name=".activity.animation.OptionsTransitionActivity" />
+        <activity android:name=".activity.animation.OptionsTransition2Activity"></activity>
     </application>
 
 </manifest>
