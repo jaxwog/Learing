@@ -32,6 +32,8 @@
         <!--可以修改背景颜色和水波纹的颜色：-->
         <!--<item name="colorControlHighlight">@color/colorPrimary_pink</item>-->
         <!--<item name="colorButtonNormal">@color/material_blue_grey_800</item>-->
+        <!--允许使用转场动画-->
+        <!--<item name="android:windowContentTransitions" tools:ignore="NewApi">true</item>-->
     </style>
 
     <!--
