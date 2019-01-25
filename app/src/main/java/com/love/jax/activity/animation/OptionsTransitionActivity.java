@@ -19,6 +19,9 @@ import android.widget.ImageView;
 import com.love.jax.R;
 import com.love.jax.activity.BaseActivity;
 import com.love.jax.activity.MainActivity;
+import com.squareup.leakcanary.HahaHelper;
+
+import java.lang.annotation.Target;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,6 +30,7 @@ import butterknife.OnClick;
 /**
  * 相同元素的转场动画
  */
+
 public class OptionsTransitionActivity extends BaseActivity {
 
 
@@ -132,9 +136,10 @@ public class OptionsTransitionActivity extends BaseActivity {
 
 
        //如果有共享元素，可以设置共享元素，那么它就会按照共享元素动画执行，其他的子view就会按照Fade动画执行。
-//        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this,iv1, "yingjia");
+        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this,iv1, "yingjia");
 
-        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this);
+        //  ？？？？？？？？？？？？？？？？       使用该方法会造成leaks捕获异常需要处理   ？？？？？？？？？？？？？
+//        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this);
         Intent intent = new Intent(this, OptionsTransition2Activity.class);
         startActivity(intent, optionsCompat.toBundle());
 
