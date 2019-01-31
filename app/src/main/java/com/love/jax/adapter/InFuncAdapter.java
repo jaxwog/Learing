@@ -78,7 +78,7 @@ public class InFuncAdapter extends RecyclerView.Adapter<InFuncAdapter.FunctionVi
     public void onBindViewHolder(@NonNull FunctionViewHolder viewHolder, final int position) {
 //        viewHolder.mTextView.setText(mList.get(position).toString());
         viewHolder.mTextView.setText(Html.fromHtml(mList.get(position).getTitle()));
-        Glide.with(mContext).load(mIntegers[NumUtils.getRandom(mIntegers.length - 1)]).apply
+        Glide.with(mContext).load(mIntegers[NumUtils.getRandom(mIntegers.length)]).apply
                 (options).
                 into(viewHolder.mImageView);
 

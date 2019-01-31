@@ -74,10 +74,13 @@
         <activity
             android:name=".activity.animation.RevealEffectActivity"
             android:theme="@style/LightNoAcBarTheme" />
-        <activity android:name=".activity.animation.OptionsTransitionActivity"
+        <activity
+            android:name=".activity.animation.OptionsTransitionActivity"
             android:theme="@style/LightNoAcBarTheme" />
-        <activity android:name=".activity.animation.OptionsTransition2Activity"
-            android:theme="@style/LightNoAcBarTheme" ></activity>
+        <activity
+            android:name=".activity.animation.OptionsTransition2Activity"
+            android:theme="@style/LightNoAcBarTheme" />
+        <activity android:name=".activity.animation.SvgVectorActivity"></activity>
     </application>
 
 </manifest>

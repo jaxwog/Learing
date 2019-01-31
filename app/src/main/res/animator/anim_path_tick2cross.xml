@@ -1,0 +1,9 @@
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <objectAnimator
+        android:duration="300"
+        android:propertyName="pathData"
+        android:valueFrom="M19.6,7 L10.4,16.2 M6.8,13.4 L10.5,17.6"
+        android:valueTo="M17.6,6.4 L6.4,17.6 M6.4,6.4 L17.6,17.6"
+        android:valueType="pathType"/>
+<!--动画效果执行的方法为pathData属性，type为pathType-->
+</set>

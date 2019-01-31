@@ -1,0 +1,11 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:drawable="@drawable/vd_star"
+    tools:ignore="NewApi">
+    <target
+        android:name="star_group"
+        android:animation="@animator/svg_star_rotate" />
+    <target
+        android:name="star"
+        android:animation="@animator/svg_star_shap" />
+</animated-vector>
