@@ -49,7 +49,7 @@ public class SvgVectorActivity extends BaseActivity {
         }
     }
 
-    //对号转错号动画
+    //星星转勺子
     public void anim2(View v){
         ImageView iv = (ImageView) v;
         Drawable drawable = iv.getDrawable();

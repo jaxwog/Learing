@@ -830,6 +830,40 @@ public abstract static class Behavior<V extends View>
 
 
 
+------------------------------------------自定义动画框架--------------------------
+。
+2方面可以深入了解的。
+	方法1)偷天换日，给每一个需要配置自定义属性的子控件外面包裹一层自定义容器。
+	方法2)偷天换日，
+
+如果做一个自己封装好的效果。
+封装的目的：便于使用和重用；便于配置；
+
+自定义View，属性和方法是可以配置的。
+自定义属性。
+
+<MyView
+	android:layout_width=""
+	app:xxx=""
+/>
+
+
+1.分析布局
+
+2.监听滑动onScrollChanged
+根据滑动的距离/view.getHeight()==动画执行的百分比
+
+3.子View要根据滑动百分比执行相应的动画
+
+
+4.每一个子view动画不一样，给每一个子view配置不同的动画属性。
+
+
+ViewGroup.addView(....ImageView)
+
+
+ViewGroup.addView(new MyFrameLayout().addView(ImageView))
+
 
 
 

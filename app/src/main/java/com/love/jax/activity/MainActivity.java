@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -14,9 +15,11 @@ import android.widget.LinearLayout;
 
 import com.google.gson.Gson;
 import com.love.jax.R;
+import com.love.jax.activity.animation.AnimaFramework1Activity;
 import com.love.jax.activity.animation.AnimatorSetActivity;
 import com.love.jax.activity.animation.ArrtAnimatorActivity;
 import com.love.jax.activity.animation.OptionsTransitionActivity;
+import com.love.jax.activity.animation.ParallaxSplashActivity;
 import com.love.jax.activity.animation.RevealEffectActivity;
 import com.love.jax.activity.animation.SvgVectorActivity;
 import com.love.jax.activity.fragment.TabLayoutBottomActivity;
@@ -56,6 +59,7 @@ import com.love.jax.view.HistoryFlowLayout;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -97,7 +101,7 @@ public class MainActivity extends BaseActivity {
             "屏幕适配","商品订单","主题适配","列表简单使用","列表间隔线","列表头尾","列表交互动画","侧滑效果一","侧滑效果二"
             ,"底部弹窗","文本输入","标题栏","顶部透明","颜色获取","顶部标题","底部导航","顶部沉浸","底部沉浸","卡片布局","悬浮按钮"
             ,"隐藏交互动画","隐藏动画2","隐藏动画3","平行空间","导航折叠","运转状态1","运转状态2","属性动画","属性动画集","揭露动画"
-            ,"转场动画","矢量图像"
+            ,"转场动画","矢量图像","动画框架一","动画框架二"
 //            ,"南辕北辙","得陇望蜀","明修栈道","暗度陈仓","叶公好龙","无理取闹","风风火火","恍恍惚惚","德玛西亚"
 //            ,"剑圣偷塔","艾欧尼亚","暗影之道","五光十色","诺克萨斯","德邦总管","加里奥","凯南","武器大师"
 //            ,"金属大师","盖伦","德莱文","卢锡安","战争女神","黑暗骑士","斯嘉丽","黑寡妇","泰勒斯威夫特"
@@ -243,6 +247,14 @@ public class MainActivity extends BaseActivity {
             case "矢量图像":
                 sBundle.putString(ConfigSet.INTENT_STRING,"矢量图像");
                 jumpToActivity(SvgVectorActivity.class, sBundle);
+                break;
+            case "动画框架一":
+                sBundle.putString(ConfigSet.INTENT_STRING,"动画框架一");
+                jumpToActivity(AnimaFramework1Activity.class, sBundle);
+                break;
+            case "动画框架二":
+                sBundle.putString(ConfigSet.INTENT_STRING,"动画框架二");
+                jumpToActivity(ParallaxSplashActivity.class, sBundle);
                 break;
             default:
                 break;

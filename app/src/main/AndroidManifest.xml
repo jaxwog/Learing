@@ -80,7 +80,10 @@
         <activity
             android:name=".activity.animation.OptionsTransition2Activity"
             android:theme="@style/LightNoAcBarTheme" />
-        <activity android:name=".activity.animation.SvgVectorActivity"></activity>
+        <activity android:name=".activity.animation.SvgVectorActivity" />
+        <activity android:name=".activity.animation.AnimaFramework1Activity" />
+        <activity android:name=".activity.animation.ParallaxSplashActivity"
+            android:theme="@style/LightNoAcBarTheme"  ></activity>
     </application>
 
 </manifest>

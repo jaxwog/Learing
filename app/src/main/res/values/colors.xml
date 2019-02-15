@@ -114,4 +114,6 @@
     <!--平行空间效果-->
 
 
+
+    <color name="base_shallow_black">#818181</color>
 </resources>
