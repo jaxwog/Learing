@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.love.jax.view.TouchScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.events.TouchEventSLActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<!--验证ListView和ScrollView的滑动冲突-->
+
+        <!--<ListView-->
+            <!--android:id="@+id/lv_1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/dimen_dp_200dp">-->
+
+        <!--</ListView>-->
+
+        <!--解决ListView展开显示问题-->
+
+        <com.love.jax.view.TouchListView
+            android:id="@+id/lv_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_200dp">
+        </com.love.jax.view.TouchListView>
+
+
+
+        <TextView
+            android:text="@string/string_vat_ordinary_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_200dp" />
+        <TextView
+            android:text="@string/string_vat_ordinary_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_200dp" />
+        <TextView
+            android:text="@string/string_vat_ordinary_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_200dp" />
+        <TextView
+            android:text="@string/string_vat_ordinary_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_200dp" />
+        <TextView
+            android:text="@string/string_vat_ordinary_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_200dp" />
+        <TextView
+            android:text="@string/string_vat_ordinary_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_200dp" />
+        <TextView
+            android:text="@string/string_vat_ordinary_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_200dp" />
+        <TextView
+            android:text="@string/string_vat_ordinary_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_200dp" />
+        <TextView
+            android:text="@string/string_vat_ordinary_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_200dp" />
+        <TextView
+            android:text="@string/string_vat_ordinary_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_200dp" />
+
+
+    </LinearLayout>
+
+</com.love.jax.view.TouchScrollView>

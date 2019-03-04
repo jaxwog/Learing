@@ -82,8 +82,11 @@
             android:theme="@style/LightNoAcBarTheme" />
         <activity android:name=".activity.animation.SvgVectorActivity" />
         <activity android:name=".activity.animation.AnimaFramework1Activity" />
-        <activity android:name=".activity.animation.ParallaxSplashActivity"
-            android:theme="@style/LightNoAcBarTheme"  ></activity>
+        <activity
+            android:name=".activity.animation.ParallaxSplashActivity"
+            android:theme="@style/LightNoAcBarTheme" />
+        <activity android:name=".activity.events.TouchEventSLActivity" />
+        <activity android:name=".activity.events.ViewPagerActivity"></activity>
     </application>
 
 </manifest>

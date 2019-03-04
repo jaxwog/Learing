@@ -8,6 +8,7 @@ import com.love.jax.activity.animation.ParallaxSplashActivity;
 import com.love.jax.fragment.ParallaxFragment;
 import com.love.jax.fragment.ParallaxPagerAdapter;
 import com.love.jax.fragment.ParallaxViewTag;
+import com.love.jax.utils.Logger;
 import com.nineoldandroids.view.ViewHelper;
 
 import android.content.Context;
@@ -41,7 +42,7 @@ public class ParallaxContainer extends FrameLayout implements OnPageChangeListen
      */
     public void setUp(int... childIds) {
         //根据布局文件数组，初始化所有的fragment
-        fragments = new ArrayList<ParallaxFragment>();
+        fragments = new ArrayList<>();
         for (int i = 0; i < childIds.length; i++) {
             ParallaxFragment f = new ParallaxFragment();
             Bundle args = new Bundle();
@@ -75,11 +76,12 @@ public class ParallaxContainer extends FrameLayout implements OnPageChangeListen
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         this.containerWidth = getWidth();
+        Logger.i("tagHH","position"+position);
         //在翻页的过程中，不断根据视图的标签中对应的动画参数，改变视图的位置或者透明度
         //获取到进入的页面
         ParallaxFragment inFragment = null;
         try {
-            inFragment = fragments.get(position - 1);
+            inFragment = fragments.get(position-1);
         } catch (Exception e) {
         }
 

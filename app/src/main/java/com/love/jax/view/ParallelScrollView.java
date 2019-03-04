@@ -23,7 +23,7 @@ public class ParallelScrollView extends HorizontalScrollView {
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
 
-        return true;
+        return false;
     }
 
 }

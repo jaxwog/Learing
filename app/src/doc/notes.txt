@@ -864,10 +864,141 @@ ViewGroup.addView(....ImageView)
 
 ViewGroup.addView(new MyFrameLayout().addView(ImageView))
 
+------------------------------------------事件传递--------------------------
+
+
+在很多的滑动控件嵌套的情况下经常会出现滑动事件冲突等等。
+在自定义控件的时候，需要处理触摸、点击、滑动等事件，需要考虑父容器的这些事件的冲突问题。
+
+事件传递：
+	1.事件传递机制---源码。
+
+	2.处理事件的冲突。
+
+事件：Activity里面、View里面、ViewGroup里面、Key按键。
+
+一、View的事件分发。
+结论：
+	1.控件的Listener事件触发的顺序是先onTouch，再onClick。】
+	2.控件的onTouch返回true，将会onClick事件没有了---阻止了事件的传递。
+	  返回false，才会传递onClick事件(才会传递up事件)
+
+
+源码依据：
+	View的事件分发
+	1.dispatchTouchEvent（）；分发
+	2.onTouchListener-->onTouch方法
+	3.onTouchEvent()
+	4.onClickListener-->onClick方法
+
+
+结论：
+	1.如果onTouchListener的onTouch方法返回了true，那么view里面的onTouchEvent就不会被调用了。
+
+顺序dispatchTouchEvent-->onTouchListener---return false-->onTouchEvent
+	2.如果view为disenable,则：onTouchListener里面不会执行，但是会执行onTouchEvent(event)方法
+
+	3.onTouchEvent方法中的ACTION_UP分支中触发onclick事件监听
+		onTouchListener-->onTouch方法返回true，消耗次事件。down,但是up事件是无法到达onClickListener.
+		onTouchListener-->onTouch方法返回false，不会消耗此事件
+
+二、ViewGroup+View的事件分发
+ViewGroup-->View
+	1.dispatchTouchEvent()
+	2.onTouchEvent();
+	3.onInterceptTouchEvent(); 拦截触摸事件。
+
+1.先接触到事件的是父容器。
+2.顺序：dispatchTouchEvent-->onInterceptTouchEvent----->onTouchListener---return false-->onTouchEvent
+
+dispatchTouchEvent:action--0---view:MyRelativeLayout
+onInterceptTouchEvent:action--0---view:MyRelativeLayout
+	super.dispatchTouchEvent()
+	child.dispatchTouchEvent()
+dispatchTouchEvent:action--0---view:MyButton
+OnTouchListener:acton--0----view:com.ricky.event.MyButton{528154dc VFED..C. ........ 0,37-205,163 #7f080001 app:id/button1}
+onTouchEvent:action--0---view:MyButton
+
+源码：2108行
+	 final boolean disallowIntercept = (mGroupFlags & FLAG_DISALLOW_INTERCEPT) != 0;
+                if (!disallowIntercept) {
+                    intercepted = onInterceptTouchEvent(ev);//调用拦截方法判断
+                    ev.setAction(action); // restore action in case it was changed
+                } else {
+                    intercepted = false;
+                }
+源码：2197行
+	 if (dispatchTransformedTouchEvent(ev, false, child, idBitsToAssign)) {
+
+源码：2520行
+	dispatchTransformedTouchEvent(){
+		 if (child == null) {//如果ViewGroup里面没有子控件就交给自己处理(就是一个纯粹的View)
+			handled = super.dispatchTouchEvent(event);
+		    } else {
+			handled = child.dispatchTouchEvent(event);
+		    }
+	}
+
+作业：
+	1.在ScrollView里面嵌套一个ListView，滑动事件冲突，解决。
+	2.ListView全部展开。
+
+看源码有什么技巧：
+	1.带着疑问或者你推测的结论去看。
+	2.画图、记录笔记
+	3.遍看源码的时候不但地去回溯代码，一定需要反复看。
+	4.要能及时刹住车。
 
 
 
 
 
+一、ViewGroup的dispatchTouchEvent()方法
+	1.mFirstTouchTarget = null;
 
+	if (actionMasked == MotionEvent.ACTION_DOWN) {
+                // Throw away all previous state when starting a new touch gesture.
+                // The framework may have dropped the up or cancel event for the previous gesture
+                // due to an app switch, ANR, or some other state change.
+                cancelAndClearTouchTargets(ev);
+                resetTouchState();
+            }
+
+	private void clearTouchTargets() {
+        TouchTarget target = mFirstTouchTarget;
+        if (target != null) {
+            do {
+                TouchTarget next = target.next;
+                target.recycle();
+                target = next;
+            } while (target != null);
+            mFirstTouchTarget = null;//target置为空了。
+        }
+    }
+
+	2.所有的ViewGroup都是默认不拦截的。
+	（注意：所谓的拦截，是指按下去自身以及以后的后续事件move,up。拦截下来给自己onTouch使用。）
+	    public boolean onInterceptTouchEvent(MotionEvent ev) {
+		return false;
+	    }
+
+	    // Check for interception.
+            final boolean intercepted;
+	    if (actionMasked == MotionEvent.ACTION_DOWN
+                    || mFirstTouchTarget != null) {
+                final boolean disallowIntercept = (mGroupFlags & FLAG_DISALLOW_INTERCEPT) != 0;
+                if (!disallowIntercept) {
+                    intercepted = onInterceptTouchEvent(ev);
+                    ev.setAction(action); // restore action in case it was changed
+                } else {
+                    intercepted = false;
+                }
+            } else {
+                // There are no touch targets and this action is not an initial down
+                // so this view group continues to intercept touches.
+                intercepted = true;
+            }
+
+
+	viewGroup.setDisallowIntercept(true/false)
 

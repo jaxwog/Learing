@@ -9,6 +9,12 @@ import android.widget.ImageView;
 import com.love.jax.R;
 import com.love.jax.view.ParallaxContainer;
 
+
+/**
+ * XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ * 编译版本问题，出现动画无法加载问题
+ * 在低版本可以加载，编译高版本出现无法解析属性问题，待后期排查
+ */
 public class ParallaxSplashActivity extends FragmentActivity {
 
 
