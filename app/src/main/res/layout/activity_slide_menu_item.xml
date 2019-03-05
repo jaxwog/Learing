@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.love.jax.view.CustomSlideMenuItem xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.events.SlideMenuItemActivity">
+
+    <TextView
+        android:id="@+id/tv_left"
+        android:gravity="center|left"
+        android:text="你有消息来自集团信息部"
+        android:background="@color/zteBlue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_dp_60dp" />
+    <TextView
+        android:id="@+id/tv_right"
+        android:gravity="center"
+        android:text="删除"
+        android:background="@color/color_FF3F61"
+        android:layout_width="100dp"
+        android:layout_height="@dimen/dimen_dp_60dp" />
+
+</com.love.jax.view.CustomSlideMenuItem>

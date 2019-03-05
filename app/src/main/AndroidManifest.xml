@@ -87,8 +87,10 @@
             android:theme="@style/LightNoAcBarTheme" />
         <activity android:name=".activity.events.TouchEventSLActivity" />
         <activity android:name=".activity.events.ViewPagerActivity" />
-        <activity android:name=".activity.events.SlideMenuActivity"
-            android:theme="@style/LightNoAcBarTheme"  ></activity>
+        <activity
+            android:name=".activity.events.SlideMenuActivity"
+            android:theme="@style/LightNoAcBarTheme" />
+        <activity android:name=".activity.events.SlideMenuItemActivity"></activity>
     </application>
 
 </manifest>
