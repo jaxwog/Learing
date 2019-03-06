@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/dimen_dp_60dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.events.PaintProgressActivity">
+
+    <com.love.jax.view.CustomProgressBar
+        android:id="@+id/cs_pro_bar"
+        android:layout_width="@dimen/dimen_dp_100dp"
+        android:layout_height="@dimen/dimen_dp_100dp"
+        app:roundProgressColor="#ff00ff"
+        app:textColor="#ff0000"
+        app:textSize="20dp"
+        app:roundWidth="15dp"/>
+
+
+
+</android.support.constraint.ConstraintLayout>
