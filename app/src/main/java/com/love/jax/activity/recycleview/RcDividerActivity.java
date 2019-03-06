@@ -3,7 +3,6 @@ package com.love.jax.activity.recycleview;
 
 
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,7 +11,6 @@ import android.widget.Toast;
 
 import com.love.jax.R;
 import com.love.jax.activity.BaseActivity;
-import com.love.jax.adapter.MyDivItemDecoration;
 import com.love.jax.adapter.MyDivItemGridDecoration;
 import com.love.jax.adapter.MySimpleAdapter;
 import com.love.jax.adapter.MyStagSimpleAdapter;

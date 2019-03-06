@@ -2,15 +2,10 @@ package com.love.jax.activity.animation;
 
 
 import android.annotation.SuppressLint;
-import android.app.ActivityOptions;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.util.Pair;
 import android.support.v7.widget.Toolbar;
-import android.transition.Explode;
 import android.transition.Fade;
-import android.transition.Slide;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -18,13 +13,8 @@ import android.widget.ImageView;
 
 import com.love.jax.R;
 import com.love.jax.activity.BaseActivity;
-import com.love.jax.activity.MainActivity;
-import com.squareup.leakcanary.HahaHelper;
-
-import java.lang.annotation.Target;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**

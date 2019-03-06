@@ -1,27 +1,12 @@
 package com.love.jax.activity.animation;
 
-import android.animation.Animator;
-import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
-import android.animation.TypeEvaluator;
-import android.animation.ValueAnimator;
-import android.graphics.PointF;
-import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AnticipateInterpolator;
-import android.view.animation.AnticipateOvershootInterpolator;
-import android.view.animation.BounceInterpolator;
-import android.view.animation.CycleInterpolator;
-import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 
 import com.love.jax.R;
 import com.love.jax.activity.BaseActivity;
-import com.love.jax.utils.Logger;
 
 import butterknife.BindView;
 

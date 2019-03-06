@@ -14,7 +14,6 @@ import com.love.jax.R;
 import com.love.jax.activity.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class TabLayoutBottomActivity extends BaseActivity {
 

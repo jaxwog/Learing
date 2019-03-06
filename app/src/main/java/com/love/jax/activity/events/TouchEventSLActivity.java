@@ -1,7 +1,6 @@
 package com.love.jax.activity.events;
 
 
-import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -12,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 
 /**

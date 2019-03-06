@@ -1064,3 +1064,18 @@ onTouchEvent:action--0---view:MyButton
             		2）实例：指定中间位置，绘制文本
             		公式： float baselineY = centerY + (fontMetrics.bottom-fontMetrics.top)/2 - fontMetrics.bottom
 
+        =============================高级渲染===========================
+        渲染 Shader：
+            BimapShader位图的图像渲染器
+            LinearGradient线性渲染
+            RadialGradient环形渲染
+                水波纹效果，充电水波纹扩散效果、调色板
+            SweepGradient梯度渲染(扫描渲染)
+                微信等雷达扫描效果。手机卫士垃圾扫描
+            ComposeShader组合渲染
+
+
+        可以绘制图片、颜色块、文字
+        canvas.drawCircle()
+        canvas.drawRect()
+        canvas.drawOval()

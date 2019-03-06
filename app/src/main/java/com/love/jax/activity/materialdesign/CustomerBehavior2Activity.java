@@ -1,8 +1,5 @@
 package com.love.jax.activity.materialdesign;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import com.love.jax.R;
 import com.love.jax.activity.BaseActivity;
 

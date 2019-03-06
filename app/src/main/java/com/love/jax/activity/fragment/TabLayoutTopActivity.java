@@ -13,7 +13,6 @@ import com.love.jax.R;
 import com.love.jax.activity.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * 顶部显示tab

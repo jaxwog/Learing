@@ -1,6 +1,5 @@
 package com.love.jax.activity.events;
 
-import android.os.Bundle;
 import android.view.View;
 
 import com.love.jax.R;

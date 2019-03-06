@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,6 +23,7 @@ import com.love.jax.activity.animation.RevealEffectActivity;
 import com.love.jax.activity.animation.SvgVectorActivity;
 import com.love.jax.activity.events.PaintPathActivity;
 import com.love.jax.activity.events.PaintProgressActivity;
+import com.love.jax.activity.events.SeniorRendActivity;
 import com.love.jax.activity.events.SlideMenuActivity;
 import com.love.jax.activity.events.SlideMenuItemActivity;
 import com.love.jax.activity.events.TouchEventSLActivity;
@@ -108,6 +108,7 @@ public class MainActivity extends BaseActivity {
             ,"底部弹窗","文本输入","标题栏","顶部透明","颜色获取","顶部标题","底部导航","顶部沉浸","底部沉浸","卡片布局","悬浮按钮"
             ,"隐藏交互动画","隐藏动画2","隐藏动画3","平行空间","导航折叠","运转状态1","运转状态2","属性动画","属性动画集","揭露动画"
             ,"转场动画","矢量图像","动画框架一","动画框架二","滑动冲突一","滑动冲突二","侧滑效果三","条目侧滑","画笔一","进度条圆环"
+            ,"高级渲染"
 //            ,"南辕北辙","得陇望蜀","明修栈道","暗度陈仓","叶公好龙","无理取闹","风风火火","恍恍惚惚","德玛西亚"
 //            ,"剑圣偷塔","艾欧尼亚","暗影之道","五光十色","诺克萨斯","德邦总管","加里奥","凯南","武器大师"
 //            ,"金属大师","盖伦","德莱文","卢锡安","战争女神","黑暗骑士","斯嘉丽","黑寡妇","泰勒斯威夫特"
@@ -285,6 +286,10 @@ public class MainActivity extends BaseActivity {
             case "进度条圆环":
                 sBundle.putString(ConfigSet.INTENT_STRING,"进度条圆环");
                 jumpToActivity(PaintProgressActivity.class, sBundle);
+                break;
+            case "高级渲染":
+                sBundle.putString(ConfigSet.INTENT_STRING,"高级渲染");
+                jumpToActivity(SeniorRendActivity.class, sBundle);
                 break;
             default:
                 break;
