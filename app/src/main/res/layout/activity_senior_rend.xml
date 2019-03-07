@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_FF8A91A4"
     tools:context=".activity.events.SeniorRendActivity">
+    <!--设置背景颜色，否则字体显示不出来-->
 
-</android.support.constraint.ConstraintLayout>
+    <com.love.jax.view.LinearGradientTextView
+        android:textSize="@dimen/dimen_sp_25sp"
+        android:text="苦海，泛起爱恨在世间难逃避命运"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/tertiary_text_light"/>
+
+
+</LinearLayout>
