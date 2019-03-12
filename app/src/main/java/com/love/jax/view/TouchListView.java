@@ -22,8 +22,9 @@ public class TouchListView extends ListView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
-        int expandeHeight = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE>>2,MeasureSpec.AT_MOST);
-        super.onMeasure(widthMeasureSpec, expandeHeight);
-//        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        //用于展开ListView内容
+//        int expandeHeight = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE>>2,MeasureSpec.AT_MOST);
+//        super.onMeasure(widthMeasureSpec, expandeHeight);
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 }

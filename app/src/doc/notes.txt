@@ -1079,3 +1079,86 @@ onTouchEvent:action--0---view:MyButton
         canvas.drawCircle()
         canvas.drawRect()
         canvas.drawOval()
+        ===============================《滤镜效果和颜色通道过滤》=========================================
+
+        1.自定义控件
+        2.动画--属性动画、补间动画、自绘动画（ValueAnimator+onDraw）
+        3.渲染效果--高级渲染、滤镜效果、颜色通道过滤（矩阵变换--高等数学，颜色矩阵）
+
+
+        一、滤镜效果
+        对图像进行一定的过滤加工处理。使用Paint设置滤镜效果。
+        1.Alpha滤镜处理
+        MaskFilter
+        paint.setMaskFilter(maskfilter)
+        	(1).模糊遮罩滤镜（BlurMaskFilter） 采用c语言写的源码，效率更高（每个像素都需要计算）
+        	(2).浮雕遮罩滤镜（EmbossMaskFilter）-----已过时
+
+        2.颜色RGB的滤镜处理
+        ColorMatrix
+        滤镜的所有处理效果都是通过颜色矩阵的变换实现的。
+        比如：美颜相机实现的特效（高光、复古、黑白）
+
+        	（1）什么是矩阵？
+
+        R
+        G>>1
+        B>>2
+
+        	(2)例子：通过矩阵变换讲一个图片、颜色块，过滤掉其中的红色、绿色（只留下蓝色）
+
+        	（3）色彩运算
+        		1.色彩的平移运算（加法运算）
+
+        		2.色彩的缩放运算（乘法运算）
+
+        		运用：反相效果
+        		RGB=100，200，250
+        		RGB=155，55，5
+        		效果：1.黑白图片处理
+        			2.色彩发色效果
+
+
+
+        研究ColorMatrix的API
+        1、构造方法
+        //		ColorMatrix matrix = new ColorMatrix(new float[]{
+        //		ColorMatrix matrix = new ColorMatrix();
+        //		matrix.set(src)
+        2.设置色彩的缩放函数
+        	matrix.setScale(1, 1, 1.4f, 1);
+        3.设置饱和度
+        	//饱和度设置（1，是原来不变；0灰色；>1增加饱和度）
+        		matrix.setSaturation(progress);
+        4.色彩旋转函数
+        		/**
+        		 * axis,代表绕哪一个轴旋转，0,1,2
+        		 * 	(0红色轴，1绿色，2蓝色)
+        		 * degrees：旋转的度数
+        		 */
+        		matrix.setRotate(0, progress);
+
+
+
+        5.ColorFilter使用的子类
+        	ColorMatrixColorFilter：色彩矩阵的颜色顾虑器。
+        	LightingColorFilter：过滤颜色和增强色彩的方法。（光照颜色过滤器）
+        	PorterDuffColorFilter：图形混合滤镜（图形学的一个理论飞跃）
+
+        	Xfermode
+1.PorterDuff.Mode.CLEAR　　 　所绘制不会提交到画布上
+2.PorterDuff.Mode.SRC　　　　　显示上层绘制图片
+3.PorterDuff.Mode.DST　　　　　显示下层绘制图片
+4.PorterDuff.Mode.SRC_OVER　　正常绘制显示，上下层绘制叠盖。
+5.PorterDuff.Mode.DST_OVER　　上下层都显示。下层居上显示。
+6.PorterDuff.Mode.SRC_IN　　　　取两层绘制交集。显示上层。
+7.PorterDuff.Mode.DST_IN　　　　取两层绘制交集。显示下层。
+8.PorterDuff.Mode.SRC_OUT　　　取上层绘制非交集部分。
+9.PorterDuff.Mode.DST_OUT　　　取下层绘制非交集部分。
+10.PorterDuff.Mode.SRC_ATOP　　取下层非交集部分与上层交集部分
+11.PorterDuff.Mode.DST_ATOP　　取上层非交集部分与下层交集部分
+12.PorterDuff.Mode.XOR　　　　　异或：去除两图层交集部分
+13.PorterDuff.Mode.DARKEN　　　取两图层全部区域，交集部分颜色加深
+14.PorterDuff.Mode.LIGHTEN　　　取两图层全部，点亮交集部分颜色
+15.PorterDuff.Mode.MULTIPLY　　取两图层交集部分叠加后颜色
+16.PorterDuff.Mode.SCREEN　　　 取两图层全部区域，交集部分变为透明色

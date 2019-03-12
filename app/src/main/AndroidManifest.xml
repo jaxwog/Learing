@@ -93,7 +93,8 @@
         <activity android:name=".activity.events.SlideMenuItemActivity" />
         <activity android:name=".activity.events.PaintPathActivity" />
         <activity android:name=".activity.events.PaintProgressActivity" />
-        <activity android:name=".activity.events.SeniorRendActivity"></activity>
+        <activity android:name=".activity.events.SeniorRendActivity" />
+        <activity android:name=".activity.events.MaskFilterActivity"></activity>
     </application>
 
 </manifest>

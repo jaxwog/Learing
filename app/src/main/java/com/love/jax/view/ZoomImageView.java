@@ -48,7 +48,6 @@ public class ZoomImageView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        // TODO Auto-generated method stub
         super.onDraw(canvas);
         canvas.drawBitmap(bitmap, 0, 0, null);
         //画制作好的圆形图片
