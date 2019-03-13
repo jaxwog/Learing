@@ -1145,7 +1145,7 @@ onTouchEvent:action--0---view:MyButton
         	LightingColorFilter：过滤颜色和增强色彩的方法。（光照颜色过滤器）
         	PorterDuffColorFilter：图形混合滤镜（图形学的一个理论飞跃）
 
-        	Xfermode
+        =======================================Xfermode======================
 1.PorterDuff.Mode.CLEAR　　 　所绘制不会提交到画布上
 2.PorterDuff.Mode.SRC　　　　　显示上层绘制图片
 3.PorterDuff.Mode.DST　　　　　显示下层绘制图片
@@ -1162,3 +1162,36 @@ onTouchEvent:action--0---view:MyButton
 14.PorterDuff.Mode.LIGHTEN　　　取两图层全部，点亮交集部分颜色
 15.PorterDuff.Mode.MULTIPLY　　取两图层交集部分叠加后颜色
 16.PorterDuff.Mode.SCREEN　　　 取两图层全部区域，交集部分变为透明色
+
+
+ ========================================Paint画笔================================
+
+
+Canvas的使用以及高级部分
+
+Canvas：画布、画板。
+一、Canvas基本的使用
+
+绘制直线、点、几何图形、曲线、Bitmap、圆弧等等
+Path路径来绘制线条
+
+1.Region区域
+
+
+Canvas画布的正确的理解：
+	1）当canvas执行drawXXX的时候就会新建一个新的画布图层
+		canvas.drawRect(r, paint);
+	2）虽然后面新建了一个画布图层，但是还是会沿用之前设置的平移变换。不可逆的。（save和restore来解决）
+		canvas.translate(50, 50);
+		//当canvas执行drawXXX的时候就会新建一个新的画布图层
+		canvas.drawRect(r, paint);
+		RectF r2 = new RectF(0, 0, 400, 500);
+		paint.setColor(Color.RED);
+		//虽然新建了一个画布图层，但是还是会沿用之前设置的平移变换。不可逆的。（save和restore来解决）
+		canvas.drawRect(r2, paint);
+
+
+		Drawable就是一个可画的对象，其可能是一张位图（BitmapDrawable），
+		也可能是一个图形（ShapeDrawable），还有可能是一个图层（LayerDrawable），
+		我们根据画图的需求，创建相应的可画对象，就可以将这个可画对象当作一块“画布（Canvas）”，
+		在其上面操作可画对象，并最终将这种可画对象显示在画布上，有点类似于“内存画布“。
