@@ -22,6 +22,7 @@ import com.love.jax.activity.animation.ParallaxSplashActivity;
 import com.love.jax.activity.animation.RevealEffectActivity;
 import com.love.jax.activity.animation.SvgVectorActivity;
 import com.love.jax.activity.events.CanvasBasisActivity;
+import com.love.jax.activity.events.CanvasSeniorActivity;
 import com.love.jax.activity.events.MaskFilterActivity;
 import com.love.jax.activity.events.PaintPathActivity;
 import com.love.jax.activity.events.PaintProgressActivity;
@@ -111,7 +112,7 @@ public class MainActivity extends BaseActivity {
             ,"底部弹窗","文本输入","标题栏","顶部透明","颜色获取","顶部标题","底部导航","顶部沉浸","底部沉浸","卡片布局","悬浮按钮"
             ,"隐藏交互动画","隐藏动画2","隐藏动画3","平行空间","导航折叠","运转状态1","运转状态2","属性动画","属性动画集","揭露动画"
             ,"转场动画","矢量图像","动画框架一","动画框架二","滑动冲突一","滑动冲突二","侧滑效果三","条目侧滑","画笔一","进度条圆环"
-            ,"高级渲染","滤镜效果","画布基础"
+            ,"高级渲染","滤镜效果","基础画布","高级画布"
 //            ,"南辕北辙","得陇望蜀","明修栈道","暗度陈仓","叶公好龙","无理取闹","风风火火","恍恍惚惚","德玛西亚"
 //            ,"剑圣偷塔","艾欧尼亚","暗影之道","五光十色","诺克萨斯","德邦总管","加里奥","凯南","武器大师"
 //            ,"金属大师","盖伦","德莱文","卢锡安","战争女神","黑暗骑士","斯嘉丽","黑寡妇","泰勒斯威夫特"
@@ -298,9 +299,13 @@ public class MainActivity extends BaseActivity {
                 sBundle.putString(ConfigSet.INTENT_STRING,"滤镜效果");
                 jumpToActivity(MaskFilterActivity.class, sBundle);
                 break;
-            case "画布基础":
-                sBundle.putString(ConfigSet.INTENT_STRING,"画布基础");
+            case "基础画布":
+                sBundle.putString(ConfigSet.INTENT_STRING,"基础画布");
                 jumpToActivity(CanvasBasisActivity.class, sBundle);
+                break;
+            case "高级画布":
+                sBundle.putString(ConfigSet.INTENT_STRING,"高级画布");
+                jumpToActivity(CanvasSeniorActivity.class, sBundle);
                 break;
             default:
                 break;

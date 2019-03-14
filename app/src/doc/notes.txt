@@ -1188,6 +1188,7 @@ Canvas画布的正确的理解：
 		RectF r2 = new RectF(0, 0, 400, 500);
 		paint.setColor(Color.RED);
 		//虽然新建了一个画布图层，但是还是会沿用之前设置的平移变换。不可逆的。（save和restore来解决）
+		使用画板栈，存储canvas对象
 		canvas.drawRect(r2, paint);
 
 

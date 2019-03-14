@@ -95,7 +95,8 @@
         <activity android:name=".activity.events.PaintProgressActivity" />
         <activity android:name=".activity.events.SeniorRendActivity" />
         <activity android:name=".activity.events.MaskFilterActivity" />
-        <activity android:name=".activity.events.CanvasBasisActivity"></activity>
+        <activity android:name=".activity.events.CanvasBasisActivity" />
+        <activity android:name=".activity.events.CanvasSeniorActivity"></activity>
     </application>
 
 </manifest>

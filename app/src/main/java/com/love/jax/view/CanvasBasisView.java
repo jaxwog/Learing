@@ -86,6 +86,7 @@ public class CanvasBasisView extends View{
         RectF r = new RectF(200, 200, 400, 500);
         canvas.drawRect(r, paint);
         paint.setColor(Color.BLUE);
+        //Canvas变换操作不会对前面造成影响
         canvas.clipRect(new Rect(250, 250, 300, 400));
         //裁剪后的画布显示颜色，为矩形实体块
         canvas.drawColor(Color.YELLOW);
