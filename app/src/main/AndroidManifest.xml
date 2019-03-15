@@ -96,7 +96,8 @@
         <activity android:name=".activity.events.SeniorRendActivity" />
         <activity android:name=".activity.events.MaskFilterActivity" />
         <activity android:name=".activity.events.CanvasBasisActivity" />
-        <activity android:name=".activity.events.CanvasSeniorActivity"></activity>
+        <activity android:name=".activity.events.CanvasSeniorActivity" />
+        <activity android:name=".activity.events.SearchIconActivity"></activity>
     </application>
 
 </manifest>
