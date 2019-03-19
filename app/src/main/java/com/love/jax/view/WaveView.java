@@ -44,6 +44,9 @@ public class WaveView  extends View {
         int originY = 1500;
         if(dy<originY + 150){
             dy += 10;
+        }else {
+            animator.removeAllUpdateListeners();
+            animator.cancel();
         }
         int halfWaveLength = waveLength/2;
         path.moveTo(-waveLength+dx, originY-dy);
