@@ -40,7 +40,7 @@ public class RcTouchActivity extends BaseActivity implements StartDragListener{
     protected void initView() {
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
 
-        List<QQMessage> list = DataUtils.init();
+        List<QQMessage> list = DataUtils.initQQ();
         adapter = new QQAdapter(list,this);
         recyclerview.setAdapter(adapter);
 

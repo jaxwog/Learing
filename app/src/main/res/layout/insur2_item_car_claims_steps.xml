@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_claims"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_dp_96dp">
+    <com.love.jax.view.CarClaimsView
+        android:id="@+id/ccv_claims"
+        android:layout_width="@dimen/dimen_dp_60dp"
+        android:layout_height="@dimen/dimen_dp_96dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_dp_96dp">
+
+
+        <TextView
+            android:id="@+id/tv_car_claims_steps_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_dp_16dp"
+            android:gravity="center_vertical"
+            android:minHeight="@dimen/dimen_dp_20dp"
+            android:text="计算赔款中"
+            android:textColor="@color/color_4C5979"
+            android:textSize="@dimen/dimen_sp_14sp" />
+
+        <TextView
+            android:id="@+id/tv_car_claims_steps_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_car_claims_steps_title"
+            android:gravity="center_vertical"
+            android:minHeight="@dimen/dimen_dp_20dp"
+            android:text="正在计算赔款，请耐心等候"
+            android:textColor="@color/color_8A91A4"
+            android:textSize="@dimen/dimen_sp_14sp" />
+
+        <TextView
+            android:id="@+id/tv_car_claims_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_car_claims_steps_content"
+            android:layout_marginTop="@dimen/dimen_dp_6dp"
+            android:layout_marginBottom="@dimen/dimen_dp_16dp"
+            android:minHeight="@dimen/dimen_dp_17dp"
+            android:gravity="center_vertical"
+            android:text="2019年01月14日 19:30"
+            android:textColor="@color/color_8A91A4"
+            android:textSize="@dimen/dimen_sp_12sp" />
+    <View
+
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_F4F6FC"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_dp_1dp"/>
+
+    </RelativeLayout>
+    </LinearLayout>
+
+

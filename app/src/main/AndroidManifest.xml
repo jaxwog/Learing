@@ -103,7 +103,8 @@
             android:name=".activity.events.PathMeasureActivity"
             android:hardwareAccelerated="false" />
         <activity android:name=".activity.events.PathAnimaActivity" />
-        <activity android:name=".activity.events.SearchView2Activity"></activity>
+        <activity android:name=".activity.events.SearchView2Activity" />
+        <activity android:name=".activity.tkjobs.CarClaimsInfoActivity"></activity>
     </application>
 
 </manifest>

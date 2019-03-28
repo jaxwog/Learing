@@ -7,7 +7,7 @@ import java.util.List;
 
 public class DataUtils {
 
-    public static List<QQMessage> init() {
+    public static List<QQMessage> initQQ() {
         List<QQMessage> list = new ArrayList<QQMessage>();
         list.add(new QQMessage(R.mipmap.touch_help_logo_1, "Java高级交流群", "苍老师:不对啊", "14:28", R
 				.mipmap.touch_help_pop));

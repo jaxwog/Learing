@@ -61,6 +61,7 @@ import com.love.jax.activity.recycleview.RcDividerActivity;
 import com.love.jax.activity.recycleview.RcSimpleActivity;
 import com.love.jax.activity.recycleview.RcTouchActivity;
 import com.love.jax.activity.recycleview.ThemeActivity;
+import com.love.jax.activity.tkjobs.CarClaimsInfoActivity;
 import com.love.jax.activity.tkjobs.OrderActivity;
 import com.love.jax.adapter.InFuncAdapter;
 import com.love.jax.bean.LettersEntity;
@@ -113,7 +114,7 @@ public class MainActivity extends BaseActivity {
 
     InFuncAdapter mInFuncAdapter;
     private String[] mStrings = new String[]{
-            "屏幕适配","商品订单","主题适配","列表简单使用","列表间隔线","列表头尾","列表交互动画","侧滑效果一","侧滑效果二"
+            "屏幕适配","商品订单","理赔列表","主题适配","列表简单使用","列表间隔线","列表头尾","列表交互动画","侧滑效果一","侧滑效果二"
             ,"底部弹窗","文本输入","标题栏","顶部透明","颜色获取","顶部标题","底部导航","顶部沉浸","底部沉浸","卡片布局","悬浮按钮"
             ,"隐藏交互动画","隐藏动画2","隐藏动画3","平行空间","导航折叠","运转状态1","运转状态2","属性动画","属性动画集","揭露动画"
             ,"转场动画","矢量图像","动画框架一","动画框架二","滑动冲突一","滑动冲突二","侧滑效果三","条目侧滑","画笔一","进度条圆环"
@@ -143,6 +144,11 @@ public class MainActivity extends BaseActivity {
                 OrderEntity entity = new OrderEntity("超声波洁牙套餐","20181115","高端款","400",9);
                 sBundle.putString(ConfigSet.INTENT_STRING, mGson.toJson(entity));
                 jumpToActivity(OrderActivity.class, sBundle);
+                break;
+            case "理赔列表":
+                //传递过去json数据
+                sBundle.putString(ConfigSet.INTENT_STRING,"理赔列表");
+                jumpToActivity(CarClaimsInfoActivity.class, sBundle);
                 break;
             case "列表简单使用":
                 sBundle.putString(ConfigSet.INTENT_STRING,"列表简单使用");

@@ -51,7 +51,8 @@ public class RcSimpleActivity extends BaseActivity {
 
             @Override
             public void onItemClick(View view, int position) {
-                Toast.makeText(mContext, "点我干嘛"+position, Toast.LENGTH_LONG).show();
+
+                Toast.makeText(mContext, "点我干嘛"+position+view.getId(), Toast.LENGTH_LONG).show();
             }
         });
 
