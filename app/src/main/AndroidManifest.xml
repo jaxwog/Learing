@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.love.jax">
 
+    <!-- 读写sd卡权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 参数设置权限 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
     <application
         android:name=".JaxApplication"
         android:allowBackup="true"
@@ -104,7 +111,11 @@
             android:hardwareAccelerated="false" />
         <activity android:name=".activity.events.PathAnimaActivity" />
         <activity android:name=".activity.events.SearchView2Activity" />
-        <activity android:name=".activity.tkjobs.CarClaimsInfoActivity"></activity>
+        <activity android:name=".activity.tkjobs.CarClaimsInfoActivity" />
+        <activity
+            android:name=".activity.recycleview.CityListActivity"
+            android:theme="@style/LightNoAcBarTheme" />
+        <activity android:name=".activity.tkjobs.SelectCityActivity"></activity>
     </application>
 
 </manifest>

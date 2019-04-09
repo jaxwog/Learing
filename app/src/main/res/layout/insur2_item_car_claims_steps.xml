@@ -3,15 +3,15 @@
     android:id="@+id/rl_claims"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dimen_dp_96dp">
+    android:layout_height="match_parent">
     <com.love.jax.view.CarClaimsView
         android:id="@+id/ccv_claims"
         android:layout_width="@dimen/dimen_dp_60dp"
-        android:layout_height="@dimen/dimen_dp_96dp" />
+        android:layout_height="@dimen/dimen_dp_72dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_dp_96dp">
+        android:layout_height="@dimen/dimen_dp_72dp">
 
 
         <TextView
@@ -37,6 +37,7 @@
             android:textSize="@dimen/dimen_sp_14sp" />
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_car_claims_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

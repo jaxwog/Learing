@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.tkjobs.SelectCityActivity">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_54dp"
+            android:orientation="horizontal"
+            android:background="@color/white">
+            <RelativeLayout
+                android:id="@+id/tab_report_0"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/text_report_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="省份"
+                    android:textColor="@color/color_4C5979"
+                    android:textSize="@dimen/dimen_sp_16sp"/>
+                <ImageView
+                    android:layout_marginRight="@dimen/dimen_dp_6dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/health_next_arrows"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:id="@+id/cursor_report_0"
+                    android:layout_width="@dimen/dimen_dp_48dp"
+                    android:layout_height="@dimen/dimen_dp_2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/color_517df7"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/tab_report_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/text_report_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="城市"
+                    android:textColor="@color/color_1F2845"
+                    android:textSize="@dimen/dimen_sp_16sp"/>
+                <ImageView
+                    android:layout_marginRight="@dimen/dimen_dp_6dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/health_next_arrows"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:id="@+id/cursor_report_1"
+                    android:layout_width="@dimen/dimen_dp_48dp"
+                    android:layout_height="@dimen/dimen_dp_2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/color_517df7"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/tab_report_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/text_report_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="县区"
+                    android:textColor="@color/color_8A91A4"
+                    android:textSize="@dimen/dimen_sp_16sp"/>
+                <View
+                    android:id="@+id/cursor_report_2"
+                    android:layout_width="@dimen/dimen_dp_48dp"
+                    android:layout_height="@dimen/dimen_dp_2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/color_517df7"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    <View
+        android:background="@color/color_F4F6FC"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_dp_1dp"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rec_selct_province"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/rec_selct_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/rec_selct_county"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
+
+</LinearLayout>

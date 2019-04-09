@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/content"
+    android:background="@color/color_FFFFFF"
+    android:orientation="vertical">
+
+    <TextView
+        android:paddingLeft="@dimen/dimen_dp_30dp"
+        android:paddingRight="@dimen/dimen_dp_18dp"
+       android:paddingTop="@dimen/dimen_dp_16dp"
+        android:paddingBottom="16dp"
+        android:minHeight="@dimen/dimen_dp_20dp"
+        android:layout_gravity="center"
+        android:id="@+id/tv_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="全部服务"
+        android:textColor="@color/color_1F2845"
+        android:textSize="@dimen/dimen_sp_14sp" />
+    <View
+
+        android:layout_marginLeft="@dimen/dimen_dp_18dp"
+        android:layout_marginRight="@dimen/dimen_dp_18dp"
+        android:background="@color/color_F4F6FC"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_dp_1dp"/>
+
+</LinearLayout>

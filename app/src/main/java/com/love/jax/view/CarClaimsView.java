@@ -54,7 +54,7 @@ public class CarClaimsView extends View {
         mBlueR = ScreenUtil.dip2px(mContext, 7.5f);
         mBlueRBig = ScreenUtil.dip2px(mContext, 10.5f);
         mDuckR = ScreenUtil.dip2px(mContext, 4.5f);
-        mLeng = ScreenUtil.dip2px(mContext, 96f);
+        mLeng = ScreenUtil.dip2px(mContext, 72f);
         mSize = 5;
 
     }

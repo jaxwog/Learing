@@ -2,9 +2,14 @@ package com.love.jax;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Environment;
 
+import com.love.jax.bean.dao.DbHelper;
+import com.love.jax.callback.IDbHelper;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
+
+import java.io.File;
 
 /**
  * com.love.jax
@@ -15,13 +20,22 @@ public class JaxApplication extends Application {
 
     private  static RefWatcher refWatcher;
     private  static JaxApplication instance;
+//    public static final String FILE_PATH = Environment.getExternalStorageDirectory() + File.separator
+//            + "AAA" + File.separator+ "Android" + File.separator
+//            + "files" + File.separator;
+
+    public static final String FILE_PATH = "/data/data/com.love.jax/databases/";
+
+    private IDbHelper dbHelper;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        dbHelper = DbHelper.getInstance(this, FILE_PATH, "carrepairlocation.db");
         refWatcher= setupLeakCanary();
         instance = this;
     }
+
 
     public static JaxApplication getInstance(){
         return instance;
@@ -32,7 +46,10 @@ public class JaxApplication extends Application {
     }
 
 
-
+    //获取数据库
+    public IDbHelper getDataBase() {
+        return dbHelper;
+    }
 
     private RefWatcher setupLeakCanary() {
         //如果当前的进程是用来给LeakCanary进行堆分析的则return
