@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.recycleview.CityListActivity"
+    android:orientation="vertical">
+  <include layout="@layout/search_title_backup"/>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rec_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+    </android.support.v7.widget.RecyclerView>
+
+    <com.love.jax.view.IndexBar
+        android:visibility="gone"
+        android:id="@+id/indexBar"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp"
+        android:layout_width="18dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        app:indexBarPressBackground="@color/color_F4F6FC"
+        app:indexBarTextSize="12sp"/>
+</FrameLayout>
+</LinearLayout>

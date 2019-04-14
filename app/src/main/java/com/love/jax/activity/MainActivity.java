@@ -1,7 +1,13 @@
 package com.love.jax.activity;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -11,8 +17,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.love.jax.JaxApplication;
 import com.love.jax.R;
 import com.love.jax.activity.animation.AnimaFramework1Activity;
 import com.love.jax.activity.animation.AnimatorSetActivity;
@@ -56,6 +64,7 @@ import com.love.jax.activity.materialdesign.ToolbarActivity;
 import com.love.jax.activity.materialdesign.TranslucentActivity;
 import com.love.jax.activity.materialdesign.TranslucentTopActivity;
 import com.love.jax.activity.materialdesign.TransparentToolbarActivity;
+import com.love.jax.activity.recycleview.CityListActivity;
 import com.love.jax.activity.recycleview.HeaderActivity;
 import com.love.jax.activity.recycleview.RcDividerActivity;
 import com.love.jax.activity.recycleview.RcSimpleActivity;
@@ -63,9 +72,12 @@ import com.love.jax.activity.recycleview.RcTouchActivity;
 import com.love.jax.activity.recycleview.ThemeActivity;
 import com.love.jax.activity.tkjobs.CarClaimsInfoActivity;
 import com.love.jax.activity.tkjobs.OrderActivity;
+import com.love.jax.activity.tkjobs.SelectCityActivity;
 import com.love.jax.adapter.InFuncAdapter;
 import com.love.jax.bean.LettersEntity;
 import com.love.jax.bean.OrderEntity;
+import com.love.jax.bean.dao.DbHelper;
+import com.love.jax.callback.IDbHelper;
 import com.love.jax.utils.ConfigSet;
 import com.love.jax.utils.ListUtils;
 import com.love.jax.utils.Logger;
@@ -73,6 +85,7 @@ import com.love.jax.utils.StringShowUtils;
 import com.love.jax.view.CanvasBasisView;
 import com.love.jax.view.HistoryFlowLayout;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -118,7 +131,7 @@ public class MainActivity extends BaseActivity {
             ,"底部弹窗","文本输入","标题栏","顶部透明","颜色获取","顶部标题","底部导航","顶部沉浸","底部沉浸","卡片布局","悬浮按钮"
             ,"隐藏交互动画","隐藏动画2","隐藏动画3","平行空间","导航折叠","运转状态1","运转状态2","属性动画","属性动画集","揭露动画"
             ,"转场动画","矢量图像","动画框架一","动画框架二","滑动冲突一","滑动冲突二","侧滑效果三","条目侧滑","画笔一","进度条圆环"
-            ,"高级渲染","滤镜效果","基础画布","高级画布","搜索图标一","搜索图标二","波形路径","路径截取","波浪行驶"
+            ,"高级渲染","滤镜效果","基础画布","高级画布","搜索图标一","搜索图标二","波形路径","路径截取","波浪行驶","城市列表","城市选择"
 //            ,"南辕北辙","得陇望蜀","明修栈道","暗度陈仓","叶公好龙","无理取闹","风风火火","恍恍惚惚","德玛西亚"
 //            ,"剑圣偷塔","艾欧尼亚","暗影之道","五光十色","诺克萨斯","德邦总管","加里奥","凯南","武器大师"
 //            ,"金属大师","盖伦","德莱文","卢锡安","战争女神","黑暗骑士","斯嘉丽","黑寡妇","泰勒斯威夫特"
@@ -338,6 +351,23 @@ public class MainActivity extends BaseActivity {
                 sBundle.putString(ConfigSet.INTENT_STRING,"波浪行驶");
                 jumpToActivity(PathAnimaActivity.class, sBundle);
                 break;
+            case "城市列表":
+                // 判断环境兼容，检查自己的权限，是否被同意
+//                if (ContextCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+//                    //如果不同意，就去请求权限   参数1：上下文，2：权限，3：请求码
+//                    ActivityCompat.requestPermissions(this,new String []{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+//                }else {
+//                    Logger.i("wog","同意权限信息了222");
+//
+//                }
+                sBundle.putString(ConfigSet.INTENT_STRING,"城市列表");
+                jumpToActivity(CityListActivity.class, sBundle);
+
+                break;
+            case "城市选择":
+                sBundle.putString(ConfigSet.INTENT_STRING,"城市选择");
+                jumpToActivity(SelectCityActivity.class, sBundle);
+                break;
             default:
                 break;
 
@@ -545,5 +575,19 @@ public class MainActivity extends BaseActivity {
         super.onDestroy();
     }
 
-
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        //判断请求码
+        switch (requestCode){
+            case 1:
+                //如果同意，就拨打
+                if (grantResults.length>0&&grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                   Logger.i("wog","同意权限信息了111");
+                }else{
+                    Toast.makeText(this,"哈哈哈",Toast.LENGTH_SHORT).show();
+                }
+                break;
+        }
+    }
 }
