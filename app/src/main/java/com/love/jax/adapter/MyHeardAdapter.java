@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.love.jax.R;
+import com.love.jax.bean.table.province;
+import com.love.jax.utils.ListUtils;
 
 import java.util.List;
 
@@ -21,6 +23,14 @@ public class MyHeardAdapter extends RecyclerView.Adapter<MyHeardAdapter.ViewHold
     public MyHeardAdapter(List<String> list) {
         // TODO Auto-generated constructor stub
         this.list = list;
+    }
+
+    public void addDatas(List<String> list){
+        if (!ListUtils.isEmpty(list)) {
+            list.addAll(list);
+            notifyDataSetChanged();
+        }
+
     }
 
 

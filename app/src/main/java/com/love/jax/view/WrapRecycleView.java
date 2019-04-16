@@ -49,6 +49,15 @@ public class WrapRecycleView extends RecyclerView {
             }
         }
     }
+    public void delFooterView(View v){
+       mFooterViewInfos.clear();
+        if (mAdapter != null) {
+            if (!(mAdapter instanceof HeaderViewRecycleAdapter)) {
+                mAdapter = new HeaderViewRecycleAdapter(mHeaderViewInfos, mFooterViewInfos, mAdapter);
+            }
+        }
+    }
+
 
 
     @Override
