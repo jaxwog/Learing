@@ -84,6 +84,7 @@ import com.love.jax.utils.Logger;
 import com.love.jax.utils.StringShowUtils;
 import com.love.jax.view.CanvasBasisView;
 import com.love.jax.view.HistoryFlowLayout;
+import com.love.jax.view.search.LimitEditText;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -101,7 +102,7 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.rec_but)
     RecyclerView mRecFunction;
     @BindView(R.id.et_search)
-    EditText mEditText;
+    LimitEditText mEditText;
     @BindView(R.id.iv_delect_tv)
     ImageView mViewdel;//搜索框内容删除
     @BindView(R.id.iv_back)
@@ -455,16 +456,18 @@ public class MainActivity extends BaseActivity {
         mEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                Logger.e("wog","beforeTextChanged:"+s + "\nstart:"+start+"\ncount:"+count+"\nafter:"+after);
 
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                Logger.e("wog","onTextChanged:"+s + "\nstart:"+start+"\ncount:"+count);
             }
 
             @Override
             public void afterTextChanged(Editable s) {
+                Logger.e("wog","afterTextChanged:"+s );
                 if (!s.toString().trim().isEmpty()){
                     mViewdel.setVisibility(View.VISIBLE);
                 }else {

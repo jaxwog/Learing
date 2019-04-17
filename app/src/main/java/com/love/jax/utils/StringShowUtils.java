@@ -82,6 +82,18 @@ public class StringShowUtils {
         return false;
     }
 
+    public static boolean getWordNumOrLett(String word){
+        if (word.isEmpty()) {
+            return false;
+        }
+        Pattern pattern = Pattern.compile("^[0-9A-Za-z]*");
+        Matcher isNum = pattern.matcher(word);
+        if(isNum.matches() ){
+            return true;
+        }
+        return false;
+    }
+
     /**
      * 判断字符串是否为拼音
      * @param word 需要判断的字符串
