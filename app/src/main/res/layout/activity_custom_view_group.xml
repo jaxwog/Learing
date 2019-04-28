@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.love.jax.view.CustomViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/zteBlue"
+    tools:context=".activity.animation.CustomViewGroupActivity">
+
+    <TextView
+        android:text="我是测试控件1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="我是测试控件2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="我是测试控件3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="我是测试控件4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="我是测试控件5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</com.love.jax.view.CustomViewGroup>

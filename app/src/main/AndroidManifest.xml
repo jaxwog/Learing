@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.love.jax">
-
     <!-- 读写sd卡权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <!-- 参数设置权限 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 参数设置权限 -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
@@ -17,6 +15,7 @@
         android:roundIcon="@mipmap/jax_logo"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme">
+        <activity android:name=".activity.animation.CustomViewGroupActivity"></activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -115,7 +114,7 @@
         <activity
             android:name=".activity.recycleview.CityListActivity"
             android:theme="@style/LightNoAcBarTheme" />
-        <activity android:name=".activity.tkjobs.SelectCityActivity"></activity>
+        <activity android:name=".activity.tkjobs.SelectCityActivity" />
     </application>
 
 </manifest>

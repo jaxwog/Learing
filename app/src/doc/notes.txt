@@ -1331,7 +1331,71 @@ int 32位：010111100011100
 写自定义控件的时候，我们要去获得自己的宽高来进行一些计算，必须先经过measure，才能获得到宽高---不是getWidth(),而是getMeasuredWidth()
 也就是当我们重写onMeasure的时候，我们需要在里面调用child.measure()才能获取child的宽高。
 
+从规格当中获取mode和value：
+	final int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        final int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+反过来将mode和value合成一个规格呢：
+	MeasureSpec.makeMeasureSpec(resultSize, resultMode);
 
+ViewGroup:
+	设计它的目的是什么？
+	1）作为容器处理焦点问题。
+	2）作为容器处理事件分发问题；
+	3）控制容器添加View的流程：addView()，removeView()
+	4）抽出了一些容器的公共的工具方法：measureChildren，measureChild,measureChildWidthMargins方法。
+
+
+-------------------重点：-----------------------
+玩自定义控件的时候，需要进行测量measure，如何做好这件事？
+两种情况：
+	1.继承自View的子类
+		只需要重写onMeasure测量好自己的宽高就可以了。
+		最终调用setMeasuredDimension()保存好自己的测量宽高。
+		套路：
+		int mode = MeasureSpec.getMode(widthMeasureSpec);
+		int Size = MeasureSpec.getSize(widthMeasureSpec);
+		int viewSize = 0;
+		switch(mode){
+			case MeasureSpec.EXACTLY:
+				viewSize = size;//当前view的尺寸就为父容器的尺寸
+				break;
+			case MeasureSpec.AT_MOST:
+				viewSize = Math.min(size, getContentSize());//当前view的尺寸就为内容尺寸和父容器尺寸当中的最小值。
+				break;
+			case MeasureSpec.UNSPECIFIED:
+				viewSize = getContentSize();//内容有多大，久设置多大尺寸。
+				break;
+			default:
+				break;
+		}
+		//setMeasuredDimension(width, height);
+		setMeasuredDimension(size);
+
+	2.继承自ViewGroup的子类：
+		不但需要重写onMeasure测量自己，还要测量子控件的规格大小。
+
+		可以直接使用ViewGroup的工具方法来测量里面的子控件，也可以自己来实现这一套子控件的测量（比如：RelativeLayout）
+	套路：
+		//1.测量自己的尺寸
+		ViewGroup.onMeasure();
+			//1.1 为每一个child计算测量规格信息(MeasureSpec)
+			ViewGroup.getChildMeasureSpec();
+			//1.2 将上面测量后的结果，传给每一个子View，子view测量自己的尺寸
+			child.measure();
+
+			//1.3 子View测量完，ViewGroup就可以拿到这个子View的测量后的尺寸了
+			child.getChildMeasuredSize();//child.getMeasuredWidth()和child.getMeasuredHeight()
+			//1.4ViewGroup自己就可以根据自身的情况(Padding等等),来计算自己的尺寸
+			ViewGroup.calculateSelfSize();
+		//2.保存自己的尺寸
+		ViewGroup.setMeasuredDimension(size);
+
+
+
+
+----------------------------------------------
 二、layout的过程
 
 
