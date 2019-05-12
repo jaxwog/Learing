@@ -1284,7 +1284,7 @@ ViewGroup.java
 
 看View.java类的源码：
 1.view的requestLayout()方法开始，递归地不断往上找父容器，最终找到DecorView
-2.执行了DecorView的ViewRootImp类的performTranversal()方法
+2.执行了DecorView的ViewRootImp类的performTranversal()方法(ViewRootImpl是PhoneWindow和DecorView的桥梁)
 3.performTranversal(){
 
 	 // Ask host how big it wants to be
@@ -1354,8 +1354,8 @@ ViewGroup:
 		只需要重写onMeasure测量好自己的宽高就可以了。
 		最终调用setMeasuredDimension()保存好自己的测量宽高。
 		套路：
-		int mode = MeasureSpec.getMode(widthMeasureSpec);
-		int Size = MeasureSpec.getSize(widthMeasureSpec);
+		int mode = MeasureSpec.getMode(parentWidthMeasureSpec);
+		int Size = MeasureSpec.getSize(parentWidthMeasureSpec);
 		int viewSize = 0;
 		switch(mode){
 			case MeasureSpec.EXACTLY:
@@ -1411,8 +1411,28 @@ public void onMeasure(){
   super.onMeasure(widthMeasureSpec, expandSpec);
 }
 为什么要这么做？1.设置mode为 MeasureSpec.AT_MOST？2.value为Integer.MAX_VALUE >> 2？
+1、ListView中onmeasure方法中：
+ if (heightMode == MeasureSpec.UNSPECIFIED) {
+            heightSize = mListPadding.top + mListPadding.bottom + childHeight +
+                    getVerticalFadingEdgeLength() * 2;
+        }
 
+        if (heightMode == MeasureSpec.AT_MOST) {
+            // TODO: after first layout we should maybe start at the first visible position, not 0
+            heightSize = measureHeightOfChildren(widthMeasureSpec, 0, NO_POSITION, heightSize, -1);
+        }
+       采用AT_MOST的方法显示的是具体的大小，而根据实际情况显示出来的数据为一个item大小，所以需要确定（父类）传递进来的参数为什么是MeasureSpec.UNSPECIFIED
+ 2、ScrollView继承自FrameLayout，而FrameLayout中调用了ViewGroup中的measureChildWithMargins 方法， measureChildWithMargins被ScrollView这个子类重写
+ ScrollView中重新方法 传递的测量模式为：
+ final int childHeightMeasureSpec = MeasureSpec.makeSafeMeasureSpec(
+                 Math.max(0, MeasureSpec.getSize(parentHeightMeasureSpec) - usedTotal),
+                 MeasureSpec.UNSPECIFIED);
+ 综上所诉：测量的mode传递的类型为 MeasureSpec.UNSPECIFIED，造成了ListView中显示出来的为一个item大小的高度
 
+ ScrollView中只能设置一个布局是因为读取子控件的时候只读取第一个布局：
+ final View child = getChildAt(0);
+
+Integer.MAX_VALUE >> 2 因为测量规格是前两位为mode、后30位为大小，传递参数时候需要为30位，需要右移两位进行运算
 
 
 
