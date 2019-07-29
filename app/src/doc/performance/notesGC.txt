@@ -263,8 +263,84 @@ attr.recycle()回收。
 比如：轮播图效果。
 
 
+====================================性能优化的帮助工具=================
+	MAT,
+	Memory Monitor(属于AndroidMonitor中一个模块)，
+	HeapTool(查看堆信息)，
+	Allaction Tracking，
+	LeakCanary
+	Lint工具
+
+1.Allaction Tracking
+追踪内存分配信息。可以很直观地看到某个操作的内存是如何进行一步一步地分配的。
 
 
+2.LeakCanary
+Square公司
+可以直接在手机端查看内存泄露的工具
+实现原理：本质上还是用命令控制生成hprof文件分析检查内存泄露。
+然后发送通知。
+Application
+	install()
+LeakCanary
+	androidWatcher()
+RefWatcher
+	new AndroidWatcherExecutor() --->dumpHeap()/analyze()(--->runAnalysis())--->Hprof文件分析
+	new AndroidHeapDumper()
+	new ServiceHeapDumpListener
+
+
+3.Lint分析工具
+Android Studio很方便 很好用。
+	检测资源文件是否有没有用到的资源。
+	检测常见内存泄露
+	安全问题SDK版本安全问题
+	是否有费的代码没有用到
+	代码的规范---甚至驼峰命名法也会检测
+	自动生成的罗列出来
+	没用的导包
+	可能的bug
+
+渲染机制以及优化
+
+一、了解渲染刷新机制
+VSYNC(垂直刷新/绘制)
+
+60HZ是屏幕刷新理想的频率。60fps---一秒内绘制的帧数。
+24帧/秒 电源胶卷时代
+
+在60fps内，系统会得到发送的VSYNC(垂直刷新)信号qu去进行渲染，就会正常地绘制。
+60fps要求：每一帧只能停留16ms.
+
+VSYNC：有两个概念
+	1）Refresh Rate：屏幕在一秒时间内刷新屏幕的次数----有硬件的参数决定，比如60HZ.
+	2）Frame Rate：GPU在一秒内绘制操作的帧数，比如：60fps。
+
+GPU刷新：GPU帮助我们将UI组件等计算成纹理Texture和三维图形Polygons
+	同时会使用OpenGL---会将纹理和Polygons缓存在GPU内存里面。
+View Tree。
+
+卡顿是如何造成的
+卡主线程了！（卡UI线程）
+1.外部引起的
+	比如：Activity里面直接进行网络访问/大文件的IO操作
+内存这一块有些什么要注意的。
+
+	1）内存抖动的问题。
+		new Object
+
+		obj = null
+	2)一个方法太耗时了。
+
+2.View本身的卡顿
+自定义View要注意的，能否优化、
+
+	1）可以使用Allocation Tracing来定位大致的情况
+	2）可以使用TraceView来确定详细的问题所在。
+
+优化：
+1.渲染性能的优化
+2.防止过度绘制
 
 
 
