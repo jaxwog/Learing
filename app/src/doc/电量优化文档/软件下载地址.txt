@@ -1,0 +1,10 @@
+一、GO环境安装：
+下载目录： https://golang.org/doc/install
+https://golang.org/doc/install?download=go1.7.3.windows-amd64.msi
+
+二、安装Git
+https://git-scm.com/
+
+三、安装Python
+注意仅支持python2.7
+https://www.python.org/
