@@ -490,3 +490,51 @@ python historian.py -a batterystat666s.txt > battery.html
 
 电量优化---网络优化
 
+
+
+5.0API以后用的JobScheduler
+5.0API之前用GCM---谷歌的Google Play ServiceManager，国内基本是废的。(里面有很多的网络优化的代码--包括访问策略等)
+
+
+JobInfo
+JobScheduler
+JobService
+
+
+进程1
+MyService{
+	MyBinder extends MyInterface.Stub{
+		a(){
+		//
+		}
+	}
+}
+
+MyInterface.aidl{
+	接口方法a();
+}
+
+进程2
+MyInterface.aidl{
+	接口方法a();
+}
+
+bindService(service,new ServiceConnection(){
+	onServiceConnected(IBinder binder){
+		//建立连接
+		MyInterface interface = binder.asInterface();
+
+	}
+})
+
+interface.a();
+
+
+Zygote进程--Linux核心
+启动系统进程SystemServer，开启一些列的关键服务：AMS/PMS/WMS/JobSchedulerService
+
+
+/data/system/job/jobs.xml文件---永久的任务。
+
+
+
