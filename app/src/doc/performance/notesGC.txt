@@ -706,3 +706,60 @@ PeopleList{
 
 }
 
+============================多线程===========================
+生产者消费者线程模式
+
+25fps
+60fps
+
+MessageQueue 库存
+
+AsyncTask 异步任务
+
+Callable
+Future
+
+异步任务执行的结果，主线程无法轻易的获取
+
+Java FutureTask 异步任务操作提供了便利性
+1.获取异步任务的返回值
+2.监听异步任务的执行完毕
+3.取消异步任务
+
+doBackground(call)
+call的返回值在Future的done方法中获取
+
+->onPostExecute
+
+new MyTask().execute();
+
+实例化：
+new AsyncTask() -> new FutureTask()
+
+执行：
+Executor.execute(mFuture) -> SerialExecutor.myTasks（队列）
+-> (线程池)THREAD_POOL_EXECUTOR.execute
+
+线程池中的所有线程，为了执行异步任务
+
+CORE_POOL_SIZE 核心线程数
+MAXIMUM_POOL_SIZE 最大线程数量
+KEEP_ALIVE 1s闲置回收
+TimeUnit.SECONDS 时间单位
+sPoolWorkQueue 异步任务队列
+sThreadFactory 线程工厂
+
+如果当前线程池中的数量小于corePoolSize，创建并添加的任务。
+如果当前线程池中的数量等于corePoolSize，缓冲队列 workQueue未满，那么任务被放入缓冲队列、等待任务调度执行。
+如果当前线程池中的数量大于corePoolSize，缓冲队列workQueue已满，并且线程池中的数量小于maximumPoolSize，新提交任务会创建新线程执行任务。
+如果当前线程池中的数量大于corePoolSize，缓冲队列workQueue已满，并且线程池中的数量等于maximumPoolSize，新提交任务由Handler处理。
+当线程池中的线程大于corePoolSize时，多余线程空闲时间超过keepAliveTime时，会关闭这部分线程。
+
+public static final Executor THREAD_POOL_EXECUTOR
+= new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE,
+		TimeUnit.SECONDS, sPoolWorkQueue, sThreadFactory);
+
+1.线程池容量不够抛出异常
+2.内存泄露
+3.一个线程，一个异步任务（？）
+
