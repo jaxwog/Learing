@@ -763,3 +763,125 @@ public static final Executor THREAD_POOL_EXECUTOR
 2.内存泄露
 3.一个线程，一个异步任务（？）
 
+=================安装包的性能优化=================
+一个字：删！！删不了就尽量小。
+
+1.图片压缩
+图片：apk里面的资源图片 压缩图片
+svg图片：一些图片的描述，牺牲CPU的计算能力的，节省空间。
+使用的原则：简单的图标。
+
+webp:谷歌现在非常提倡的使用。保存图片比较小。
+	VP8派生而来的。webp的无损压缩比PNG文件小45%左右，即使PNG进过其他的压缩工具压缩后，
+	任然可以减小到PNG的28%。
+
+	Facebook在用、腾讯、淘宝。
+	缺点：加载相比于PNG要慢很多。 但是配置比较高。
+	工具：http://isparta.github.io/
+
+2.资源动态加载：
+	比如：emoji表情、换肤
+	动态下载的资源。
+	一些模块的插件化动态添加。
+
+3.Lint工具 建议优化的点
+	1）检测没有用的布局 删除
+	2）未使用到的资源 比如 图片 ---删除
+	3）建议String.xml有一些没有用到的字符。
+
+4.极限压缩
+7zZip工具的使用。
+
+5.Proguard 混淆。
+让apk变小。为什么？
+	1）可以删除注释和不用的代码。
+	2）将java文件名改成短名a.java，b.java
+	3）方法名等 CommonUtil.getDisplayMetrix();--》a.a()
+
+
+
+
+=================在常规的安装包的优化之外继续压缩---资源文件再压缩=======================
+
+系统编译完成apk文件以后：
+映射关系：res/drawable/ic_launcher.png ----- > 0x7f020000
+
+再做“混淆”：要实现将res/drawable/ic_launcher.png图片改成a.png
+drawable文件的名字
+String文件的名字
+layout的名字
+比如：R.string.description--->R.string.a
+	res/drawable/ic_launcher.png图片改成a.png
+
+还可以更加夸张
+res/drawable--->r/d
+res/value-->r/v
+res/drawable/ic_launcher.png图片改成r/d/a.png
+
+
+读取resources.arsc二进制文件，然后修改某一段一段的字节。
+有一段叫做：res/drawable/ic_launcher.png  在自己数组当中的第800位-810位
+将这一段第800位-810位替换成改成r/d/a.png 的字节码。
+
+args参数：
+Lsn10SearchView.apk -config config.xml -7zip 7za.exe -out xxx/hehe -mapping xxx/yyy.txt
+
+1.12M
+1.03M
+920K
+
+
+什么是Zipalign？什么是Zipaligned？
+http://bbs.ihei5.com/thread-171596-1-1.html
+
+------------------main函数运行配置-------------------
+在项目上右键-->Run as--->RunConfiguration
+选择Arguments
+在Program arguments里面填写如下：
+
+input.apk -config config.xml -out outapkdir/haha -7zip 7za.exe
+
+或者
+input.apk -config config.xml -7zip 7za.exe
+
+----------------------------------
+图片压缩
+
+ 通过色彩深度，透明通道的压缩，不明显降低图片质量情况下减小图片大小。色彩深度计算机图形学领域表示在位图或者视频帧缓冲区中储存1像素的颜色所用的位数，它也称为位/像素（bpp）。色彩深度越高，可用的颜色就越多。
+PNG图片优化压缩的文章：
+  http://www.wufangbo.com/png-image-optimization/
+
+
+================================activity 的启动流程=====================
+
+
+ActivityManagerService（ActivityManagerNative）
+
+
+
+ActivityStackSupervisor   管理整个手机任务栈
+
+
+
+ActivityStack   Activity的栈（任务栈）
+
+
+PackageManagerService(完成组件在清单里的扫描和注册)
+
+
+ActivityThread(安卓java应用层的入口函数类)
+
+
+C/S 架构思想
+
+ServiceManager
+
+多进程多任务多窗口多app
+
+
+分模块思想
+
+Activity
+
+
+分层次思想
