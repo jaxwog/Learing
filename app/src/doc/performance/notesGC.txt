@@ -885,3 +885,115 @@ Activity
 
 
 分层次思想
+
+热修复
+1.阿里系：DeXposed。andfix
+	从底层C的二进制来入手的。
+
+2.腾讯系：tinker
+	Java类加载机制来入手的。
+
+
+什么是热修复？
+	一般的bug修复，都是等下一个版本解决，然后发布新的apk。
+	热修复：可以直接在客户已经安装的程序当中修复bug。
+
+bug一般会出现在某个类的某个方法地方。
+如果我们能够动态地将客户手机里面的apk里面的某个类给替换成我们已经修复好的类。
+
+Instant run
+在做今天的热修复的时候记得把Instant run功能关闭。不然会影响我们今天的热修复实现。
+dex分包。mutildex
+
+如何实现呢？实现的原理？
+从Java的类加载机制来入手的。
+classLoader
+
+安卓是如何加载classes.dex文件，启动程序。
+
+public class PathClassLoader extends BaseDexClassLoader {
+用来加载应用程序的dex
+
+public class DexClassLoader extends BaseDexClassLoader {
+可以加载指定的某个dex文件。（限制：必须要在应用程序的目录下面）
+
+修复方案：搞多个dex。
+第一个版本：classes.dex
+修复后的补丁包：classes2.dex（包涵了我们修复xxx.class）
+
+这种实现方式也可以用于插件开发。
+
+2.如果可以解决这个问题：把两个dex合并---将修复的class替换原来出bug的class.
+
+通过BaseDexClassLoader调用findClass(className)
+Class<?> findClass(String name)
+
+将修复好的dex插入到dexElements的集合，位置：出现bug的xxx.class所在的dex的前面。
+
+List of dex/resource (class path) elements.
+Element[] dexElements;存储的是dex的集合
+
+最本质的实现原理：类加载器去加载某个类的时候，是去dexElements里面从头往下查找的。
+fixed.dex,classes1.dex,classes2.dex,classes3.dex
+
+
+=================AS打包multidex(官方待验证)============================
+1.
+dependencies {
+    compile 'com.android.support:multidex:1.0.1'
+}
+
+2.
+defaultConfig {
+        multiDexEnabled true
+    }
+
+3.
+buildTypes {
+release {
+    multiDexKeepFile file('dex.keep')
+    def myFile = file('dex.keep')
+    println("isFileExists:"+myFile.exists())
+    println "dex keep"
+    minifyEnabled true
+    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+}
+}
+
+4.
+public class MyApplication extends Application{
+
+	@Override
+	protected void attachBaseContext(Context base) {
+		// TODO Auto-generated method stub
+		MultiDex.install(base);
+	}
+
+}
+
+BaseDexClassLoader类{
+	DexPathList pathList；
+
+
+}
+DexPathList类{
+	Element[] dexElements;
+}
+源码链接：
+http://androidxref.com/4.4.2_r1/xref/libcore/dalvik/src/main/java/dalvik/system/BaseDexClassLoader.java#pathList
+http://androidxref.com/4.4.2_r1/xref/libcore/dalvik/src/main/java/dalvik/system/DexPathList.java
+提供参考源码解析文章阅读：
+http://blog.csdn.net/ch15851302205/article/details/44671687
+
+Element[] dexElements;原来的
+Element[] dexElements2;合并以后的
+
+1.找到MyTestClass.class
+	dn_fix_ricky_as\app\build\intermediates\bin\MyTestClass.class
+2.配置dx.bat的环境变量
+	Android\sdk\build-tools\23.0.3\dx.bat
+3.命令
+dx --dex --output=D:\Users\ricky\Desktop\dex\classes2.dex D:\Users\ricky\Desktop\dex
+命令解释：
+	--output=D:\Users\ricky\Desktop\dex\classes2.dex   指定输出路径
+	D:\Users\ricky\Desktop\dex    最后指定去打包哪个目录下面的class字节文件(注意要包括全路径的文件夹，也可以有多个class)
