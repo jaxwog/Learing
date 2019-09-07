@@ -1,62 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_outlets"
     android:layout_width="match_parent"
-    android:layout_marginTop="@dimen/dimen_dp_16dp"
-    android:layout_marginBottom="@dimen/dimen_dp_16dp"
-    android:layout_marginLeft="@dimen/dimen_dp_18dp"
-    android:layout_marginRight="@dimen/dimen_dp_18dp"
-    android:id="@+id/ll_birdental_item"
-    android:background="@drawable/bg_4corner_ffffff"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-     <RelativeLayout
-         android:layout_marginLeft="@dimen/dimen_dp_18dp"
-         android:layout_marginRight="@dimen/dimen_dp_18dp"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content">
-        <TextView
-            android:layout_marginTop="@dimen/dimen_dp_20dp"
-            android:layout_marginBottom="@dimen/dimen_dp_13dp"
-            android:singleLine="true"
-            android:id="@+id/tv_birden_ourser_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:minHeight="@dimen/dimen_dp_26dp"
-            android:text="我的服务"
-            android:textColor="@color/color_1F2845"
-            android:textStyle="bold"
-            android:textSize="@dimen/dimen_sp_18sp" />
-
-         <TextView
-             android:id="@+id/tv_birden_ourser_all"
-             android:layout_marginTop="@dimen/dimen_dp_24dp"
-             android:layout_alignParentRight="true"
-             android:paddingLeft="@dimen/dimen_dp_7dp"
-             android:textColor="@color/color_1F2845"
-             android:minHeight="@dimen/dimen_dp_18dp"
-             android:text="查看全部"
-             android:textSize="@dimen/dimen_sp_14sp"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content" />
-
-     </RelativeLayout>
-
-
-
-    <RelativeLayout
-        android:background="@drawable/bg_4corner_f7f7f9"
-        android:id="@+id/ll_outlets"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="@dimen/dimen_dp_18dp"
-        android:paddingTop="@dimen/dimen_dp_16dp"
-        android:paddingBottom="@dimen/dimen_dp_18dp"
-        android:layout_marginBottom="@dimen/dimen_dp_30dp"
-        android:layout_marginLeft="@dimen/dimen_dp_18dp"
-        android:layout_marginRight="@dimen/dimen_dp_18dp">
+    android:layout_height="@dimen/dimen_dp_125dp"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dimen_dp_18dp"
+    android:paddingTop="@dimen/dimen_dp_16dp"
+    android:paddingBottom="@dimen/dimen_dp_18dp">
 
         <TextView
             android:id="@+id/tv_birden_content_title"
@@ -123,6 +73,3 @@
 
     </RelativeLayout>
 
-
-
-</LinearLayout>

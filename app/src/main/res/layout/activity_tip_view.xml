@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.animation.TipViewActivity">
+    android:layout_marginTop="@dimen/dimen_dp_16dp"
+    android:layout_marginBottom="@dimen/dimen_dp_16dp"
+    android:layout_marginLeft="@dimen/dimen_dp_18dp"
+    android:layout_marginRight="@dimen/dimen_dp_18dp"
+    android:id="@+id/ll_birdental_item"
+    android:background="@drawable/bg_4corner_517df7"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_marginLeft="@dimen/dimen_dp_18dp"
+        android:layout_marginRight="@dimen/dimen_dp_18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="@dimen/dimen_dp_20dp"
+            android:layout_marginBottom="@dimen/dimen_dp_13dp"
+            android:singleLine="true"
+            android:id="@+id/tv_birden_ourser_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="@dimen/dimen_dp_26dp"
+            android:text="我的服务"
+            android:textColor="@color/color_1F2845"
+            android:textStyle="bold"
+            android:textSize="@dimen/dimen_sp_18sp" />
+
+        <TextView
+            android:id="@+id/tv_birden_ourser_all"
+            android:layout_marginTop="@dimen/dimen_dp_24dp"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="@dimen/dimen_dp_7dp"
+            android:textColor="@color/color_1F2845"
+            android:minHeight="@dimen/dimen_dp_18dp"
+            android:text="查看全部"
+            android:textSize="@dimen/dimen_sp_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+        <!--不止一条待办-->
+        <!--待办明细-->
+        <com.love.jax.view.TipView
+            android:background="@drawable/bg_4corner_f7f7f9"
+            android:layout_marginBottom="@dimen/dimen_dp_16dp"
+            android:layout_marginLeft="@dimen/dimen_dp_18dp"
+            android:layout_marginRight="@dimen/dimen_dp_18dp"
+            android:id="@+id/tip_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.love.jax.view.TipView>
+
+
+</LinearLayout>

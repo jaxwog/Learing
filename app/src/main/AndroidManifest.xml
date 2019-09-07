@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/jax_logo"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme">
-        <activity android:name=".activity.tkjobs.IpSetActivity"></activity>
+        <activity android:name=".activity.animation.TipViewActivity"></activity>
+        <activity android:name=".activity.tkjobs.IpSetActivity" />
         <activity android:name=".activity.animation.CustomViewGroupActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
