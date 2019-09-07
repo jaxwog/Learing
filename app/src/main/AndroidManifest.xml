@@ -6,6 +6,11 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" /> <!-- 参数设置权限 -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:name=".JaxApplication"
@@ -15,7 +20,8 @@
         android:roundIcon="@mipmap/jax_logo"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme">
-        <activity android:name=".activity.animation.TipViewActivity"></activity>
+        <activity android:name=".activity.performance.LoadMoreActivity"></activity>
+        <activity android:name=".activity.animation.TipViewActivity" />
         <activity android:name=".activity.tkjobs.IpSetActivity" />
         <activity android:name=".activity.animation.CustomViewGroupActivity" />
         <activity android:name=".activity.MainActivity">

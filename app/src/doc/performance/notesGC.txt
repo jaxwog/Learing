@@ -763,6 +763,47 @@ public static final Executor THREAD_POOL_EXECUTOR
 2.内存泄露
 3.一个线程，一个异步任务（？）
 
+HandlerThread（Thread）
+
+1.减轻主线程的压力，提高UI的流畅度
+2.可以处理多个任务，开启一个线程起到多个线程的作用（looper共享）
+
+HandlerThread与Camera的能够Looper共享
+
+需求：
+打开相机
+预览回调（编码）
+
+异步任务的Looper，使用的MainLooper
+
+Handler.handleMessage的执行，一定在它的Looper线程中
+
+onPreviewFrame的执行，在Camera所持有的Looper线程中执行
+
+new Camera -> looper -> EventHandler.handleMessage -> onPreviewFrame
+
+
+IntentService(本质：Service+HandlerThread+Intent)
+startService
+至少要有一个空的构造方法
+优点
+1.提高子线程的优先级
+2.减轻主线程的压力
+
+IntentService内部会创建一个HandlerThread，onHandleIntent在HandlerThread线程中执行
+
+Activity中启动子线程
+1.内存泄露
+2.无效的更新UI
+
+Loader保证子线程与Activity或者Fragment的生命周期一致
+Activity和Fragment自带LoaderManager
+
+优点：
+1.方便
+2.Activity或者Fragment的生命周期一致
+3.数据缓存与更新通知
+
 =================安装包的性能优化=================
 一个字：删！！删不了就尽量小。
 
