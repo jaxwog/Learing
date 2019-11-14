@@ -66,6 +66,7 @@ import com.love.jax.activity.materialdesign.ToolbarActivity;
 import com.love.jax.activity.materialdesign.TranslucentActivity;
 import com.love.jax.activity.materialdesign.TranslucentTopActivity;
 import com.love.jax.activity.materialdesign.TransparentToolbarActivity;
+import com.love.jax.activity.performance.AopActivity;
 import com.love.jax.activity.performance.LoadMoreActivity;
 import com.love.jax.activity.recycleview.CityListActivity;
 import com.love.jax.activity.recycleview.HeaderActivity;
@@ -140,7 +141,7 @@ public class MainActivity extends BaseActivity {
             ,"隐藏交互动画","隐藏动画2","隐藏动画3","平行空间","导航折叠","运转状态1","运转状态2","属性动画","属性动画集","揭露动画"
             ,"转场动画","矢量图像","动画框架一","动画框架二","滑动冲突一","滑动冲突二","侧滑效果三","条目侧滑","画笔一","进度条圆环"
             ,"高级渲染","滤镜效果","基础画布","高级画布","搜索图标一","搜索图标二","波形路径","路径截取","波浪行驶","城市列表","城市选择"
-            ,"自定义容器","网络地址","条目滚动","操作通话"
+            ,"自定义容器","网络地址","条目滚动","操作通话","面向切面"
 //            ,"南辕北辙","得陇望蜀","明修栈道","暗度陈仓","叶公好龙","无理取闹","风风火火","恍恍惚惚","德玛西亚"
 //            ,"剑圣偷塔","艾欧尼亚","暗影之道","五光十色","诺克萨斯","德邦总管","加里奥","凯南","武器大师"
 //            ,"金属大师","盖伦","德莱文","卢锡安","战争女神","黑暗骑士","斯嘉丽","黑寡妇","泰勒斯威夫特"
@@ -392,6 +393,10 @@ public class MainActivity extends BaseActivity {
             case "操作通话":
                 sBundle.putString(ConfigSet.INTENT_STRING,"操作通话");
                 jumpToActivity(LoadMoreActivity.class, sBundle);
+                break;
+            case "面向切面":
+                sBundle.putString(ConfigSet.INTENT_STRING,"面向切面");
+                jumpToActivity(AopActivity.class, sBundle);
                 break;
             default:
                 break;
