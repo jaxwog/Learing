@@ -20,7 +20,8 @@
         android:roundIcon="@mipmap/jax_logo"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme">
-        <activity android:name=".activity.performance.AopActivity"></activity>
+        <activity android:name=".activity.design.DbFrameworkActivity"></activity>
+        <activity android:name=".activity.performance.AopActivity" />
         <activity android:name=".activity.performance.LoadMoreActivity" />
         <activity android:name=".activity.animation.TipViewActivity" />
         <activity android:name=".activity.tkjobs.IpSetActivity" />

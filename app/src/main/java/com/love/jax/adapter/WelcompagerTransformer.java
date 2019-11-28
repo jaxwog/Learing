@@ -1,5 +1,6 @@
 package com.love.jax.adapter;
 
+import android.animation.Animator;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -106,6 +107,27 @@ public class WelcompagerTransformer implements PageTransformer, OnPageChangeList
                     public void onAnimationUpdate(ValueAnimator animation) {
                         mscv.smoothScrollTo((int) (mscv.getWidth() * animation
                                 .getAnimatedFraction()), 0);
+                    }
+                });
+                animator_bg1.addListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationCancel(Animator animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animator animation) {
+
                     }
                 });
                 animator_bg1.start();

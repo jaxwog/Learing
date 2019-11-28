@@ -9,6 +9,7 @@ import android.view.View;
 import com.love.jax.R;
 import com.love.jax.activity.BaseActivity;
 import com.love.jax.callback.BehaviorTrace;
+import com.love.jax.database.db.BaseDaoFactory;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
