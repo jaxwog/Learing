@@ -94,7 +94,7 @@ public abstract class BaseDao<T> implements IBaseDao<T> {
 
     //维护映射关系
     private void initCacheMap() {
-        //第一次去查询一遍，找到表的列名
+        //第一次去查询一遍，找到表的列名，从第一条开始去查询0条数据
         String sql="select * from "+this.tableName+" limit 1 , 0";
         Cursor cursor=null;
         try {
@@ -315,6 +315,7 @@ public abstract class BaseDao<T> implements IBaseDao<T> {
          Cursor cursor =  database.query(tableName,null,condition.getWhereClause(),
                  condition.getWhereArgs(),null,null,orderBy,limitString);
          List<T> result = getResult(cursor,where);
+         cursor.close();//关闭游标
         return result;
   }
 
