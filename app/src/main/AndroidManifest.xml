@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".JaxApplication"
@@ -20,7 +21,9 @@
         android:roundIcon="@mipmap/jax_logo"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme">
-        <activity android:name=".activity.design.DbFrameworkActivity"></activity>
+        <activity android:name=".activity.design.DbUpdateActivity"></activity>
+        <activity android:name=".activity.design.VollyActivity" />
+        <activity android:name=".activity.design.DbFrameworkActivity" />
         <activity android:name=".activity.performance.AopActivity" />
         <activity android:name=".activity.performance.LoadMoreActivity" />
         <activity android:name=".activity.animation.TipViewActivity" />

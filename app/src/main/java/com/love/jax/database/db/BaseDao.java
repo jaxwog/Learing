@@ -25,7 +25,7 @@ public abstract class BaseDao<T> implements IBaseDao<T> {
     /**
      * 需要跟底层打交道，持有数据库操作类的引用
      */
-    private SQLiteDatabase database;
+    protected SQLiteDatabase database;
 
     /**
      * 保证实例化一次
@@ -37,6 +37,10 @@ public abstract class BaseDao<T> implements IBaseDao<T> {
      * User
      */
     private Class<T> entityClass;
+
+    public String getTableName() {
+        return tableName;
+    }
 
     /**
      * 数据库表名

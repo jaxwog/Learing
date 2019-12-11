@@ -31,6 +31,7 @@ android {
         daoPackage 'com.love.jax.bean.dao'
         targetGenDir 'src/main/java'
     }
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -64,6 +65,8 @@ dependencies {
 
 //    AOP
     implementation 'org.aspectj:aspectjrt:1.9.4'
+    implementation 'httpcomponents-httpcore:httpcore:4.0-alpha6'
+    implementation 'com.alibaba:fastjson:1.2.62'
 }
 
 // 贴上面那段没用的代码是为了说明：下面的任务代码与dependencies同级

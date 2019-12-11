@@ -18,6 +18,25 @@ import com.love.jax.database.db.IBaseDao;
 
 import java.util.List;
 
+/**
+ * 数据库框架设计会用到的知识点
+ * 泛型
+ * 注解
+ * 反射
+ * 数据库语句拼接
+ *
+ *
+ * 用到的设计的模式
+ *
+ * 单例模式
+ * 简单工厂模式
+ * 模板方法模式
+ * 更改后  user  name lisi   123456
+ *        user=lisi
+ * BaseDao  1
+ *
+ * IBaseDao 2
+ */
 public class DbFrameworkActivity extends BaseActivity {
 
 
