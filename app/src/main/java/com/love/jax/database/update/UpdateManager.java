@@ -71,7 +71,8 @@ public class UpdateManager {
         UpdateDbXml updateDbxml = readDbXml(context);
         if (getLocalVersionInfo()) {
             //拿到当前版本
-            String thisVersion = getVersionName(context);
+//            String thisVersion = getVersionName(context);
+            String thisVersion = existVersion;
             //拿到上一个版本
             String lastVersion = lastBackupVersion;
             UpdateStep updateStep = analyseUpdateStep(updateDbxml, lastVersion, thisVersion);
@@ -94,8 +95,8 @@ public class UpdateManager {
                     FileUtil.CopySingleFile(logicDbDir, logicCopy);
                 }
                 //备份总数据库
-                String user = parentFile.getAbsolutePath() + "/user.db";
-                String user_bak = bakFile.getAbsolutePath() + "/user.db";
+                String user = parentFile.getAbsolutePath() + "/teacher.db";
+                String user_bak = bakFile.getAbsolutePath() + "/teacher.db";
                 FileUtil.CopySingleFile(user, user_bak);
                 // 第二步:执行sql_before语句，删除以及备份相关旧表
                 executeDb(updateDbs, -1);
@@ -342,7 +343,7 @@ public class UpdateManager {
             dbfilepath = file.getAbsolutePath() + "/logic.db";// logic对应的数据库路径
 
         } else if (dbname.equalsIgnoreCase("user")) {
-            dbfilepath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/user.db";// service对应的数据库
+            dbfilepath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/teacher.db";// service对应的数据库
         }
 
         if (dbfilepath != null) {
