@@ -22,7 +22,7 @@ public class ParallaxFragment extends Fragment {
         Bundle args = getArguments();
         int layoutId = args.getInt("layoutId");
         int index = args.getInt("index");
-        Log.d("jason", "fragment:" + index);
+        Log.d("jax", "fragment:" + index);
         //1.布局加载器将布局加载进来了
         //2.解析创建布局上所有的视图
         //3.自己搞定创建视图的过程
