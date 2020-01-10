@@ -10,6 +10,7 @@
     <!--loadmoreactivity-->
     <string name="content_description">contentDescription</string>
     <string name="hello_world">学习加载器的使用</string>
+    <string name="hello_ioc">动态代理模式</string>
     <string name="all">所有通话记录</string>
     <string name="incoming">拨入记录</string>
     <string name="outcoming">拨出记录</string>

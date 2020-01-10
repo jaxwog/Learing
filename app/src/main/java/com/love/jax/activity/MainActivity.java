@@ -36,6 +36,7 @@ import com.love.jax.activity.design.DbUpdateActivity;
 import com.love.jax.activity.design.FastJsonActivity;
 import com.love.jax.activity.design.ImageLoaderActivity;
 import com.love.jax.activity.design.VollyActivity;
+import com.love.jax.activity.design.XUtilsActivity;
 import com.love.jax.activity.events.CanvasBasisActivity;
 import com.love.jax.activity.events.CanvasSeniorActivity;
 import com.love.jax.activity.events.MaskFilterActivity;
@@ -146,7 +147,7 @@ public class MainActivity extends BaseActivity {
             ,"隐藏交互动画","隐藏动画2","隐藏动画3","平行空间","导航折叠","运转状态1","运转状态2","属性动画","属性动画集","揭露动画"
             ,"转场动画","矢量图像","动画框架一","动画框架二","滑动冲突一","滑动冲突二","侧滑效果三","条目侧滑","画笔一","进度条圆环"
             ,"高级渲染","滤镜效果","基础画布","高级画布","搜索图标一","搜索图标二","波形路径","路径截取","波浪行驶","城市列表","城市选择"
-            ,"自定义容器","网络地址","条目滚动","操作通话","面向切面","数据库框架","分库升级","网络框架","图片框架","JSON"
+            ,"自定义容器","网络地址","条目滚动","操作通话","面向切面","数据库框架","分库升级","网络框架","图片框架","JSON","XUtils"
 //            ,"南辕北辙","得陇望蜀","明修栈道","暗度陈仓","叶公好龙","无理取闹","风风火火","恍恍惚惚","德玛西亚"
 //            ,"剑圣偷塔","艾欧尼亚","暗影之道","五光十色","诺克萨斯","德邦总管","加里奥","凯南","武器大师"
 //            ,"金属大师","盖伦","德莱文","卢锡安","战争女神","黑暗骑士","斯嘉丽","黑寡妇","泰勒斯威夫特"
@@ -422,6 +423,10 @@ public class MainActivity extends BaseActivity {
             case "JSON":
                 sBundle.putString(ConfigSet.INTENT_STRING,"JSON");
                 jumpToActivity(FastJsonActivity.class, sBundle);
+                break;
+            case "XUtils":
+                sBundle.putString(ConfigSet.INTENT_STRING,"XUtils");
+                jumpToActivity(XUtilsActivity.class, sBundle);
                 break;
             default:
                 break;
