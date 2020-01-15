@@ -21,7 +21,8 @@
         android:roundIcon="@mipmap/jax_logo"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme">
-        <activity android:name=".activity.design.XUtilsActivity"></activity>
+        <activity android:name=".activity.design.MvpActivity"></activity>
+        <activity android:name=".activity.design.XUtilsActivity" />
         <activity android:name=".activity.design.FastJsonActivity" />
         <activity android:name=".activity.design.ImageLoaderActivity" />
         <activity android:name=".activity.design.DbUpdateActivity" />
