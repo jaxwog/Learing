@@ -3,6 +3,10 @@ apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 28
+    //MV VM 使用
+    dataBinding {
+        enabled true
+    }
     defaultConfig {
         applicationId "com.love.jax"
         minSdkVersion 15

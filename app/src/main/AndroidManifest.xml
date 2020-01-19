@@ -18,10 +18,13 @@
         android:allowBackup="true"
         android:icon="@mipmap/jax_logo"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/networksecurityconfig"
         android:roundIcon="@mipmap/jax_logo"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme">
-        <activity android:name=".activity.design.MvpActivity"></activity>
+        <activity android:name=".activity.design.mvvm.MvvmListActivity"></activity>
+        <activity android:name=".activity.design.mvvm.MvvmObjectActivity" />
+        <activity android:name=".activity.design.MvpActivity" />
         <activity android:name=".activity.design.XUtilsActivity" />
         <activity android:name=".activity.design.FastJsonActivity" />
         <activity android:name=".activity.design.ImageLoaderActivity" />
