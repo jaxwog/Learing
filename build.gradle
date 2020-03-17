@@ -9,6 +9,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.1.0'
+//        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
 //        aop
         classpath 'org.aspectj:aspectjtools:1.9.4'
         classpath 'org.aspectj:aspectjweaver:1.9.4'

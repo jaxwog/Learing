@@ -31,6 +31,7 @@ import com.love.jax.activity.animation.ParallaxSplashActivity;
 import com.love.jax.activity.animation.RevealEffectActivity;
 import com.love.jax.activity.animation.SvgVectorActivity;
 import com.love.jax.activity.animation.TipViewActivity;
+import com.love.jax.activity.design.ButterKnifeActivity;
 import com.love.jax.activity.design.DbFrameworkActivity;
 import com.love.jax.activity.design.DbUpdateActivity;
 import com.love.jax.activity.design.FastJsonActivity;
@@ -151,7 +152,7 @@ public class MainActivity extends BaseActivity {
             ,"转场动画","矢量图像","动画框架一","动画框架二","滑动冲突一","滑动冲突二","侧滑效果三","条目侧滑","画笔一","进度条圆环"
             ,"高级渲染","滤镜效果","基础画布","高级画布","搜索图标一","搜索图标二","波形路径","路径截取","波浪行驶","城市列表","城市选择"
             ,"自定义容器","网络地址","条目滚动","操作通话","面向切面","数据库框架","分库升级","网络框架","图片框架","JSON","XUtils","MVP"
-            ,"MVVM1","MVVM2"
+            ,"MVVM1","MVVM2","依赖注入"
 //            ,"南辕北辙","得陇望蜀","明修栈道","暗度陈仓","叶公好龙","无理取闹","风风火火","恍恍惚惚","德玛西亚"
 //            ,"剑圣偷塔","艾欧尼亚","暗影之道","五光十色","诺克萨斯","德邦总管","加里奥","凯南","武器大师"
 //            ,"金属大师","盖伦","德莱文","卢锡安","战争女神","黑暗骑士","斯嘉丽","黑寡妇","泰勒斯威夫特"
@@ -443,6 +444,10 @@ public class MainActivity extends BaseActivity {
             case "MVVM2":
                 sBundle.putString(ConfigSet.INTENT_STRING,"MVVM2");
                 jumpToActivity(MvvmListActivity.class, sBundle);
+                break;
+            case "依赖注入":
+                sBundle.putString(ConfigSet.INTENT_STRING,"依赖注入");
+                jumpToActivity(ButterKnifeActivity.class, sBundle);
                 break;
             default:
                 break;

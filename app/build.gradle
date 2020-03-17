@@ -37,9 +37,10 @@ android {
     }
     useLibrary 'org.apache.http.legacy'
 }
-
+//apply plugin: 'com.neenbedankt.gradle.plugins:android-apt:1.8'
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    annotationProcessor  project(':butterknifejax-compiler')
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.google.code.gson:gson:2.2.4'
@@ -71,6 +72,11 @@ dependencies {
     implementation 'org.aspectj:aspectjrt:1.9.4'
     implementation 'httpcomponents-httpcore:httpcore:4.0-alpha6'
     implementation 'com.alibaba:fastjson:1.2.62'
+
+//    annotationProcessor 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    implementation project(':butterknifejax-annotations')
+
+
 }
 
 // 贴上面那段没用的代码是为了说明：下面的任务代码与dependencies同级
