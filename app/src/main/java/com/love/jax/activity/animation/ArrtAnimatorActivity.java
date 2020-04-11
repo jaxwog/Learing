@@ -1,12 +1,21 @@
 package com.love.jax.activity.animation;
 
 import android.animation.ObjectAnimator;
+import android.graphics.Point;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
 import com.love.jax.R;
 import com.love.jax.activity.BaseActivity;
+import com.love.jax.utils.Logger;
 
 import butterknife.BindView;
 
@@ -26,7 +35,8 @@ public class ArrtAnimatorActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+       int h =  button1.getResources().getDisplayMetrics().heightPixels;
+        Log.w("jax",  "heightPixel = " + h);
     }
 
     @Override
@@ -203,22 +213,111 @@ public class ArrtAnimatorActivity extends BaseActivity {
 
 //-------------------------------------------------------------------------------------------------
         //插值器使用
-        ObjectAnimator oa = ObjectAnimator.ofFloat(v, "translationY", 100f, 1000f);
-//        oa.setInterpolator(new AccelerateInterpolator()); // 加速插值器
-//        oa.setInterpolator(new AccelerateDecelerateInterpolator());// 加速减速插值器
-//        oa.setInterpolator(new AnticipateInterpolator());//回荡秋千插值器
-//        oa.setInterpolator(new AnticipateOvershootInterpolator());//先回荡秋千后反力插值器
-//        oa.setInterpolator(new BounceInterpolator());//弹跳插值器插值器
-//        oa.setInterpolator(new CycleInterpolator(1));// 正弦曲线插值器
-//        oa.setInterpolator(new DecelerateInterpolator());//减速插值器
-        oa.setInterpolator(new OvershootInterpolator()); //末尾反力插值器
-        oa.setDuration(5000);
-        oa.start();
+//        ObjectAnimator oa = ObjectAnimator.ofFloat(v, "translationY", 100f, 1000f);
+////        oa.setInterpolator(new AccelerateInterpolator()); // 加速插值器
+////        oa.setInterpolator(new AccelerateDecelerateInterpolator());// 加速减速插值器
+////        oa.setInterpolator(new AnticipateInterpolator());//回荡秋千插值器
+////        oa.setInterpolator(new AnticipateOvershootInterpolator());//先回荡秋千后反力插值器
+////        oa.setInterpolator(new BounceInterpolator());//弹跳插值器插值器
+////        oa.setInterpolator(new CycleInterpolator(1));// 正弦曲线插值器
+////        oa.setInterpolator(new DecelerateInterpolator());//减速插值器
+//        oa.setInterpolator(new OvershootInterpolator()); //末尾反力插值器
+//        oa.setDuration(5000);
+//        oa.start();
 
 
 
+        RotateAnimation rotate  = new RotateAnimation(0f, 180f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        LinearInterpolator lin = new LinearInterpolator();
+        rotate.setInterpolator(lin);
+        rotate.setDuration(2000);//设置动画持续周期
+        rotate.setRepeatCount(0);//设置重复次数
+        rotate.setFillAfter(true);//动画执行完后是否停留在执行完的状态
+        rotate.setStartOffset(10);//执行前的等待时间
+        rotate.setRepeatMode(Animation.REVERSE);
+        v.startAnimation(rotate);
+        rotate.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Log.i("jax", "onAnimationEnd: ");
+
+//                v.setBackgroundResource(R.drawable.yingjia1);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                Log.i("jax", "onAnimationRepeat: ");
+            }
+        });
 
 
+    }
+
+    public void xuanzhuan1(View v) {
+
+        RotateAnimation rotate  = new RotateAnimation(0f, 180f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        LinearInterpolator lin = new LinearInterpolator();
+        rotate.setInterpolator(lin);
+        rotate.setDuration(2000);//设置动画持续周期
+        rotate.setRepeatCount(0);//设置重复次数
+        rotate.setFillAfter(true);//动画执行完后是否停留在执行完的状态
+        rotate.setStartOffset(10);//执行前的等待时间
+        rotate.setRepeatMode(Animation.REVERSE);
+        button1.startAnimation(rotate);
+        rotate.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Log.i("jax", "onAnimationEnd: ");
+
+//                button1.setBackgroundResource(R.drawable.yingjia1);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                Log.i("jax", "onAnimationRepeat: ");
+            }
+        });
+    }
+
+
+    public void xuanzhuan2(View v) {
+        RotateAnimation rotate  = new RotateAnimation(180f, 0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        LinearInterpolator lin = new LinearInterpolator();
+        rotate.setInterpolator(lin);
+        rotate.setDuration(2000);//设置动画持续周期
+        rotate.setRepeatCount(0);//设置重复次数
+        rotate.setFillAfter(true);//动画执行完后是否停留在执行完的状态
+        rotate.setStartOffset(10);//执行前的等待时间
+        rotate.setRepeatMode(Animation.REVERSE);
+        button1.startAnimation(rotate);
+        rotate.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Log.i("jax", "onAnimationEnd: ");
+
+//                button1.setBackgroundResource(R.drawable.yingjia);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                Log.i("jax", "onAnimationRepeat: ");
+            }
+        });
 
     }
 

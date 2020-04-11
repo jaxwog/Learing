@@ -22,7 +22,8 @@
         android:roundIcon="@mipmap/jax_logo"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme">
-        <activity android:name=".activity.design.ButterKnifeActivity"></activity>
+        <activity android:name=".activity.performance.ManhattanDistanceActivity"></activity>
+        <activity android:name=".activity.design.ButterKnifeActivity" />
         <activity android:name=".activity.design.mvvm.MvvmListActivity" />
         <activity android:name=".activity.design.mvvm.MvvmObjectActivity" />
         <activity android:name=".activity.design.MvpActivity" />

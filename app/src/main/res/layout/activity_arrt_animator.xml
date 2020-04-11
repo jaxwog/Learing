@@ -5,6 +5,7 @@
     android:layout_height="match_parent" >
 
     <ImageView
+        android:layout_marginLeft="@dimen/dimen_dp_90dp"
         android:layout_marginTop="@dimen/dimen_dp_30dp"
         android:id="@+id/button1"
         android:scaleType="centerCrop"
@@ -13,6 +14,19 @@
         android:layout_height="150dp"
         android:src="@drawable/yingjia"
         />
+
+    <Button
+        android:onClick="xuanzhuan1"
+        android:text="1"
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:onClick="xuanzhuan2"
+        android:text="2"
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
 
