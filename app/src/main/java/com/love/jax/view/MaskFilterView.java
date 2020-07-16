@@ -69,6 +69,7 @@ public class MaskFilterView extends View {
 
     /**
      * 颜色RGB的滤镜处理
+     * 颜色通道过滤
      *
      * @param canvas
      * @param bitmap RGBA矩阵为：  255，255，255，255，1 用于和颜色矩阵进行运算得到ARGB颜色值

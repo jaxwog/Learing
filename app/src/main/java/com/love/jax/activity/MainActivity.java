@@ -3,6 +3,7 @@ package com.love.jax.activity;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
@@ -11,6 +12,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
@@ -81,6 +83,7 @@ import com.love.jax.activity.performance.LoadMoreActivity;
 import com.love.jax.activity.performance.ManhattanDistanceActivity;
 import com.love.jax.activity.recycleview.CityListActivity;
 import com.love.jax.activity.recycleview.HeaderActivity;
+import com.love.jax.activity.recycleview.NestedRecycleViewActivity;
 import com.love.jax.activity.recycleview.RcDividerActivity;
 import com.love.jax.activity.recycleview.RcSimpleActivity;
 import com.love.jax.activity.recycleview.RcTouchActivity;
@@ -107,7 +110,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -452,7 +457,8 @@ public class MainActivity extends BaseActivity {
                 break;
             case "曼哈顿":
                 sBundle.putString(ConfigSet.INTENT_STRING,"曼哈顿");
-                jumpToActivity(ManhattanDistanceActivity.class, sBundle);
+//                jumpToActivity(ManhattanDistanceActivity.class, sBundle);
+                jumpToActivity(NestedRecycleViewActivity.class, sBundle);
                 break;
             default:
                 break;
@@ -503,6 +509,38 @@ public class MainActivity extends BaseActivity {
             mLayoutHis.setVisibility(View.VISIBLE);
         }
         mHistoryFlowLayoutHis.addAllWord(mHislist);
+        getContent();
+    }
+
+    public void getContent(){
+        String s = "https://operation.mobile.taikang.com/currencyDownload/p?app_page=28-role=TBR-id=000-sign=aaaaaaaa-typeCode=501-processNo=TLIFE111111 ";
+        Uri data = Uri.parse(s);
+        Logger.w("ShortLinkUtils", data.toString());
+        try {
+            if (null != data) {
+                String substring = data.getEncodedQuery();
+                String[] split = substring.split("-");
+                Map<String, String> params = new HashMap<>();
+                if (split != null && split.length >= 1) {
+                    for (String string : split) {
+                        if (!TextUtils.isEmpty(string)) {
+                            String[] param = string.split("=");
+                            if (param.length > 1) {
+                                params.put(param[0], param[1]);
+                                System.out.println("key=="+param[0]);
+                                System.out.println("value=="+param[1]);
+                            }
+                        }
+                    }
+                }
+
+
+
+            }
+
+        }catch (Exception e){
+
+        }
     }
 
     @Override

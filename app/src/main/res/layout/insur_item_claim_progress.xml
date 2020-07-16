@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFFFF"
+    android:orientation="vertical">
+
+<!--    理赔中第二步，继续填写-->
+    <TextView
+        android:id="@+id/tv_title"
+        android:text="我是标题啊"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+
+    <com.love.jax.view.MyRecycle
+        android:id="@+id/rcv_progress_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@color/color_FFFFFF" />
+
+
+
+</LinearLayout>

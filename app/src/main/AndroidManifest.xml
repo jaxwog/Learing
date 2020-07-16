@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.love.jax">
     <!-- 读写sd卡权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" /> <!-- 参数设置权限 -->
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
@@ -22,7 +24,8 @@
         android:roundIcon="@mipmap/jax_logo"
         android:supportsRtl="true"
         android:theme="@style/MyAppTheme">
-        <activity android:name=".activity.performance.ManhattanDistanceActivity"></activity>
+        <activity android:name=".activity.recycleview.NestedRecycleViewActivity"></activity>
+        <activity android:name=".activity.performance.ManhattanDistanceActivity" />
         <activity android:name=".activity.design.ButterKnifeActivity" />
         <activity android:name=".activity.design.mvvm.MvvmListActivity" />
         <activity android:name=".activity.design.mvvm.MvvmObjectActivity" />

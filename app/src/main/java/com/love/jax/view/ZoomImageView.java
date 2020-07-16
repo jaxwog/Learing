@@ -37,6 +37,11 @@ public class ZoomImageView extends View {
         //放大后的整个图片
         bmp = Bitmap.createScaledBitmap(bmp, bmp.getWidth()*FACTOR, bmp.getHeight()*FACTOR, true);
         //制作一个圆形的图片(放大的局部)，盖在canvas上面
+        //位图图像渲染，用BitMap对绘制的图形进行渲染着色，简单来说是用图片对图形进行贴图
+        //TileMode 拉伸形式
+        //CLAMP --是拉伸最后一个像素铺满
+        //MIRROR ---是横向纵向不足处不断翻转镜像平铺
+        //REPEAT ---类似电脑壁纸，横向纵向不足的重复放置
         BitmapShader shader = new BitmapShader(bmp, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
         drawable = new ShapeDrawable(new OvalShape());
         drawable.getPaint().setShader(shader);
