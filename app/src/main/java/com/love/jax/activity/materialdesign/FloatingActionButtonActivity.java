@@ -5,6 +5,10 @@ import android.view.View;
 
 import com.love.jax.R;
 import com.love.jax.activity.BaseActivity;
+import com.love.jax.eventbus.JaxEventBus;
+import com.love.jax.json.User;
+
+import org.greenrobot.eventbus.EventBus;
 
 /**
  * 悬浮动作按钮
@@ -36,6 +40,18 @@ public class FloatingActionButtonActivity extends BaseActivity {
                 .setDuration(200);
         animator.start();
         reverse = !reverse;
+        User user = new User();
+        user.setId(18);
+        user.setName("jax");
+        user.setPwd("123456");
+//        EventBus.getDefault().post(user);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                JaxEventBus.getDefault().post(user);
+            }
+        }).start();
+
     }
 
     @Override

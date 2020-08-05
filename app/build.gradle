@@ -19,6 +19,13 @@ android {
 //                includeCompileClasspath true
 //            }
 //        }
+
+        // 给注解处理器传参
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ eventBusIndex : 'com.love.jax.MyEventBusIndex' ]
+            }
+        }
     }
     buildTypes {
         release {
@@ -75,6 +82,12 @@ dependencies {
 
 //    annotationProcessor 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     implementation project(':butterknifejax-annotations')
+
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    //注解处理，编译时候生成文件，不用注解是通过反射机制进行事件总线传递
+    annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.1.1'
+    implementation project(':fastjson')
+    implementation project(':skin-core')
 
 
 }

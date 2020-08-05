@@ -97,6 +97,10 @@ import com.love.jax.bean.LettersEntity;
 import com.love.jax.bean.OrderEntity;
 import com.love.jax.bean.dao.DbHelper;
 import com.love.jax.callback.IDbHelper;
+import com.love.jax.eventbus.JaxEventBus;
+import com.love.jax.eventbus.JaxSubscribe;
+import com.love.jax.eventbus.JaxThreadMode;
+import com.love.jax.json.User;
 import com.love.jax.utils.ConfigSet;
 import com.love.jax.utils.ListUtils;
 import com.love.jax.utils.Logger;
@@ -105,6 +109,10 @@ import com.love.jax.view.CanvasBasisView;
 import com.love.jax.view.HistoryFlowLayout;
 import com.love.jax.view.search.LimitEditText;
 import com.tbruyelle.rxpermissions2.RxPermissions;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -479,6 +487,8 @@ public class MainActivity extends BaseActivity {
     }
     @Override
     protected void initData() {
+        EventBus.getDefault().register(this);
+        JaxEventBus.getDefault().register(this);
         rxPermissions = new RxPermissions(this);
         checkLocal();
         mStringList.addAll(Arrays.asList(mStrings));
@@ -701,6 +711,11 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
+        JaxEventBus.getDefault().unregister(this);
+
     }
 
     @Override
@@ -738,4 +753,18 @@ public class MainActivity extends BaseActivity {
 
 
     }
+
+    @Subscribe
+    public void receive(User user){
+        Toast.makeText(mContext,user.toString(),Toast.LENGTH_SHORT).show();
+    }
+
+    @JaxSubscribe(threadMode = JaxThreadMode.MAIN )
+    public void receive1(User user){
+        Toast.makeText(mContext,user.toString(),Toast.LENGTH_SHORT).show();
+
+    }
+
+
+
 }

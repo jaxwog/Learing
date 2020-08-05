@@ -9,6 +9,8 @@ import com.love.jax.callback.IDbHelper;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.io.File;
 
 /**
@@ -34,6 +36,8 @@ public class JaxApplication extends Application {
         dbHelper = DbHelper.getInstance(this, FILE_PATH, "carrepairlocation.db");
         refWatcher= setupLeakCanary();
         instance = this;
+        //注解编译器生成类MyEventBusIndex，编译时，而别的时候是通过反射运行时
+        EventBus.builder().addIndex(new MyEventBusIndex()).installDefaultEventBus();
     }
 
 

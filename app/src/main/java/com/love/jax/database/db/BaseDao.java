@@ -80,10 +80,16 @@ public abstract class BaseDao<T> implements IBaseDao<T> {
                 return  false;
             }
 
-            //创建数据库T类型表
+            //创建数据库T类型表，子类实现
             if(!TextUtils.isEmpty(createTable())) {
                 database.execSQL(createTable());
             }
+
+            //通过反射去创建sql语句
+            String createTableSql = getCreateTableSql();
+            database.execSQL(createTableSql);
+
+
             cacheMap = new HashMap<>();
 
             initCacheMap();
@@ -434,6 +440,60 @@ public abstract class BaseDao<T> implements IBaseDao<T> {
         public String getWhereClause() {
             return whereClause;
         }
+    }
+
+    //生成数据库
+    private String getCreateTableSql() {
+        //create table if not exists
+        // tb_user(_id integer, name varchar(20), password varchar(20),)
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("create table if not exists ");
+        stringBuffer.append(tableName + "(");
+        //反射得到所有的成员变量
+        Field[] declaredFields = entityClass.getDeclaredFields();
+        for (Field field : declaredFields) {
+            Class type = field.getType();// 拿到成员的类型
+
+            if(field.getAnnotation(DbFiled.class) != null){
+                //通过注解获取
+                if(type == String.class){
+                    stringBuffer.append(field.getAnnotation(DbFiled.class).value() + " TEXT,");
+                } else  if(type == Integer.class){
+                    stringBuffer.append(field.getAnnotation(DbFiled.class).value() + " INTEGER,");
+                }else  if(type == Long.class){
+                    stringBuffer.append(field.getAnnotation(DbFiled.class).value() + " BIGINT,");
+                }else  if(type == Double.class){
+                    stringBuffer.append(field.getAnnotation(DbFiled.class).value() + " DOUBLE,");
+                }else  if(type == byte[].class){
+                    stringBuffer.append(field.getAnnotation(DbFiled.class).value() + " BLOB,");
+                }else {
+                    //不支持的类型
+                    continue;
+                }
+            } else {
+                //通过反射获取
+                if(type == String.class){
+                    stringBuffer.append(field.getName() + " TEXT,");
+                } else  if(type == Integer.class){
+                    stringBuffer.append(field.getName() + " INTEGER,");
+                }else  if(type == Long.class){
+                    stringBuffer.append(field.getName() + " BIGINT,");
+                }else  if(type == Double.class){
+                    stringBuffer.append(field.getName() + " DOUBLE,");
+                }else  if(type == byte[].class){
+                    stringBuffer.append(field.getName() + " BLOB,");
+                }else {
+                    //不支持的类型
+                    continue;
+                }
+            }
+        }
+
+        if(stringBuffer.charAt(stringBuffer.length()  - 1) == ','){
+            stringBuffer.deleteCharAt(stringBuffer.length()  - 1);
+        }
+        stringBuffer.append(")");
+        return stringBuffer.toString();
     }
 
 

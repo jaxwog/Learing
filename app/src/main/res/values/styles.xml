@@ -27,6 +27,7 @@
         <item name="android:navigationBarColor" tools:ignore="NewApi">@color/colorPrimary_pink</item>
         <!--设置间隔线颜色和大小-->
         <item name="android:listDivider">@drawable/item_divider</item>
+        <item name="skinTypeface">@string/typeface</item>
                  <!--<item name="android:windowBackground">@color/background</item> -->
                  <!--<item name="colorAccent">#906292</item> -->
         <!--可以修改背景颜色和水波纹的颜色：-->

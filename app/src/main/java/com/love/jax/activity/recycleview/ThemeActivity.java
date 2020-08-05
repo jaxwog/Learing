@@ -8,6 +8,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.ListPopupWindow;
 import android.support.v7.widget.PopupMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -72,7 +73,14 @@ public class ThemeActivity extends BaseActivity {
     public void showPopupMenu(View v) {
         PopupMenu popupMenu = new PopupMenu(this, v);
         popupMenu.getMenuInflater().inflate(R.menu.main, popupMenu.getMenu());
-//		popupMenu.setOnMenuItemClickListener(listener);
+		popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+
+                Toast.makeText(mContext, menuItem.getTitle()+"",Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
         popupMenu.show();
 
     }

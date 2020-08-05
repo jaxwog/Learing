@@ -15,12 +15,12 @@ import java.io.File;
 public enum PrivateDataBaseEnums {
 
     /**
-     * 存放本地数据库的路径
+     * 存放本地数据库的路径，枚举实例对象
      */
     database("local/data/database/");
 
     /**
-     * 文件存储的文件路径
+     * 文件存储的文件路径，属性
      */
     private String value;
 

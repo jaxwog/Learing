@@ -10,6 +10,8 @@ import android.os.Bundle;
 import com.love.jax.utils.ConfigSet;
 import com.love.jax.utils.Logger;
 
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.ButterKnife;
 
 /**
@@ -104,4 +106,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         startActivityForResult(intent,requestCode);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(mContext);
+    }
 }

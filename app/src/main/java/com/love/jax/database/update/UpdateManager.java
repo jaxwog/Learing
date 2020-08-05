@@ -245,7 +245,7 @@ public class UpdateManager {
             return;
         }
 
-        // 事务
+        // 事务，保证这个代码同时执行多条sql语句
         sqlitedb.beginTransaction();
 
         for (String sql : sqls) {
@@ -260,6 +260,7 @@ public class UpdateManager {
             }
         }
 
+        //标记数据库事务执行成功
         sqlitedb.setTransactionSuccessful();
         sqlitedb.endTransaction();
     }

@@ -38,6 +38,7 @@ public class LoginDao extends BaseDao<LoginTable> {
     public Long insert(LoginTable entity) {
         List<LoginTable> list = query(new LoginTable());
         LoginTable where = null;
+//        list.for  ,出来foreach信息
         for (LoginTable user : list) {
             where = new LoginTable();
             where.setUser_id(user.getUser_id());

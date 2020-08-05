@@ -7,6 +7,9 @@
     <string name="drawer_open">打开</string>
     <string name="drawer_close">关闭</string>
 
+    <string name="typeface"/>
+    <string name="typeface2"/>
+
     <!--loadmoreactivity-->
     <string name="content_description">contentDescription</string>
     <string name="hello_world">学习加载器的使用</string>

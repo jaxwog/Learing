@@ -7,9 +7,11 @@ import android.widget.TextView;
 
 import com.love.jax.R;
 import com.love.jax.activity.BaseActivity;
+import com.love.jax.fastjson.JSON;
 import com.love.jax.json.FastJson;
 import com.love.jax.json.News;
 import com.love.jax.json.User;
+import com.love.jax.utils.Logger;
 
 import org.w3c.dom.Text;
 
@@ -51,7 +53,14 @@ public class FastJsonActivity extends BaseActivity {
         news.setContent("从今天开始放假啦。");
         news.setAuthor(createAuthor());
         news.setReader(createReaders());
-        mTextView.setText(FastJson.toJson(news));
+        List<News> list = new ArrayList<>();
+        list.add(0,news);
+        list.add(1,news);
+        Logger.i("jax",FastJson.toJson(list));
+
+        Logger.i("jax",JSON.toJSONString(list));
+
+        mTextView.setText(FastJson.toJson(list));
     }
 
     public void object2(View view) {
@@ -62,6 +71,8 @@ public class FastJsonActivity extends BaseActivity {
         news.setAuthor(createAuthor());
         news.setReader(createReaders());
         String json = FastJson.toJson(news);
+        Logger.i("jax",json);
+         Logger.i("jax","json转对象："+JSON.parseObject(json,News.class).toString());
 
         mTextView.setText(((News)FastJson.pareseObject(json,News.class)).toString());
     }

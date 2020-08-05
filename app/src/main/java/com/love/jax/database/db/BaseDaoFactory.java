@@ -53,7 +53,6 @@ public class BaseDaoFactory {
             }
             //通过反射创建具体的BaseDao子类
             baseDao = clazz.newInstance();
-
             baseDao.init(entityClass, this.sqLiteDatabase);
         } catch (IllegalAccessException e) {
             e.printStackTrace();

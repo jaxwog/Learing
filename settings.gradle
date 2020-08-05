@@ -1,1 +1,3 @@
+include ':skin-core'
+include ':fastjson'
 include ':app', ':butterknifejax-annotations', ':butterknifejax-compiler'

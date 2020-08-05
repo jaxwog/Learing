@@ -202,6 +202,7 @@ public class FastJson {
                     jsonBuffer.append(",");
                 }
             }
+            jsonBuffer.append("]");
         } else {
             addObjectToJson(jsonBuffer, object);
         }
